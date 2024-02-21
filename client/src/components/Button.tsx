@@ -4,7 +4,7 @@ export default function Button() {
   const [message, setMessage] = React.useState(null);
   const url = "http://localhost:1234/api";
 
-  async function handleSubmit() {
+  async function fetchMessage() {
     try {
       //Fetch data from api
       const response = await fetch(url);
@@ -21,7 +21,7 @@ export default function Button() {
 
   return (
     <div>
-      <button onClick={handleSubmit}>Click Here</button>
+      <button onClick={fetchMessage}>Click Here</button>
       {message ? (
         <div>
           <p>This is the fetched data</p>
