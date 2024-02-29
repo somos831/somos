@@ -1,0 +1,26 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: beige;
+}
+
+.mainContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid red;
+    padding: 10px 60px;
+    height: 50px;
+    background-color: white;
+}
+
+.somosLogo {
+    width: 150px;
+}
+
+.navMenu {
+    display: flex;
+    gap: 30px; 
+    border: 1px solid purple;
+}
