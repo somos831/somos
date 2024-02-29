@@ -1,40 +1,59 @@
 import React from "react";
+import {
+  FaBars,
+  FaTimes,
+  FaLinkedin,
+  FaInstagram,
+  FaTiktok,
+} from "react-icons/fa";
 import styles from "./Navbar.module.css";
-import SOMOSLogo from "../../../public/somosLogo.png";
-import { FaBars, FaTimes } from "react-icons/fa";
+import somosLogoWhite from "../../assets/somoLogo_white.png";
 
 export default function Navbar() {
-  const [navOpen, setNavOpen] = React.useState(false);
+  const [isOpen, setIsOpen] = React.useState(false);
 
   const showNavbar = () => {
-    setNavOpen(!navOpen);
+    setIsOpen((prevOpen) => !prevOpen);
   };
-  return (
-    <nav className={styles.mainContainer}>
-      <ul>
-        <li>
-          <a>
-            <img className={styles.somosLogo} src={SOMOSLogo} />
-          </a>
-        </li>
 
-        <li>
-          <a href="#" className={styles.navLinks}>
-            Home
+  return (
+    <header>
+      <img src={somosLogoWhite} className={styles.somosLogo} />
+      <nav className={isOpen ? styles.navOpen : ""}>
+        <a href="#" className={styles.logoLinkSidebar}>
+          <img
+            alt="Somos Logo"
+            src={somosLogoWhite}
+            className={styles.somosLogoSidebar}
+          />
+        </a>
+        <a href="/#">Home</a>
+        <a href="/#">About</a>
+        <a href="/#">Contact</a>
+
+        <button
+          className={`${styles.navBurger} ${styles.navCloseBtn}`}
+          onClick={showNavbar}
+        >
+          <FaTimes />
+        </button>
+
+        <div className={styles.socialLogos}>
+          <a href="#">
+            <FaLinkedin />
           </a>
-        </li>
-        <li>
-          <a href="#" className={styles.navLinks}>
-            About
+          <a href="#">
+            <FaInstagram />
           </a>
-        </li>
-        <li>
-          <a href="#" className={styles.navLinks}>
-            Contact
+          <a href="#">
+            <FaTiktok />
           </a>
-        </li>
-      </ul>
-    </nav>
+        </div>
+      </nav>
+
+      <button className={styles.navBurger} onClick={showNavbar}>
+        <FaBars />
+      </button>
+    </header>
   );
 }
-
