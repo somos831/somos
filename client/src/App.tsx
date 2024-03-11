@@ -1,5 +1,8 @@
-import "./App.css";
+import './App.css';
+import AboutMe from './layouts/AboutMe';
 
-function App() {}
+function App() {
+  return <AboutMe />;
+}
 
 export default App;
