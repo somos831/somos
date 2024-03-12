@@ -1,0 +1,43 @@
+:root {
+  --primary20-color: #25054D;
+  --text-secondary10-color: #656565;
+}
+
+.container {
+  font-size: 20px;
+  width: 900px;
+  padding: 35px 0;
+}
+
+span {
+  padding: 5px;
+}
+
+.breadcrumb-link {
+  color: var(--text-secondary10-color);
+}
+
+.breadcrumb-link.active {
+  color: var(--primary20-color); 
+}
+
+.link,
+.link.active  {
+  text-decoration: none;
+}
+
+.link {
+  color: var(--text-secondary10-color);
+}
+
+.link.active {
+  color: var(--primary20-color); 
+}
+
+@media screen and (min-width: 320px) and (max-width: 1024px) {
+  .container {
+    width: 100%;
+    padding: 20px;
+    font-size: 16px;
+  }
+}

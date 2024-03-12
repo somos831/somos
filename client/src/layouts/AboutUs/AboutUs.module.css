@@ -57,7 +57,7 @@
   padding: 20px;
   display: flex;
   width: 100%;
-  background-color: rgba(37, 5, 77, 0.6);
+  background-color: rgba(37, 5, 77, 0.9);
   color: var(--text-color);
   align-items: center;
   justify-content: center;
@@ -70,6 +70,7 @@
 }
 
 .headerText2 {
+  font-weight: 600;
   padding-top: 20px;
   padding-bottom: 10px;
   font-size: 40px;

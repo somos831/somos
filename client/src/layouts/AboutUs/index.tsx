@@ -2,11 +2,12 @@ import React from 'react';
 
 import SomosTeamCard from '../../components/SomosTeamCard/SomosTeamCard';
 import SomosMemberCard from '../../assets/images/placeHolderSomosMember.png';
-import styles from './AboutMe.module.css';
+import styles from './AboutUs.module.css';
+import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
 
 const SOMOS_MEMBERS_LENGTH = 6;
 
-export default function AboutMe(): React.ReactElement {
+export default function AboutUs(): React.ReactElement {
   const somosCards: React.ReactElement[] = [];
   for (let i = 0; i < SOMOS_MEMBERS_LENGTH; i++) {
     somosCards.push(
@@ -21,6 +22,7 @@ export default function AboutMe(): React.ReactElement {
   }
   return (
     <div className={styles.container}>
+      <Breadcrumbs />
       <div className={styles.aboutUsHeader}>
         <div className={styles.bottomContainer}>
           <div className={styles.aboutUsTextComponent}>
