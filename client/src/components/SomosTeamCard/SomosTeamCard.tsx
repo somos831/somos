@@ -1,3 +1,5 @@
+import styles from './SomosTeamCard.module.css';
+
 interface SomosMember {
   firstName: string;
   lastName: string;
@@ -12,12 +14,12 @@ export default function SomosTeamCard({
   title,
 }: SomosMember) {
   return (
-    <div className='somosImageCard'>
-      <img src={imageUri} alt='Profile' className='somosMemberImage' />
-      <div className='somosMemberName'>
+    <div className={styles.container}>
+      <img src={imageUri} alt='Profile' className={styles.somosMemberPicture} />
+      <div className={styles.somosNameText}>
         {firstName} {lastName}
       </div>
-      <div className='somosTitle'>{title}</div>
+      <div className={styles.jobTitleText}>{title}</div>
     </div>
   );
 }
