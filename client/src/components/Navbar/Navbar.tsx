@@ -8,6 +8,7 @@ import {
 } from "react-icons/fa";
 import styles from "./Navbar.module.css";
 import somosLogoWhite from "../../assets/somoLogo_white.png";
+import somosLogo from "../../assets/somosLogo.png";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -18,7 +19,7 @@ export default function Navbar() {
 
   return (
     <header>
-      <img src={somosLogoWhite} className={styles.somosLogo} />
+      <img src={somosLogo} className={styles.somosLogo} />
       <nav className={isOpen ? styles.navOpen : ""}>
         <a href="#" className={styles.logoLinkSidebar}>
           <img
