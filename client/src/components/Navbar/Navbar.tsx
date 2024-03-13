@@ -1,14 +1,14 @@
-import React from "react";
+import React from 'react';
 import {
   FaBars,
   FaTimes,
   FaLinkedin,
   FaInstagram,
   FaTiktok,
-} from "react-icons/fa";
-import styles from "./Navbar.module.css";
-import somosLogoWhite from "../../assets/somoLogo_white.png";
-import somosLogo from "../../assets/somosLogo.png";
+} from 'react-icons/fa';
+import styles from './Navbar.module.css';
+import somosLogoWhite from '../../assets/somoLogo_white.png';
+import somosLogo from '../../assets/somosLogo.png';
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -20,17 +20,17 @@ export default function Navbar() {
   return (
     <header>
       <img src={somosLogo} className={styles.somosLogo} />
-      <nav className={isOpen ? styles.navOpen : ""}>
-        <a href="#" className={styles.logoLinkSidebar}>
+      <nav className={isOpen ? styles.navOpen : ''}>
+        <a href='#' className={styles.logoLinkSidebar}>
           <img
-            alt="Somos Logo"
+            alt='Somos Logo'
             src={somosLogoWhite}
             className={styles.somosLogoSidebar}
           />
         </a>
-        <a href="/#">Home</a>
-        <a href="/#">About</a>
-        <a href="/#">Contact</a>
+        <a href='/#'>Home</a>
+        <a href='/about'>About</a>
+        <a href='/#'>Contact</a>
 
         <button
           className={`${styles.navBurger} ${styles.navCloseBtn}`}
@@ -40,13 +40,13 @@ export default function Navbar() {
         </button>
 
         <div className={styles.socialLogos}>
-          <a href="#">
+          <a href='#'>
             <FaLinkedin />
           </a>
-          <a href="#">
+          <a href='#'>
             <FaInstagram />
           </a>
-          <a href="#">
+          <a href='#'>
             <FaTiktok />
           </a>
         </div>

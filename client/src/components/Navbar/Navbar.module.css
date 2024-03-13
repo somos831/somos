@@ -2,15 +2,18 @@
   --primary-color: #501d86;
   --secondary-color: #e03997;
   --text-color: #ffffff;
+  --background-color: #f4f4f4;
+  --background10-color: #626262;
 }
 
 header {
+  font-family: 'Poppins', sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
   height: 80px;
   padding: 0 2rem;
-  background-color: white;
+  background-color: var(--background-color);
   color: var(--text-color);
 }
 
@@ -43,12 +46,12 @@ header .navBurger {
   background: transparent;
   border: none;
   outline: none;
-  color: black;
+  color: var(--background10-color);
   display: none;
   font-size: 1.8rem;
 }
 
-@media only screen and (max-width: 1024px) {
+@media screen and (min-width: 320px) and (max-width: 1024px) {
   /* show navBtns on smaller screens */
   .somosLogo {
     width: 150px;
