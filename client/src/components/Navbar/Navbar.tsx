@@ -1,14 +1,15 @@
-import React from 'react';
+import React from "react";
 import {
   FaBars,
   FaTimes,
   FaLinkedin,
   FaInstagram,
   FaTiktok,
-} from 'react-icons/fa';
-import styles from './Navbar.module.css';
-import somosLogoWhite from '../../assets/somoLogo_white.png';
-import somosLogo from '../../assets/somosLogo.png';
+} from "react-icons/fa";
+import styles from "./Navbar.module.css";
+import somosLogoWhite from "../../assets/somoLogo_white.png";
+import somosLogo from "../../assets/somosLogo.png";
+import Drawer from "./Drawer";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -20,41 +21,31 @@ export default function Navbar() {
   return (
     <header>
       <img src={somosLogo} className={styles.somosLogo} />
-      <nav className={isOpen ? styles.navOpen : ''}>
-        <a href='#' className={styles.logoLinkSidebar}>
-          <img
-            alt='Somos Logo'
-            src={somosLogoWhite}
-            className={styles.somosLogoSidebar}
-          />
-        </a>
-        <a href='/#'>Home</a>
-        <a href='/about'>About</a>
-        <a href='/#'>Contact</a>
-
-        <button
-          className={`${styles.navBurger} ${styles.navCloseBtn}`}
-          onClick={showNavbar}
-        >
-          <FaTimes />
-        </button>
-
-        <div className={styles.socialLogos}>
-          <a href='#'>
-            <FaLinkedin />
-          </a>
-          <a href='#'>
-            <FaInstagram />
-          </a>
-          <a href='#'>
-            <FaTiktok />
-          </a>
-        </div>
+      <nav className={styles.navLinks}>
+        <a href="/#">Home</a>
+        <a href="/about">About</a>
+        <a href="/#">Contact</a>
       </nav>
 
       <button className={styles.navBurger} onClick={showNavbar}>
         <FaBars />
       </button>
+
+      {isOpen && (
+        <Drawer handleDismiss={showNavbar}>
+          <ul className={styles.navListSidebar}>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">About</a>
+            </li>
+            <li>
+              <a href="#">Contact</a>
+            </li>
+          </ul>
+        </Drawer>
+      )}
     </header>
   );
 }
