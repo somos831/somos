@@ -1,3 +1,11 @@
+:root {
+  --primary-color: #501d86;
+  --secondary-color: #e03997;
+  --text-color: #ffffff;
+  --background-color: #f4f4f4;
+  --background10-color: #626262;
+}
+
 @keyframes slideIn {
   from {
     transform: translateX(100%);
@@ -18,7 +26,7 @@
 .backdrop {
   position: absolute;
   inset: 0;
-  background: hsl(350deg 100% 30% / 0.75);
+  background: rgba(80, 29, 134, 0.75);
   backdrop-filter: blur(3px);
   animation: fadeIn 850ms cubic-bezier(0.14, 0.78, 0.36, 1);
 }
@@ -27,17 +35,26 @@
   top: 0;
   right: 0;
   bottom: 0;
-  width: 50%;
+  width: 70%;
   max-width: 300px;
   min-width: 200px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  background: white;
+  align-content: center;
+  background-color: var(--primary-color);
   padding: 32px;
   animation: slideIn 500ms cubic-bezier(0.14, 0.78, 0.36, 1);
 }
-.closeBtn {
+
+.socialLogos {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.dismissBtn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -45,6 +62,7 @@
   padding: 8px;
   cursor: pointer;
   border: none;
-  background: hsl(350deg 100% 90%);
+  background: var(--secondary-color);
+  color: var(--text-color);
   border-radius: 4px;
 }

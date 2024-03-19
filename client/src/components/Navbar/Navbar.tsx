@@ -1,13 +1,7 @@
 import React from "react";
-import {
-  FaBars,
-  FaTimes,
-  FaLinkedin,
-  FaInstagram,
-  FaTiktok,
-} from "react-icons/fa";
+import { FaBars } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaTiktok } from "react-icons/fa";
 import styles from "./Navbar.module.css";
-import somosLogoWhite from "../../assets/somoLogo_white.png";
 import somosLogo from "../../assets/somosLogo.png";
 import Drawer from "./Drawer";
 
@@ -28,7 +22,7 @@ export default function Navbar() {
       </nav>
 
       <button className={styles.navBurger} onClick={showNavbar}>
-        <FaBars />
+        <FaBars tabIndex={0} />
       </button>
 
       {isOpen && (
@@ -44,6 +38,18 @@ export default function Navbar() {
               <a href="#">Contact</a>
             </li>
           </ul>
+
+          <div className={styles.socialLogos}>
+            <a href="#">
+              <FaLinkedin />
+            </a>
+            <a href="#">
+              <FaInstagram />
+            </a>
+            <a href="#">
+              <FaTiktok />
+            </a>
+          </div>
         </Drawer>
       )}
     </header>

@@ -7,7 +7,6 @@
 }
 
 header {
-  font-family: "Poppins", sans-serif;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -19,14 +18,6 @@ header {
 
 .somosLogo {
   width: 200px;
-}
-
-.somosLogoSidebar {
-  display: none;
-}
-
-.socialLogos {
-  display: none;
 }
 
 .navLinks a {
@@ -54,9 +45,35 @@ header .navBurger {
 .navListSidebar {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 24px;
   list-style-type: none;
   padding: 0;
+}
+
+.navListSidebar a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 2rem;
+}
+
+.navListSidebar a:hover {
+  color: var(--secondary-color);
+}
+
+.socialLogos {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.socialLogos a {
+  color: var(--text-color);
+  font-size: 3rem;
+}
+
+.socialLogos a:hover {
+  color: var(--secondary-color);
 }
 
 @media screen and (min-width: 320px) and (max-width: 1024px) {
