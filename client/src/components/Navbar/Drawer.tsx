@@ -24,7 +24,8 @@ const Drawer: React.FC<DrawerProps> = ({ children, handleDismiss }) => {
               <div>{children}</div>
 
               <button className={styles.dismissBtn} onClick={handleDismiss}>
-                <FaTimes size={18} /> Dismiss
+                <FaTimes size={18} aria-hidden="true" focusable="false" />{" "}
+                Dismiss
               </button>
             </div>
           </div>
