@@ -3,7 +3,7 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
 import AboutUs from './layouts/AboutUs';
 import Navbar from './components/Navbar/Navbar';
-
+import Footer from './components/Footer/Footer';
 function App() {
   return (
     <>
@@ -13,6 +13,7 @@ function App() {
           <Route path='/about' Component={AboutUs} />
         </Routes>
       </Router>
+      <Footer/>
     </>
   );
 }
