@@ -1,14 +1,10 @@
-import React from 'react';
-import {
-  FaBars,
-  FaTimes,
-  FaLinkedin,
-  FaInstagram,
-  FaTiktok,
-} from 'react-icons/fa';
-import styles from './Navbar.module.css';
-import somosLogoWhite from '../../assets/somoLogo_white.png';
-import somosLogo from '../../assets/somosLogo.png';
+import React from "react";
+import { FaBars } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaTiktok } from "react-icons/fa";
+import VisuallyHidden from "../VisuallyHidden/VisuallyHidden";
+import styles from "./Navbar.module.css";
+import somosLogo from "../../assets/somosLogo.png";
+import Drawer from "./Drawer";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -19,42 +15,62 @@ export default function Navbar() {
 
   return (
     <header>
-      <img src={somosLogo} className={styles.somosLogo} />
-      <nav className={isOpen ? styles.navOpen : ''}>
-        <a href='#' className={styles.logoLinkSidebar}>
-          <img
-            alt='Somos Logo'
-            src={somosLogoWhite}
-            className={styles.somosLogoSidebar}
-          />
-        </a>
-        <a href='/#'>Home</a>
-        <a href='/about'>About</a>
-        <a href='/#'>Contact</a>
-
-        <button
-          className={`${styles.navBurger} ${styles.navCloseBtn}`}
-          onClick={showNavbar}
-        >
-          <FaTimes />
-        </button>
-
-        <div className={styles.socialLogos}>
-          <a href='#'>
-            <FaLinkedin />
-          </a>
-          <a href='#'>
-            <FaInstagram />
-          </a>
-          <a href='#'>
-            <FaTiktok />
-          </a>
-        </div>
+      <img
+        src={somosLogo}
+        alt="Purple somos logo"
+        className={styles.somosLogo}
+      />
+      <nav role="navigation" className={styles.navLinks}>
+        <a href="/#">Home</a>
+        <a href="/about">About</a>
+        <a href="/#">Contact</a>
       </nav>
 
-      <button className={styles.navBurger} onClick={showNavbar}>
-        <FaBars />
+      <button
+        aria-label="Main Menu"
+        aria-expanded={isOpen}
+        className={styles.navBurger}
+        onClick={showNavbar}
+      >
+        <FaBars aria-label="Main Menu" focusable="false" tabIndex={0} />
+        <VisuallyHidden>Open Main Menu</VisuallyHidden>
       </button>
+
+      {isOpen && (
+        <Drawer handleDismiss={showNavbar}>
+          <ul className={styles.navListSidebar}>
+            <li>
+              <a href="/">Home</a>
+            </li>
+            <li>
+              <a href="/about">About</a>
+            </li>
+            <li>
+              <a href="/contact">Contact</a>
+            </li>
+          </ul>
+
+          <div className={styles.socialLogos}>
+            <a
+              href="https://www.linkedin.com/company/somos-central-tech-association/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedin aria-label="Linkedin" />
+            </a>
+            <a
+              href="https://www.instagram.com/somostechassociation?igsh=MzRlODBiNWFlZA=="
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram aria-label="Instagram" />
+            </a>
+            <a href="#" target="_blank" rel="noopener noreferrer">
+              <FaTiktok aria-label="Tiktok" />
+            </a>
+          </div>
+        </Drawer>
+      )}
     </header>
   );
 }
