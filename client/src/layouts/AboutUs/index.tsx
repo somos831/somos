@@ -1,9 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import SomosTeamCard from '../../components/SomosTeamCard/SomosTeamCard';
-import SomosMemberCard from '../../assets/images/placeHolderSomosMember.png';
-import styles from './AboutUs.module.css';
-import Breadcrumbs from '../../components/Breadcrumbs/Breadcrumbs';
+import SomosTeamCard from "../../components/SomosTeamCard/SomosTeamCard";
+import SomosMemberCard from "../../assets/images/placeHolderSomosMember.png";
+import styles from "./AboutUs.module.css";
+import Breadcrumbs from "../../components/Breadcrumbs/Breadcrumbs";
 
 const SOMOS_MEMBERS_LENGTH = 6;
 
@@ -13,16 +13,17 @@ export default function AboutUs(): React.ReactElement {
     somosCards.push(
       <SomosTeamCard
         key={i}
-        firstName='John'
-        lastName='Doe'
+        firstName="John"
+        lastName="Doe"
         imageUri={SomosMemberCard}
-        title='Content Creator'
+        title="Content Creator"
       />,
     );
   }
   return (
     <div className={styles.container}>
       <Breadcrumbs />
+
       <div className={styles.aboutUsHeader}>
         <div className={styles.bottomContainer}>
           <div className={styles.aboutUsTextComponent}>
@@ -34,6 +35,7 @@ export default function AboutUs(): React.ReactElement {
           </div>
         </div>
       </div>
+
       <div className={styles.aboutValues}>
         <p className={styles.aboutValuesContent}>
           We are dedicated to empowering individuals by providing them with the
@@ -41,6 +43,7 @@ export default function AboutUs(): React.ReactElement {
           industry.
         </p>
       </div>
+
       <div className={styles.content}>
         <h3 className={styles.headerText2}>Our Values</h3>
         <p className={styles.OurValuesContent}>

@@ -3,7 +3,7 @@ import { FaBars } from "react-icons/fa";
 import { FaLinkedin, FaInstagram, FaTiktok } from "react-icons/fa";
 import VisuallyHidden from "../VisuallyHidden/VisuallyHidden";
 import styles from "./Navbar.module.css";
-import somosLogo from "../../assets/somosLogo.png";
+import somosLogo from "../../assets/logos/somosLogo.png";
 import Drawer from "./Drawer";
 
 export default function Navbar() {
