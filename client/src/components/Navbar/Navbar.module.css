@@ -10,14 +10,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 70px;
   padding: 0 2rem;
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
 .somosLogo {
-  width: 200px;
+  width: 150px;
 }
 
 .navLinks a {

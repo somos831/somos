@@ -23,7 +23,7 @@ export default function Navbar() {
       <nav role="navigation" className={styles.navLinks}>
         <a href="/#">Home</a>
         <a href="/about">About</a>
-        <a href="/#">Contact</a>
+        <a href="/contact">Contact</a>
       </nav>
 
       <button
