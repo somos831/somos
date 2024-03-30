@@ -7,7 +7,7 @@ export default function HeroSection(): React.ReactElement {
     <section className={styles.heroSection}>
       <div className={styles.headingsContainer}>
         <h1 className={styles.heading}>
-          Make your website <br /> <span>wonderful</span>
+          We Are <br /> <span>SOMOS</span>
         </h1>
 
         <div className={styles.subheadingContainer}>

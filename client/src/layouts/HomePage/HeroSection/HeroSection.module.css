@@ -16,8 +16,11 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  /* background-image: url("../../../assets/images/heroPageBackground.jpeg"); */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
   color: var(--text-secondary-color);
-  padding: 20px 32px 16px 32px;
+  padding: 20px 14px 16px 14px;
   margin-bottom: 8px;
 }
 
@@ -27,7 +30,7 @@
 }
 
 .heading {
-  font-size: 5.5rem;
+  font-size: 4.5rem;
   line-height: 1.2;
   text-align: center;
   letter-spacing: -0.02rem;

@@ -1,12 +1,12 @@
 import React from "react";
 import styles from "./PhotoGrid.module.css";
 
-import aiSanFranPhoto from "../../assets/slideshowImages/somos_ai_sanfrancisco.jpeg";
-import reunionPresentationPhoto from "../../assets/slideshowImages/somos_reunion_presentation.jpeg";
-import carmelMarketPhoto from "../../assets/slideshowImages/somos_carmel_market.png";
-import hartnellGroupPhoto from "../../assets/slideshowImages/somos_hartnell_group.png";
-import julioTourPhoto from "../../assets/slideshowImages/somos_julio_tour.jpeg";
-import remarkableAIPhoto from "../../assets/slideshowImages/somos_remarkable_ai.png";
+import aiSanFranPhoto from "../../../assets/slideshowImages/somos_ai_sanfrancisco.jpeg";
+import reunionPresentationPhoto from "../../../assets/slideshowImages/somos_reunion_presentation.jpeg";
+import carmelMarketPhoto from "../../../assets/slideshowImages/somos_carmel_market.png";
+import hartnellGroupPhoto from "../../../assets/slideshowImages/somos_hartnell_group.png";
+import julioTourPhoto from "../../../assets/slideshowImages/somos_julio_tour.jpeg";
+import remarkableAIPhoto from "../../../assets/slideshowImages/somos_remarkable_ai.png";
 
 export default function PhotoGrid() {
   const photos = [
@@ -19,7 +19,7 @@ export default function PhotoGrid() {
   ];
 
   return (
-    <div className={styles.gallery}>
+    <section className={styles.gallery}>
       <figure className={`${styles.galleryItem} ${styles.item1}`}>
         <img src={photos[0]} alt="" className={styles.galleryImg} />
       </figure>
@@ -43,6 +43,6 @@ export default function PhotoGrid() {
       <figure className={`${styles.galleryItem} ${styles.item6}`}>
         <img src={photos[5]} alt="" className={styles.galleryImg} />
       </figure>
-    </div>
+    </section>
   );
 }
