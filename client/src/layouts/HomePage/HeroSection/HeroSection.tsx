@@ -1,29 +1,30 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
-import SlideShow from "../../../components/SlideShow/SlideShow";
-import PhotoGrid from "../../../components/PhotoGrid/PhotoGrid";
-import Carousel from "../../../components/Carousel/Carousel";
+import { Link } from "react-router-dom";
 
 export default function HeroSection(): React.ReactElement {
   return (
     <section className={styles.heroSection}>
       <div className={styles.headingsContainer}>
         <h1 className={styles.heading}>
-          Central Coast
-          <br /> Tech Association
+          Make your website <br /> <span>wonderful</span>
         </h1>
 
         <div className={styles.subheadingContainer}>
           <p className={styles.subheading}>
-            uis nosturd exercitation ullamco laboris nisi ut allquip ex ea
-            commodo condequeat. Duis aute irure dolor in
+            Our landing page tempate works on all devices, so you only have to
+            set it up once, and get beautiful results forever.
           </p>
 
-          <button className={styles.heroBtn}>Learn more</button>
+          <div className={styles.buttonContainer}>
+            <button className={styles.heroBtn}>Contact Us</button>
+
+            <Link to={"/about"} className={`${styles.heroBtn} ${styles.link}`}>
+              Learn more
+            </Link>
+          </div>
         </div>
       </div>
-
-      <Carousel />
     </section>
   );
 }

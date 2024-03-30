@@ -14,51 +14,75 @@
   height: max-content;
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: center;
-  background-color: var(--primary-color);
-  color: var(--text-color);
-  padding: 0 32px 16px 32px;
+  color: var(--text-secondary-color);
+  padding: 20px 32px 16px 32px;
   margin-bottom: 8px;
 }
 
 .headingsContainer {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  align-items: center;
   margin-top: 48px;
   margin-bottom: 32px;
 }
 
 .heading {
-  font-size: 3rem;
-  text-align: left;
+  font-size: 5.5rem;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.02rem;
+}
+
+.heading > span {
+  background-clip: var(--text-secondary-color);
+  font-size: 5.6rem;
+  background: -webkit-linear-gradient(#501d86, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .subheadingContainer {
-  display: flex;
-  flex-direction: column;
+  max-width: 48rem;
 }
 
 .subheading {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   margin-top: 40px;
-  text-align: left;
+  text-align: center;
+  margin: 32px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
 }
 
 .heroBtn {
-  width: 150px;
   border: none;
   border-radius: 5px;
-  margin: 30px auto 0 0;
-  padding: 6px 4px;
-  background-color: orange;
+  padding: 12px 32px;
+  background-color: var(--primary-color);
   color: var(--text-color);
   cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--primary-color);
+  background-color: var(--text-color);
+  border: solid 1px var(--primary-color);
 }
 
 .heroBtn:hover,
 .heroBtn:focus {
   background-color: coral;
+}
+
+.link:hover,
+.link:focus {
+  background-color: var(--primary-color);
+  color: var(--text-color);
 }
 
 .slideshowContainer {
@@ -68,24 +92,7 @@
 
 /* Query for mobile devices */
 @media screen and (min-width: 320px) and (max-width: 1024px) {
-  .heroSection {
-    padding: 0 16px;
-  }
-
-  .headingsContainer {
-    display: flex;
-    flex-direction: column;
-    align-items: baseline;
-    padding: 0 32px;
-    text-align: center;
-    border: red 1px solid;
-  }
-
-  .headingsContainer > h1 {
-    font-size: 1.8rem;
-  }
-
-  .heroBtn {
-    margin: 30px auto 0 auto;
+  .heading {
+    font-size: 3.25rem;
   }
 }
