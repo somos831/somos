@@ -9,8 +9,13 @@ import hartnellGroupPhoto from "../../assets/slideshowImages/somos_hartnell_grou
 import julioTourPhoto from "../../assets/slideshowImages/somos_julio_tour.jpeg";
 import remarkableAIPhoto from "../../assets/slideshowImages/somos_remarkable_ai.png";
 
-export default function Carousel() {
+interface CarouselProps {
+  duration: number;
+}
+
+const Carousel: React.FC<CarouselProps> = ({ duration }) => {
   const [currentSlide, setCurrentSlide] = React.useState(0);
+
   const nextSlide = () => {
     setCurrentSlide(currentSlide === photos.length - 1 ? 0 : currentSlide + 1);
   };
@@ -18,6 +23,16 @@ export default function Carousel() {
   const prevSlide = () => {
     setCurrentSlide(currentSlide === 0 ? photos.length - 1 : currentSlide - 1);
   };
+
+  React.useEffect(() => {
+    // Automatically switch to the next slide every 5 seconds (adjust as needed)
+    const interval = setInterval(() => {
+      nextSlide();
+    }, duration);
+
+    // Clean up the interval on component unmount
+    return () => clearInterval(interval);
+  });
 
   return (
     <section className={styles.carouselContainer}>
@@ -35,7 +50,7 @@ export default function Carousel() {
               key={idx}
               className={
                 currentSlide === idx
-                  ? `${styles.slide}`
+                  ? `${styles.slide} ${styles.fadeIn}`
                   : `${styles.slide} ${styles.slideHidden}`
               }
             />
@@ -64,7 +79,7 @@ export default function Carousel() {
       </div>
     </section>
   );
-}
+};
 
 const photos = [
   {
@@ -92,3 +107,5 @@ const photos = [
     alt: "",
   },
 ];
+
+export default Carousel;
