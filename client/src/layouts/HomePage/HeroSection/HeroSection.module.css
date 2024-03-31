@@ -30,7 +30,7 @@
 }
 
 .heading {
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   line-height: 1.2;
   text-align: center;
   letter-spacing: -0.02rem;
@@ -96,6 +96,6 @@
 /* Query for mobile devices */
 @media screen and (min-width: 320px) and (max-width: 1024px) {
   .heading {
-    font-size: 3.25rem;
+    font-size: 2.5rem;
   }
 }

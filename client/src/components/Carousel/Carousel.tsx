@@ -16,51 +16,53 @@ export default function Carousel() {
   };
 
   const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? photos.length - 1 : currentSlide + 1);
+    setCurrentSlide(currentSlide === 0 ? photos.length - 1 : currentSlide - 1);
   };
 
   return (
-    <div className={styles.carousel}>
-      <BsArrowLeftCircleFill
-        className={`${styles.arrow} ${styles.arrowLeft}`}
-        onClick={prevSlide}
-      />
+    <section className={styles.carouselContainer}>
+      <div className={styles.carousel}>
+        <BsArrowLeftCircleFill
+          className={`${styles.arrow} ${styles.arrowLeft}`}
+          onClick={prevSlide}
+        />
 
-      {photos.map((image, idx) => {
-        return (
-          <img
-            src={image.src}
-            alt={image.alt}
-            key={idx}
-            className={
-              currentSlide === idx
-                ? `${styles.slide}`
-                : `${styles.slide} ${styles.slideHidden}`
-            }
-          />
-        );
-      })}
-
-      <BsArrowRightCircleFill
-        className={`${styles.arrow} ${styles.arrowRight}`}
-        onClick={nextSlide}
-      />
-      <span className={styles.indicators}>
-        {photos.map((_, idx) => {
+        {photos.map((image, idx) => {
           return (
-            <button
+            <img
+              src={image.src}
+              alt={image.alt}
               key={idx}
-              onClick={() => setCurrentSlide(idx)}
               className={
                 currentSlide === idx
-                  ? `${styles.indicator}`
-                  : `${styles.indicator} ${styles.indicatorInactive}`
+                  ? `${styles.slide}`
+                  : `${styles.slide} ${styles.slideHidden}`
               }
-            ></button>
+            />
           );
         })}
-      </span>
-    </div>
+
+        <BsArrowRightCircleFill
+          className={`${styles.arrow} ${styles.arrowRight}`}
+          onClick={nextSlide}
+        />
+        <span className={styles.indicators}>
+          {photos.map((_, idx) => {
+            return (
+              <button
+                key={idx}
+                onClick={() => setCurrentSlide(idx)}
+                className={
+                  currentSlide === idx
+                    ? `${styles.indicator}`
+                    : `${styles.indicator} ${styles.indicatorInactive}`
+                }
+              ></button>
+            );
+          })}
+        </span>
+      </div>
+    </section>
   );
 }
 

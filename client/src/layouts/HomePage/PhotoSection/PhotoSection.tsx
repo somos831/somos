@@ -1,9 +1,9 @@
 import React from "react";
-import styles from "./PhotoGrid.module.css";
+import styles from "./PhotoSection.module.css";
 
 import aiSanFranPhoto from "../../../assets/slideshowImages/somos_ai_sanfrancisco.jpeg";
 import reunionPresentationPhoto from "../../../assets/slideshowImages/somos_reunion_presentation.jpeg";
-import carmelMarketPhoto from "../../../assets/slideshowImages/somos_carmel_market.png";
+import boardMeeting from "../../../assets/slideshowImages/somos_board_meeting.jpg";
 import hartnellGroupPhoto from "../../../assets/slideshowImages/somos_hartnell_group.png";
 import julioTourPhoto from "../../../assets/slideshowImages/somos_julio_tour.jpeg";
 import remarkableAIPhoto from "../../../assets/slideshowImages/somos_remarkable_ai.png";
@@ -12,7 +12,7 @@ export default function PhotoGrid() {
   const photos = [
     aiSanFranPhoto,
     reunionPresentationPhoto,
-    carmelMarketPhoto,
+    boardMeeting,
     hartnellGroupPhoto,
     julioTourPhoto,
     remarkableAIPhoto,

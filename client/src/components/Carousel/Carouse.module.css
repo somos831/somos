@@ -1,3 +1,8 @@
+.carouselContainer {
+  display: flex;
+  justify-content: center;
+}
+
 .carousel {
   position: relative;
   display: flex;
@@ -10,8 +15,9 @@
 .slide {
   border-radius: 0.5rem;
   box-shadow: 0 0 7px #666;
+  pointer-events: none;
   width: 100%;
-  height: 100%;
+  height: auto;
 }
 
 .slideHidden {

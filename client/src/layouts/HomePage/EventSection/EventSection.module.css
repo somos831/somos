@@ -1,0 +1,202 @@
+:root {
+  --primary-color: #501d86;
+  --primary10-color: #503c5c;
+  --primary20-color: #25054d;
+  --secondary-color: #e03997;
+  --text-color: #ffffff;
+  --bg-ghost-white: #f8f8ff;
+  --text-secondary-color: #000;
+  --text-secondary10-color: #656565;
+  --grid-background-color: #fafafa;
+}
+
+.eventSectionContainer {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  /* background-image: url("../../../assets/images/heroPageBackground.jpeg"); */
+  /* background-size: cover; */
+  /* background-repeat: no-repeat; */
+  background-color: var(--bg-ghost-white);
+  color: var(--text-secondary-color);
+  padding: 80px 0 16px 0;
+  margin-bottom: 8px;
+}
+
+/* Event Heading CSS */
+
+.headingContainer {
+  margin: 0 10.5rem 1rem 10.5rem;
+}
+
+.missionHeading {
+  margin-bottom: 16px;
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.missionSubheading {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+/* Event Tab CSS */
+
+.eventListContainer {
+  display: flex;
+  margin-top: 1.5rem;
+  padding: 1rem 2rem;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--bg-ghost-white);
+  width: 100%;
+  color: var(--text-secondary-color);
+}
+
+.monthHeader {
+  align-items: center;
+  display: flex;
+}
+
+.month {
+  font-size: 1rem;
+}
+
+.month::after {
+  background-color: #d5d5d5;
+  content: "";
+  display: block;
+  flex: auto;
+  height: 1px;
+  margin-left: 20px;
+}
+
+.eventHeading {
+  margin-top: 6rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.eventListCard {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dateColumn {
+  padding-left: 24px;
+  padding-right: 24px;
+  min-width: 90px;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 4px;
+  text-align: center;
+}
+
+.dateDay {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.dateNumber {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.dateDay,
+.dateNumber {
+  padding: 0;
+}
+
+.eventCardContentContainer {
+  padding-left: 24px;
+  padding-right: 24px;
+}
+
+.eventDate {
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+}
+
+.eventCardContentContainer > h3 {
+  font-size: 1.5rem;
+}
+
+.eventCardContentContainer > h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  margin-bottom: 14px;
+}
+
+.eventCardContentContainer > p {
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+.eventRSVPContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eventRSVPLink {
+  background-color: orange;
+  color: var(--text-secondary-color);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.eventImageContainer {
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 0;
+  width: calc(12.5% * 3);
+}
+
+.image {
+  height: auto;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+/* Media Query for Tablets */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .headingContainer {
+    margin: 0 5rem 1rem;
+  }
+
+  .missionHeading {
+    font-size: 2.625rem;
+  }
+
+  .eventImageContainer > img {
+    margin-right: 100px;
+  }
+}
+
+/* Media Query for Mobile */
+@media screen and (min-width: 320px) and (max-width: 769px) {
+  .headingContainer {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .missionHeading {
+    font-size: 2rem;
+  }
+
+  .eventListCard {
+    display: flex;
+    flex-direction: column;
+  }
+}
