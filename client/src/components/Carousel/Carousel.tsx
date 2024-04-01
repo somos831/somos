@@ -1,6 +1,5 @@
 import React from "react";
 import styles from "./Carouse.module.css";
-import { BsArrowLeftCircleFill, BsArrowRightCircleFill } from "react-icons/bs";
 
 import aiSanFranPhoto from "../../assets/slideshowImages/somos_ai_sanfrancisco.jpeg";
 import reunionPresentationPhoto from "../../assets/slideshowImages/somos_reunion_presentation.jpeg";
@@ -20,10 +19,6 @@ const Carousel: React.FC<CarouselProps> = ({ duration }) => {
     setCurrentSlide(currentSlide === photos.length - 1 ? 0 : currentSlide + 1);
   };
 
-  const prevSlide = () => {
-    setCurrentSlide(currentSlide === 0 ? photos.length - 1 : currentSlide - 1);
-  };
-
   React.useEffect(() => {
     // Automatically switch to the next slide every 5 seconds (adjust as needed)
     const interval = setInterval(() => {
@@ -37,11 +32,6 @@ const Carousel: React.FC<CarouselProps> = ({ duration }) => {
   return (
     <section className={styles.carouselContainer}>
       <div className={styles.carousel}>
-        <BsArrowLeftCircleFill
-          className={`${styles.arrow} ${styles.arrowLeft}`}
-          onClick={prevSlide}
-        />
-
         {photos.map((image, idx) => {
           return (
             <img
@@ -56,26 +46,6 @@ const Carousel: React.FC<CarouselProps> = ({ duration }) => {
             />
           );
         })}
-
-        <BsArrowRightCircleFill
-          className={`${styles.arrow} ${styles.arrowRight}`}
-          onClick={nextSlide}
-        />
-        <span className={styles.indicators}>
-          {photos.map((_, idx) => {
-            return (
-              <button
-                key={idx}
-                onClick={() => setCurrentSlide(idx)}
-                className={
-                  currentSlide === idx
-                    ? `${styles.indicator}`
-                    : `${styles.indicator} ${styles.indicatorInactive}`
-                }
-              ></button>
-            );
-          })}
-        </span>
       </div>
     </section>
   );

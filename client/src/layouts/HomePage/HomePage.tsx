@@ -10,7 +10,7 @@ export default function HomePage() {
   return (
     <main>
       <HeroSection />
-      <Carousel duration={4000} />
+      <Carousel duration={7000} />
       <EventSection />
     </main>
   );

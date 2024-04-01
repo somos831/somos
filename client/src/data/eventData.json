@@ -1,0 +1,46 @@
+{
+  "event": [
+    {
+      "title": "Breaking Into Tech",
+      "description": "Join us for an exclusive event that brings together professionals from the tech industry or related fields and aspiring tech professionals.",
+      "img": "./src/assets/images/april_tech_mixer.png",
+      "month": "April",
+      "day": 17,
+      "year": 2024,
+      "dayOfWeek": "Wed",
+      "date": "2024-04-17",
+      "time": "6:00pm - 9:00pm",
+      "cost": "Free",
+      "type": "In-Person",
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSdaOeOuyLQ8HKzT6bKxW6t7bG4mP_cXfxbDSJmhrCOk34Jupw/viewform"
+    },
+    {
+      "title": "Dinner with Saul",
+      "description": "Ever wanted to have a romantic get away with a hunk? Come join us on and share all your wildest dreams with Flavio himself.",
+      "img": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=2970&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "month": "April",
+      "day": 23,
+      "year": 2024,
+      "dayOfWeek": "Tue",
+      "date": "2024-04-23",
+      "time": "6:00pm - 7:00pm",
+      "cost": "$2 per person",
+      "type": "In-Person",
+      "link": "#"
+    },
+    {
+      "title": "Movie Night with Saul",
+      "description": "Ready to watch a scary movie and have someone to hold. Look no further! Saul with pay for snacks and refreshments.",
+      "img": "https://images.unsplash.com/photo-1535016120720-40c646be5580?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8bW92aWV8ZW58MHx8MHx8fDA%3D",
+      "month": "April",
+      "day": 28,
+      "year": 2024,
+      "dayOfWeek": "Sun",
+      "date": "2024-04-28",
+      "time": "8:00am - 9:00am",
+      "cost": "Free",
+      "type": "Virtual",
+      "link": "#"
+    }
+  ]
+}

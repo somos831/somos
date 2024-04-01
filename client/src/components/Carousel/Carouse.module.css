@@ -1,15 +1,16 @@
 .carouselContainer {
   display: flex;
   justify-content: center;
+  padding: 36px;
+  background-color: var(--primary10-color);
 }
 
 .carousel {
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 600px;
-  height: 400px;
+  width: 800px;
+  height: auto;
 }
 
 .slide {
@@ -18,66 +19,37 @@
   pointer-events: none;
   width: 100%;
   height: auto;
-  opacity: 1;
-  transition: opacity 0.4s ease-in-out;
+  opacity: 0;
+  transition: opacity 4s ease-in-out;
 }
 
 @keyframes fadeInAnimation {
   from {
     opacity: 0;
   }
-
   to {
     opacity: 1;
   }
 }
 
 .fadeIn {
-  animation: fadeInAnimation 1s ease-in-out;
+  animation: fadeInAnimation 2s ease-in-out forwards;
 }
 
 .slideHidden {
   display: none;
 }
 
-.arrow {
-  position: absolute;
-  width: 2rem;
-  height: 2rem;
-  color: white;
-  filter: drop-shadow(0 0 5px #555);
+/* Media Query for Tablets */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .carousel {
+    width: 700px;
+  }
 }
 
-.arrow:hover {
-  cursor: pointer;
-}
-
-.arrowLeft {
-  left: 1rem;
-}
-
-.arrowRight {
-  right: 1rem;
-}
-
-.indicators {
-  display: flex;
-  position: absolute;
-  bottom: 1rem;
-}
-
-.indicator {
-  background-color: white;
-  height: 0.5rem;
-  width: 0.5rem;
-  border-radius: 50%;
-  border: none;
-  outline: none;
-  box-shadow: 0 0 5px #555;
-  margin: 0 0.2rem;
-  cursor: pointer;
-}
-
-.indicatorInactive {
-  background-color: grey;
+/* Media Query for Mobile */
+@media screen and (min-width: 320px) and (max-width: 769px) {
+  .carousel {
+    width: 350px;
+  }
 }

@@ -7,13 +7,14 @@ export default function HeroSection(): React.ReactElement {
     <section className={styles.heroSection}>
       <div className={styles.headingsContainer}>
         <h1 className={styles.heading}>
-          We Welcome You To <br /> <span>SOMOS</span>
+          Central Coast Tech Association <br /> <span>SOMOS</span>
         </h1>
 
         <div className={styles.subheadingContainer}>
           <p className={styles.subheading}>
-            Our landing page tempate works on all devices, so you only have to
-            set it up once, and get beautiful results forever.
+            Fostering community growth, and addressing societal challenges
+            through mentorship, community-driven projects, and professional
+            development
           </p>
 
           <div className={styles.buttonContainer}>

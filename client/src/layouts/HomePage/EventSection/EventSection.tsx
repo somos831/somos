@@ -2,7 +2,8 @@ import React from "react";
 import styles from "./EventSection.module.css";
 
 import aprilMixerPoster from "../../../assets/images/april_tech_mixer.png";
-import { FaUser } from "react-icons/fa";
+import { FaGlobe, FaUser } from "react-icons/fa";
+import eventData from "../../../data/eventData.json";
 
 export default function EventSection() {
   return (
@@ -20,50 +21,65 @@ export default function EventSection() {
 
       <div className={styles.eventListContainer}>
         <h2 className={styles.monthHeader}>
-          <time dateTime="2024-04" className={styles.month}>
-            April 2024
+          <time dateTime="2024" className={styles.month}>
+            2024
           </time>
         </h2>
+        {eventData?.event?.map((event, indx) => {
+          return (
+            <div className={styles.eventListCard} key={indx}>
+              <div className={styles.dateColumn}>
+                <time
+                  dateTime={`${event.date}`}
+                  aria-hidden="true"
+                  className={styles.date}
+                >
+                  <span className={styles.dateDay}>{event.dayOfWeek}</span>
+                  <span className={styles.dateNumber}>{event.day}</span>
+                </time>
+              </div>
 
-        <div className={styles.eventListCard}>
-          <div className={styles.dateColumn}>
-            <time
-              dateTime="2024-04-17"
-              aria-hidden="true"
-              className={styles.date}
-            >
-              <span className={styles.dateDay}>Wed</span>
-              <span className={styles.dateNumber}>17</span>
-            </time>
-          </div>
+              <article className={styles.eventCardContentContainer}>
+                <div className={styles.eventCardDetails}>
+                  <p className={styles.eventDate}>
+                    {`${event.month} ${event.day} @ ${event.time}`}
+                  </p>
 
-          <article className={styles.eventCardContentContainer}>
-            <p className={styles.eventDate}>April 17 @ 6:00pm - 9:00am</p>
+                  <h3>{event.title}</h3>
 
-            <h3>Breaking Into Tech</h3>
+                  <h4>
+                    {`${event.type}` === "In-Person" ? (
+                      <FaUser />
+                    ) : `${event.type}` === "Virtual" ? (
+                      <FaGlobe />
+                    ) : (
+                      ""
+                    )}
+                    {`${event.type} Event`}
+                  </h4>
 
-            <h4>
-              <FaUser />
-              In-Person Event
-            </h4>
+                  <p>{`${event.description}`}</p>
 
-            <p>
-              Lorem ipsum dolor sit amet, qui minim labore adipisicing minim
-              sint cillum sint consectetur cupidatat.
-            </p>
+                  <div className={styles.eventRSVPContainer}>
+                    <a
+                      href={`${event.link}`}
+                      target="_blank"
+                      rel="noopener"
+                      className={styles.eventRSVPLink}
+                    >
+                      RSVP Now
+                    </a>
+                    <p>{`${event.cost}`}</p>
+                  </div>
+                </div>
 
-            <div className={styles.eventRSVPContainer}>
-              <a href="#" className={styles.eventRSVPLink}>
-                RSVP Now
-              </a>
-              <p>Free</p>
+                <div className={styles.eventImageContainer}>
+                  <img src={event.img} alt="" className={styles.image} />
+                </div>
+              </article>
             </div>
-          </article>
-
-          <div className={styles.eventImageContainer}>
-            <img src={aprilMixerPoster} alt="" className={styles.image} />
-          </div>
-        </div>
+          );
+        })}
       </div>
     </section>
   );
