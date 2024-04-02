@@ -21,9 +21,8 @@ export default function Navbar() {
         className={styles.somosLogo}
       />
       <nav role="navigation" className={styles.navLinks}>
-        <a href="/#">Home</a>
+        <a href="/">Home</a>
         <a href="/about">About</a>
-        <a href="/contact">Contact</a>
       </nav>
 
       <button
@@ -44,9 +43,6 @@ export default function Navbar() {
             </li>
             <li>
               <a href="/about">About</a>
-            </li>
-            <li>
-              <a href="/contact">Contact</a>
             </li>
           </ul>
 

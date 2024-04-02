@@ -1,7 +1,7 @@
 :root {
   --primary-color: #501d86;
   --primary10-color: #503c5c;
-  --primary20-color: #25054D;
+  --primary20-color: #25054d;
   --secondary-color: #e03997;
   --text-color: #ffffff;
   --text-secondary-color: #000;
@@ -10,7 +10,7 @@
 }
 
 .container {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -25,10 +25,10 @@
   font-size: 22px;
   display: flex;
   align-items: flex-end;
-  background-image: url('../../assets/images/placeHolderAboutUsBackground.png');
-  background-size: cover; 
+  background-image: url("../../assets/images/placeHolderAboutUsBackground.png");
+  background-size: cover;
   background-position: center;
-  background-repeat: no-repeat; 
+  background-repeat: no-repeat;
 }
 
 .aboutUsTextComponent,
@@ -47,10 +47,39 @@
   text-align: left;
 }
 
-.OurValuesContent {
+.lastUpdatedText {
   color: var(--text-secondary10-color);
   padding-top: 30px;
-  padding-bottom: 100px;
+  padding-bottom: 10px;
+  font-size: 1.125rem;
+}
+
+.articleSection {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+}
+
+.articleSection > h3 {
+  padding: 0;
+  margin: 20px 0;
+}
+
+.articleSection > h3::after {
+  background-color: #d5d5d5;
+  content: "";
+  display: block;
+  flex: auto;
+  height: 1px;
+}
+
+.articleSection > p {
+  margin-bottom: 16px;
+}
+
+.articleSection > p > span {
+  color: var(--primary-color);
+  font-weight: 700;
 }
 
 .bottomContainer {
@@ -95,8 +124,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  font-size: 25px;
+  align-items: left;
   padding: 20px 0px;
 }
 
@@ -118,7 +146,7 @@
 /* Media query for mobile devices */
 @media screen and (min-width: 320px) and (max-width: 1024px) {
   .aboutUsHeader {
-    height: 500px; 
+    height: 500px;
     align-items: flex-end;
   }
 
@@ -135,9 +163,9 @@
   .bottomContainer {
     padding: 30px;
     height: auto;
-    display: flex; 
-    align-items: center; 
-    justify-content: center; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .headerText1,
@@ -150,15 +178,15 @@
     line-height: 50px;
     font-size: 50px;
   }
-  
+
   .headerText2 {
     font-size: 32px;
   }
 
   .aboutValues {
-    height: auto; 
-    flex-direction: column; 
-    align-items: center; 
+    height: auto;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
   }
 
@@ -168,18 +196,18 @@
   }
 
   .content {
-    width: 90%; 
+    width: 90%;
     font-size: 20px;
   }
 
   .team {
-    flex-direction: column; 
-    align-items: center; 
+    flex-direction: column;
+    align-items: center;
   }
 
   .teamGrid {
     align-items: center;
-    width: 80%; 
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); 
+    width: 80%;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   }
 }

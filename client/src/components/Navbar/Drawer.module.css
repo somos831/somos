@@ -21,6 +21,7 @@
   position: fixed;
   inset: 0;
   padding: 50px;
+  z-index: 3;
 }
 
 .backdrop {

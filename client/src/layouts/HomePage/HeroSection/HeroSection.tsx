@@ -1,14 +1,20 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
 import { Link } from "react-router-dom";
+import somosLogo from "../../../assets/logos/somosLogo.png";
 
 export default function HeroSection(): React.ReactElement {
   return (
     <section className={styles.heroSection}>
       <div className={styles.headingsContainer}>
-        <h1 className={styles.heading}>
-          Central Coast Tech Association <br /> <span>SOMOS</span>
-        </h1>
+        <div className={styles.somosLogoContainer}>
+          <img
+            src={somosLogo}
+            alt="Purple somos logo"
+            className={styles.somosLogo}
+          />
+        </div>
+        <h1 className={styles.heading}>Central Coast Tech Association</h1>
 
         <div className={styles.subheadingContainer}>
           <p className={styles.subheading}>
