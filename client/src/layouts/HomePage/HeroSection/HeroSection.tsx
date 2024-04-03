@@ -1,11 +1,25 @@
 import React from "react";
 import styles from "./HeroSection.module.css";
-import { Link } from "react-router-dom";
-import somosLogo from "../../../assets/logos/somosLogo.png";
+import somosLogo from "../../../assets/somoLogos/somosLogo.png";
+
+import svgLogoLeft from "../../../assets/somoLogos/somos_cropped_left.svg";
+import svgLogoRight from "../../../assets/somoLogos/somos_cropped_right.svg";
 
 export default function HeroSection(): React.ReactElement {
   return (
     <section className={styles.heroSection}>
+      <img
+        src={svgLogoLeft}
+        alt="somos svg banner"
+        className={styles.svgLogoLeft}
+      />
+
+      <img
+        src={svgLogoRight}
+        alt="somos svg banner"
+        className={styles.svgLogoRight}
+      />
+
       <div className={styles.headingsContainer}>
         <div className={styles.somosLogoContainer}>
           <img
@@ -24,11 +38,7 @@ export default function HeroSection(): React.ReactElement {
           </p>
 
           <div className={styles.buttonContainer}>
-            <button className={styles.heroBtn}>Contact Us</button>
-
-            <Link to={"/about"} className={`${styles.heroBtn} ${styles.link}`}>
-              Learn more
-            </Link>
+            <button className={styles.heroBtn}>Connect With Us</button>
           </div>
         </div>
       </div>

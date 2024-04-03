@@ -34,12 +34,14 @@ export default function AboutUs(): React.ReactElement {
         </div>
       </div>
 
-      <div className={styles.aboutValues}>
-        <p className={styles.aboutValuesContent}>
-          We are dedicated to empowering individuals by providing them with the
-          tools, resources, and opportunities they need to excel in the tech
-          industry.
+      <div className={styles.quoteContainer}>
+        <p className={styles.quote}>
+          "Do what you can, with what you have, where you are."
         </p>
+
+        <div className={styles.quoteAuthorContainer}>
+          <p className={styles.quoteAuthor}>President Theodore Rooselvelt</p>
+        </div>
       </div>
 
       <div className={styles.content}>
@@ -95,37 +97,33 @@ export default function AboutUs(): React.ReactElement {
         <article className={styles.articleSection}>
           <h3 className={styles.headerText2}>Our Values</h3>
 
-          <ul>
-            <li>
+          <div className={styles.coreValuesContainer}>
+            <div className={styles.coreValuesSection}>
               <h4>Collaboration</h4>
               <p>
-                We believe in the power of collaboration to drive innovation and
-                create meaningful impact. We foster an environment where tech
-                professionals and aspiring individuals work together, sharing
-                knowledge and resources to achieve common goals
+                We foster an environment where tech professionals and aspiring
+                individuals work together, sharing knowledge and resources to
+                achieve common goals
               </p>
-            </li>
+            </div>
 
-            <li>
+            <div className={styles.coreValuesSection}>
               <h4>Empowerment</h4>
               <p>
-                We are dedicated to empowering individuals by providing them
-                with the tools, resources, and opportunities they need to excel
-                in the tech industry. Through mentorship, skill development, and
-                support, we enable each member to reach their full potential
+                Through mentorship, skill development, and support, we enable
+                each member to reach their full potential
               </p>
-            </li>
+            </div>
 
-            <li>
+            <div className={styles.coreValuesSection}>
               <h4>Community Growth</h4>
               <p>
-                Our association is built on the principle that a thriving
-                community leads to collective success. We actively contribute to
-                the growth of our local and global communities by engaging in
-                initiatives that create positive change
+                We actively contribute to the growth of our local and global
+                communities by engaging in initiatives that create positive
+                change
               </p>
-            </li>
-          </ul>
+            </div>
+          </div>
         </article>
       </div>
       {/* <div className={styles.content}> */}

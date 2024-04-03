@@ -2,8 +2,9 @@ import React from "react";
 import { FaBars } from "react-icons/fa";
 import { FaLinkedin, FaInstagram, FaTiktok } from "react-icons/fa";
 import VisuallyHidden from "../VisuallyHidden/VisuallyHidden";
+
 import styles from "./Navbar.module.css";
-import somosLogo from "../../assets/logos/somosLogo.png";
+import somosLogo from "../../assets/somoLogos//somosLogo.png";
 import Drawer from "./Drawer";
 
 export default function Navbar() {
@@ -15,11 +16,14 @@ export default function Navbar() {
 
   return (
     <header>
-      <img
-        src={somosLogo}
-        alt="Purple somos logo"
-        className={styles.somosLogo}
-      />
+      <a href="/">
+        <img
+          src={somosLogo}
+          alt="Purple somos logo"
+          className={styles.somosLogo}
+        />
+      </a>
+
       <nav role="navigation" className={styles.navLinks}>
         <a href="/">Home</a>
         <a href="/about">About</a>

@@ -1,6 +1,7 @@
 import React, { ReactNode } from "react";
 import styles from "./Drawer.module.css";
-import somosLogoWhite from "../../assets/logos/somoLogo_white.png";
+import somosLogoWhite from "../../assets/somoLogos/somoLogo_white.png";
+
 import { FaTimes } from "react-icons/fa";
 import FocusLock from "react-focus-lock";
 import { RemoveScroll } from "react-remove-scroll";
