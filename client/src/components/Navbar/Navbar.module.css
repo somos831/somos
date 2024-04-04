@@ -10,14 +10,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: 70px;
   padding: 0 2rem;
   background-color: var(--background-color);
   color: var(--text-color);
 }
 
 .somosLogo {
-  width: 200px;
+  width: 150px;
 }
 
 .navLinks a {
@@ -76,7 +76,7 @@ header .navBurger {
   color: var(--secondary-color);
 }
 
-@media screen and (min-width: 320px) and (max-width: 1024px) {
+@media screen and (min-width: 320px) and (max-width: 992px) {
   /* show navBtns on smaller screens */
   .somosLogo {
     width: 150px;
