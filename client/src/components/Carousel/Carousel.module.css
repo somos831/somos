@@ -1,0 +1,129 @@
+.carouselContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 36px;
+  background-color: var(--primary10-color);
+}
+
+.carousel {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 850px;
+  height: auto;
+}
+
+.photoContainer {
+  display: flex;
+  align-items: center;
+}
+
+.slide {
+  border-radius: 0.5rem;
+  box-shadow: 0 0 7px #666;
+  pointer-events: none;
+  width: 100%;
+  height: auto;
+  opacity: 0;
+  transition: opacity 4s ease-in-out;
+}
+
+.arrowBtn {
+  border: none;
+  background-color: transparent;
+}
+
+.arrowBtn:hover {
+  cursor: pointer;
+}
+
+.arrow {
+  width: 3rem;
+  height: 2rem;
+  color: white;
+}
+
+.arrow:hover,
+.arrow:focus {
+  color: lightgrey;
+}
+
+.indicators {
+  display: flex;
+  margin-top: 16px;
+}
+
+.indicator {
+  background-color: white;
+  height: 0.5rem;
+  width: 0.5rem;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 5px #555;
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+
+.indicatorInactive {
+  background-color: grey;
+}
+
+@keyframes fadeInAnimation {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.fadeIn {
+  animation: fadeInAnimation 2s ease-in-out forwards;
+}
+
+.slideHidden {
+  display: none;
+}
+
+/* Media Query for Tablets */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .carousel {
+    width: 700px;
+  }
+}
+
+/* Media Query for Mobile */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .carousel {
+    width: 350px;
+  }
+
+  .arrow {
+    width: 2rem;
+    height: 1.4rem;
+  }
+
+  /* .photoContainer { */
+  /*   display: grid; */
+  /*   grid-template-rows: repeat(2, 1fr); */
+  /*   grid-template-columns: repeat(2, 1fr); */
+  /*   grid-template-areas: */
+  /*     "img img" */
+  /*     "arrowLeft arrowRight"; */
+  /* } */
+  /**/
+  /* .arrowLeft { */
+  /*   grid-area: arrowLeft; */
+  /* } */
+  /**/
+  /* .arrowRight { */
+  /*   grid-area: arrowRight; */
+  /* } */
+  /**/
+  /* .slide { */
+  /*   grid-area: img; */
+  /* } */
+}

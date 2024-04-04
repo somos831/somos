@@ -1,0 +1,149 @@
+:root {
+  --primary-color: #501d86;
+  --primary10-color: #503c5c;
+  --primary20-color: #25054d;
+  --secondary-color: #e03997;
+  --text-color: #ffffff;
+  --text-secondary-color: #000;
+  --text-secondary10-color: #656565;
+  --grid-background-color: #fafafa;
+}
+
+.heroSection {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-secondary-color);
+  padding: 20px 14px 16px 14px;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.svgLogoLeft {
+  display: inline;
+  max-width: 330px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.svgLogoRight {
+  display: inline;
+  max-width: 330px;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  opacity: 0.5;
+  z-index: -1;
+}
+
+.headingsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 62px 0;
+}
+
+.heading {
+  font-size: 2rem;
+  line-height: 1.2;
+  text-align: center;
+  letter-spacing: -0.02rem;
+}
+
+.somosLogoContainer {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 24px;
+  width: 100%;
+}
+
+.somosLogo {
+  max-width: 350px;
+}
+
+.heading > span {
+  background-clip: var(--text-secondary-color);
+  font-size: 5.6rem;
+  background: -webkit-linear-gradient(#501d86, #00d4ff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.subheadingContainer {
+  max-width: 48rem;
+}
+
+.subheading {
+  font-size: 1.25rem;
+  margin-top: 40px;
+  text-align: center;
+  margin: 32px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  padding-top: 32px;
+}
+
+.contactUsLink {
+  border: none;
+  border-radius: 5px;
+  padding: 12px 32px;
+  text-decoration: none;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  transition: ease-out 0.2s;
+  cursor: pointer;
+}
+
+.contactUsLink:hover,
+.contactUsLink:focus {
+  background-color: coral;
+}
+
+/* Media Query for Tablets */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .svgLogoLeft {
+    top: 0px;
+    left: -200px;
+    opacity: 0.4;
+  }
+
+  .svgLogoRight {
+    top: 0px;
+    right: -200px;
+  }
+}
+
+/* Media Query for Mobile */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .heading {
+    font-size: 2rem;
+  }
+
+  .svgLogoLeft {
+    top: 0px;
+    left: -240px;
+  }
+
+  .svgLogoRight {
+    top: 0px;
+    right: -240px;
+  }
+
+  .svgLogoLeft,
+  .svgLogoRight {
+    max-width: 380px;
+    opacity: 0.3;
+  }
+}

@@ -1,0 +1,257 @@
+:root {
+  --primary-color: #501d86;
+  --primary10-color: #503c5c;
+  --primary20-color: #25054d;
+  --secondary-color: #e03997;
+  --text-color: #ffffff;
+  --bg-ghost-white: #f8f8ff;
+  --text-secondary-color: #000;
+  --text-secondary10-color: #656565;
+  --grid-background-color: #fafafa;
+}
+
+.eventSectionContainer {
+  width: 100%;
+  height: max-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-ghost-white);
+  color: var(--text-secondary-color);
+  padding: 80px 0 16px 0;
+  margin-bottom: 8px;
+}
+
+/* Event Heading CSS */
+
+.headingContainer {
+  margin: 0 10.5rem 1rem 10.5rem;
+  padding: 0 1rem;
+  max-width: 48rem;
+}
+
+.missionHeading {
+  margin-bottom: 16px;
+  font-size: 2.8rem;
+  text-align: center;
+}
+
+.missionHeading::after {
+  background-color: #d5d5d5;
+  content: "";
+  display: block;
+  flex: auto;
+  height: 1px;
+}
+
+.missionSubheading {
+  font-size: 1.25rem;
+  text-align: center;
+}
+
+/* Event Tab CSS */
+
+.eventListContainer {
+  display: flex;
+  margin-top: 1.5rem;
+  padding: 1rem 4rem;
+  flex-direction: column;
+  gap: 2rem;
+  background-color: var(--bg-ghost-white);
+  width: 100%;
+  color: var(--text-secondary-color);
+}
+
+.monthHeader {
+  align-items: center;
+}
+
+.monthHeader::after {
+  background-color: #d5d5d5;
+  content: "";
+  display: block;
+  flex: auto;
+  height: 1px;
+}
+
+.month {
+  font-size: 1rem;
+}
+
+.eventHeading {
+  margin-top: 6rem;
+  font-size: 2rem;
+  text-align: center;
+}
+
+.eventListCard {
+  display: flex;
+}
+
+.dateColumn {
+  padding-left: 24px;
+  padding-right: 24px;
+  min-width: 60px;
+}
+
+.date {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding-top: 4px;
+  text-align: center;
+}
+
+.dateDay {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+}
+
+.dateNumber {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.dateDay,
+.dateNumber {
+  padding: 0;
+}
+
+.eventCardContentContainer {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 24px;
+  padding-right: 24px;
+  width: 100%;
+}
+
+.eventCardDetails {
+  display: flex;
+  flex-direction: column;
+  margin-right: 12px;
+}
+
+.eventDate {
+  font-size: 0.875rem;
+  margin-bottom: 8px;
+}
+
+.eventCardDetails > h3 {
+  font-size: 1.5rem;
+}
+
+.eventCardDetails > h4 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.875rem;
+  margin-bottom: 14px;
+}
+
+.eventCardDetails > p {
+  font-size: 0.875rem;
+  margin-bottom: 16px;
+}
+
+.eventRSVPContainer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.eventRSVPLink {
+  background-color: orange;
+  color: var(--text-secondary-color);
+  text-decoration: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.eventImageContainer {
+  padding-left: 24px;
+  padding-right: 24px;
+  margin-bottom: 0;
+  max-width: calc(12.5% * 3);
+}
+
+.image {
+  height: auto;
+  border-radius: 16px;
+  max-width: 350px;
+}
+
+/* Media Query for Tablets */
+@media screen and (min-width: 768px) and (max-width: 992px) {
+  .headingContainer {
+    margin: 0 5rem 1rem;
+  }
+
+  .missionHeading {
+    font-size: 2.625rem;
+  }
+
+  .eventListContainer {
+    padding: 1rem 3rem;
+  }
+
+  .eventCardContentContainer {
+    padding: 0;
+  }
+
+  .eventImageContainer {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .eventImageContainer > img {
+    height: auto;
+  }
+}
+
+/* Media Query for Mobile */
+@media screen and (min-width: 320px) and (max-width: 767px) {
+  .headingContainer {
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 16px;
+  }
+
+  .missionHeading {
+    font-size: 2rem;
+  }
+
+  .eventListContainer {
+    padding: 1rem 1rem;
+  }
+
+  .eventListCard {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .eventCardContentContainer {
+    flex-direction: column-reverse;
+    gap: 16px;
+    padding: 0;
+  }
+
+  .dateColumn {
+    padding: 4px 0 0;
+  }
+
+  .month {
+    margin-left: 12px;
+  }
+
+  .eventImageContainer {
+    padding: 0;
+    max-width: 100%;
+  }
+
+  .eventImageContainer > img {
+    max-width: 100%;
+    height: auto;
+  }
+}

@@ -1,0 +1,98 @@
+:root {
+  --primary-color: #501d86;
+  --secondary-color: #e03997;
+  --text-color: #ffffff;
+  --background-color: #f4f4f4;
+  --background10-color: #626262;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  padding: 0 2rem;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+.somosLogo {
+  width: 150px;
+}
+
+.navLinks a {
+  margin: 0 2rem;
+  color: black;
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.navLinks a:hover {
+  color: var(--secondary-color);
+}
+
+header .navBurger {
+  padding: 2px;
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: var(--background10-color);
+  display: none;
+  font-size: 1.8rem;
+}
+
+.navListSidebar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  list-style-type: none;
+  padding: 0;
+}
+
+.navListSidebar a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-size: 2rem;
+}
+
+.navListSidebar a:hover {
+  color: var(--secondary-color);
+}
+
+.socialLogos {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+}
+
+.socialLogos a {
+  color: var(--text-color);
+  font-size: 3rem;
+}
+
+.socialLogos a:hover {
+  color: var(--secondary-color);
+}
+
+@media screen and (min-width: 320px) and (max-width: 992px) {
+  /* show navBtns on smaller screens */
+  .somosLogo {
+    width: 150px;
+  }
+
+  .somosLogoSidebar {
+    display: block;
+    width: 150px;
+    margin-top: 40px;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  header .navBurger {
+    display: block;
+  }
+}
