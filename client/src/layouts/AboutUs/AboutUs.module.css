@@ -147,6 +147,7 @@
 .quote {
   padding: 30px 0;
   font-size: 1.8rem;
+  text-align: center;
   font-style: italic;
 }
 
@@ -168,7 +169,6 @@
 .somosGroupPhotoContainer {
   max-width: 100%;
   height: auto;
-  background-color: var(--primary-color);
   border-radius: 16px;
   padding: 16px;
   margin-bottom: 12px;

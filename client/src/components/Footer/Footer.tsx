@@ -1,7 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
 
-import circleSomos from "../../assets/somoLogos/circle_somos.png";
 import somosLogo from "../../assets/somoLogos/SOMOS-LOGOS-04.png";
 import { FaInstagram, FaTiktok, FaDiscord } from "react-icons/fa";
 import linkedInIcon from "../../assets/brandLogos/linkedin.svg";
@@ -22,11 +21,9 @@ export default function Footer() {
               </figure>
             </div>
 
-            <p className={styles.footerText}>
-              SOMOS is dedicated to empowering underrepresented communities and
-              fostering diversity in the tech sector, one breakthrough at a
-              time.
-            </p>
+            <h4 className={styles.footerText}>
+              Central Coast Tech Association
+            </h4>
           </div>
 
           <div className={styles.siteDirContainer}>

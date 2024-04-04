@@ -39,7 +39,7 @@ export default function HeroSection(): React.ReactElement {
 
           <div className={styles.buttonContainer}>
             <a
-              href="https://docs.google.com/forms/d/1THIa-Cd9hy2OyugCBNLZALG4WHZJ690jQTSl6iSuG_k/edit"
+              href="https://forms.gle/WsK5CBuS5P22grjJ7"
               target="_blank"
               rel="noopener noreferrer"
               className={styles.contactUsLink}
