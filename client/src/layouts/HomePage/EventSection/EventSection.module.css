@@ -37,6 +37,14 @@
   text-align: center;
 }
 
+.missionHeading::after {
+  background-color: #d5d5d5;
+  content: "";
+  display: block;
+  flex: auto;
+  height: 1px;
+}
+
 .missionSubheading {
   font-size: 1.25rem;
   text-align: center;
@@ -57,19 +65,18 @@
 
 .monthHeader {
   align-items: center;
-  display: flex;
 }
 
-.month {
-  font-size: 1rem;
-}
-
-.month::after {
+.monthHeader::after {
   background-color: #d5d5d5;
   content: "";
   display: block;
   flex: auto;
   height: 1px;
+}
+
+.month {
+  font-size: 1rem;
 }
 
 .eventHeading {

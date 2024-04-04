@@ -38,7 +38,14 @@ export default function HeroSection(): React.ReactElement {
           </p>
 
           <div className={styles.buttonContainer}>
-            <button className={styles.heroBtn}>Connect With Us</button>
+            <a
+              href="https://forms.gle/WsK5CBuS5P22grjJ7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={styles.contactUsLink}
+            >
+              Connect With Us
+            </a>
           </div>
         </div>
       </div>

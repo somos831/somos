@@ -1,5 +1,6 @@
 .slideShowContainer {
-  padding: 0 16px;
+  padding: 2.6rem;
+  background-color: var(--primary-color);
 }
 
 .slide {
@@ -13,12 +14,12 @@
 
 .photoContainer {
   border-radius: 8px;
-  width: 75%;
+  max-width: 100%;
 }
 
 .photo {
   border-radius: 8px;
-  width: 300px;
+  max-width: 100%;
   object-fit: cover;
   object-position: center;
 }

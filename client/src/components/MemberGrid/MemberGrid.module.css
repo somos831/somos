@@ -1,0 +1,10 @@
+.team {
+  flex-direction: column;
+  align-items: center;
+}
+
+.teamGrid {
+  align-items: center;
+  width: 80%;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
