@@ -1,24 +1,13 @@
 import React from "react";
 
-import SomosTeamCard from "../../components/SomosTeamCard/SomosTeamCard";
-import SomosMemberCard from "../../assets/images/placeHolderSomosMember.png";
 import styles from "./AboutUs.module.css";
 
-const SOMOS_MEMBERS_LENGTH = 6;
+import collabIcon from "../../assets/icons/Collaboration.svg";
+import empowerIcon from "../../assets/icons/Empowerment.svg";
+import growthIcon from "../../assets/icons/Growth.svg";
+import somosStaff from "../../assets/images/somosStaff.png";
 
 export default function AboutUs(): React.ReactElement {
-  const somosCards: React.ReactElement[] = [];
-  for (let i = 0; i < SOMOS_MEMBERS_LENGTH; i++) {
-    somosCards.push(
-      <SomosTeamCard
-        key={i}
-        firstName="John"
-        lastName="Doe"
-        imageUri={SomosMemberCard}
-        title="Content Creator"
-      />,
-    );
-  }
   return (
     <div className={styles.container}>
       <div className={styles.aboutUsHeader}>
@@ -40,7 +29,7 @@ export default function AboutUs(): React.ReactElement {
         </p>
 
         <div className={styles.quoteAuthorContainer}>
-          <p className={styles.quoteAuthor}>President Theodore Rooselvelt</p>
+          <p className={styles.quoteAuthor}>Theodore Roosevelt</p>
         </div>
       </div>
 
@@ -99,6 +88,7 @@ export default function AboutUs(): React.ReactElement {
 
           <div className={styles.coreValuesContainer}>
             <div className={styles.coreValuesSection}>
+              <img src={collabIcon} alt="" className={styles.coreValuesIcon} />
               <h4>Collaboration</h4>
               <p>
                 We foster an environment where tech professionals and aspiring
@@ -108,6 +98,7 @@ export default function AboutUs(): React.ReactElement {
             </div>
 
             <div className={styles.coreValuesSection}>
+              <img src={empowerIcon} alt="" className={styles.coreValuesIcon} />
               <h4>Empowerment</h4>
               <p>
                 Through mentorship, skill development, and support, we enable
@@ -116,6 +107,7 @@ export default function AboutUs(): React.ReactElement {
             </div>
 
             <div className={styles.coreValuesSection}>
+              <img src={growthIcon} alt="" className={styles.coreValuesIcon} />
               <h4>Community Growth</h4>
               <p>
                 We actively contribute to the growth of our local and global
@@ -124,15 +116,32 @@ export default function AboutUs(): React.ReactElement {
               </p>
             </div>
           </div>
+
+          <article className={styles.articleSection}>
+            <h3 className={styles.headerText2}>Meet the Team Behind SOMOS</h3>
+
+            <div className={styles.somosGroupPhotoContainer}>
+              <img
+                src={somosStaff}
+                alt="group photo of somos staff"
+                className={styles.somosGroupPhoto}
+              />
+            </div>
+
+            <div className={styles.captionContainer}>
+              <p>
+                Top (Left to Right): Mytzy Escalante Godinez, Mayra Ochoa,
+                Estefania Solis, Madahy Villareal, Angela Hernandez, Jennifer
+                Lopez
+              </p>
+              <p>
+                Bottom (Left to Right): Saul Reyes-Morales, Jonathan Odriano,
+                Armando Banuelos, Ronaldo Mendoza
+              </p>
+            </div>
+          </article>
         </article>
       </div>
-      {/* <div className={styles.content}> */}
-      {/*   <h3 className={styles.headerText2}>Meet the Team Behind Somos</h3> */}
-      {/* </div> */}
-
-      {/* <div className={styles.team}> */}
-      {/*   <div className={styles.teamGrid}>{somosCards}</div> */}
-      {/* </div> */}
     </div>
   );
 }

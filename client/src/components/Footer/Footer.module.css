@@ -1,88 +1,183 @@
 :root {
-    --primary-color: #503c5c;
-    --secondary-color: #e03997;
-    --text-color: #ffffff;
-    --background-color: #f4f4f4;
-    --background10-color: #626262;
+  --primary-color: #503c5c;
+  --secondary-color: #e03997;
+  --text-color: #ffffff;
+  --secondary-color30: #e3cbfd;
+  --background-color: #f4f4f4;
+  --background10-color: #626262;
+}
+
+footer {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--primary-color);
+  color: var(--text-color);
+  height: auto;
+  padding: 24px 0 8px;
+}
+
+.contentContainer {
+  max-width: 1260px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.topContainer {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 0.3fr;
+}
+
+.somosColumnContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.somosContainer {
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  gap: 12px;
+}
+
+.circleSomosContainer {
+  max-width: 42px;
+}
+
+.circleSomos {
+  max-width: 100%;
+  height: auto;
+}
+
+.somosLogoContainer {
+  max-width: 180px;
+}
+
+.somosLogo {
+  max-width: 100%;
+  height: auto;
+}
+
+.footerText {
+  font-size: 1rem;
+  max-width: 300px;
+  line-height: 1.6;
+  font-weight: 600;
+}
+
+.siteDirContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.siteDirContainer > h4 {
+  color: var(--secondary-color30);
+  font-size: 1.125rem;
+}
+
+.siteDirList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.siteDirListItem {
+  line-height: 1.8;
+}
+
+.siteDirListItem > a {
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.socialsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.socialsContainer > h4 {
+  color: var(--secondary-color30);
+  font-size: 1.125rem;
+  margin-bottom: 8px;
+}
+
+.socialListContainer {
+  display: grid;
+  grid-template-columns: repeat(4, 50px);
+}
+
+.socialIcons {
+  font-size: 2rem;
+  max-width: 32px;
+  fill: var(--text-color);
+}
+
+.copyrightContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 16px;
+}
+
+.copyrightContainer > p {
+  font-size: 1.1rem;
+}
+
+/* Media Query for Tablets */
+@media screen and (min-width: 576px) and (max-width: 992px) {
+  .topContainer {
+    grid-template-columns: 1fr 0.5fr 0.4fr;
   }
-  
-  footer {
-    font-family: 'Poppins', sans-serif;
+
+  .footerText {
+    font-size: 1rem;
+    max-width: 350px;
+  }
+
+  .copyrightContainer {
     display: flex;
-    background-color: var(--primary-color);
-    color: var(--text-color);
     justify-content: center;
+    margin-top: 20px;
+  }
+}
+
+/* Media Query for mobile */
+@media screen and (min-width: 375px) and (max-width: 575px) {
+  .somosLogoContainer {
+    max-width: 155px;
   }
 
-  .overallSect {
-    width: 900px;
-  }
-  
-  .topSection{
-    display: flex;
-    padding: 20px;
-    width: 100%;
-    justify-content: center;
-   
+  .topContainer {
+    grid-template-columns: 1fr 0.4fr;
   }
 
-  .topLeft{
-    display: flex;
-    justify-content: flex-start;
-    width: 50%;
+  .socialsContainer {
+    margin: 16px 0;
   }
 
-  .topRight{
-    display: flex;
+  .socialListContainer {
+    grid-template-rows: 0;
+    grid-template-columns: repeat(4, 0.2fr);
+  }
+
+  .siteDirContainer {
+    margin-bottom: 0;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: end;
-    width: 50%;
   }
 
-  .socialMedia{
-    margin-top: 10px;
-    padding-right: 20px;
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
+  .siteDirContainer > h4 {
+    font-size: 1.2rem;
   }
 
-  .noDecoration {
-    text-decoration: none;
-    color: white;
+  .copyrightContainer {
+    margin-top: 32px;
   }
+}
 
-  ul {
-    list-style-type: none;
+@media screen and (max-width: 374px) {
+  .topContainer {
+    grid-template-columns: 1fr;
+    gap: 12px;
   }
+}
 
-  .footerNavList{
-    display: flex;
-    flex-direction: column;
-    gap: 5px;
-  }
-
-  .bottomSection {
-    padding-bottom: 10px;
-    display: flex;
-    justify-content: center;
-  }
-
-  @media screen and (min-width: 320px) and (max-width: 1024px){
-    .topSection{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .topLeft{
-      justify-content: center;
-    }
-    ul {
-      padding: 0;
-    }
-    .topRight{
-      justify-content: center;
-      align-items: center;
-    }
-  }

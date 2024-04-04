@@ -10,49 +10,48 @@ import hartnellGroupPhoto from "../../assets/slideshowImages/somos_hartnell_grou
 import julioTourPhoto from "../../assets/slideshowImages/somos_julio_tour.jpeg";
 import remarkableAIPhoto from "../../assets/slideshowImages/somos_remarkable_ai.png";
 
-export default function SlideShow() {
-  const photos = [
-    aiSanFranPhoto,
-    reunionPresentationPhoto,
-    boardMeeting,
-    hartnellGroupPhoto,
-    julioTourPhoto,
-    remarkableAIPhoto,
-  ];
-
+const SlideShow: React.FC = () => {
   return (
     <section className={styles.slideShowContainer}>
       <Fade>
-        <div className={styles.slide}>
-          <div className={styles.photoContainer}>
-            <img src={photos[0]} alt="" />
-          </div>
-        </div>
-
-        <div className={styles.slide}>
-          <div>
-            <img src={photos[1]} alt="" />
-          </div>
-        </div>
-
-        <div className={styles.slide}>
-          <div>
-            <img src={photos[2]} alt="" />
-          </div>
-        </div>
-
-        <div className={styles.slide}>
-          <div>
-            <img src={photos[3]} alt="" />
-          </div>
-        </div>
-
-        <div className={styles.slide}>
-          <div>
-            <img src={photos[4]} alt="" />
-          </div>
-        </div>
+        {photos.map((image, indx) => {
+          return (
+            <div className={styles.slide} key={indx}>
+              <div className={styles.photoContainer}>
+                <img src={image.src} alt={image.alt} className={styles.photo} />
+              </div>
+            </div>
+          );
+        })}
       </Fade>
     </section>
   );
-}
+};
+const photos = [
+  {
+    src: boardMeeting,
+    alt: "",
+  },
+  {
+    src: aiSanFranPhoto,
+    alt: "",
+  },
+  {
+    src: reunionPresentationPhoto,
+    alt: "",
+  },
+  {
+    src: hartnellGroupPhoto,
+    alt: "",
+  },
+  {
+    src: julioTourPhoto,
+    alt: "",
+  },
+  {
+    src: remarkableAIPhoto,
+    alt: "",
+  },
+];
+
+export default SlideShow;
