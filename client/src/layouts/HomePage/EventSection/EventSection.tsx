@@ -1,7 +1,5 @@
-import React from "react";
 import styles from "./EventSection.module.css";
 
-import aprilMixerPoster from "../../../assets/images/april_tech_mixer.png";
 import { FaGlobe, FaUser } from "react-icons/fa";
 import eventData from "../../../data/eventData.json";
 

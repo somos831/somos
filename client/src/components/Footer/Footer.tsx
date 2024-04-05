@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./Footer.module.css";
 
 import somosLogo from "../../assets/somoLogos/SOMOS-LOGOS-04.png";

@@ -1,4 +1,3 @@
-import React from "react";
 import styles from "./PhotoSection.module.css";
 
 import aiSanFranPhoto from "../../../assets/slideshowImages/somos_ai_sanfrancisco.jpeg";
