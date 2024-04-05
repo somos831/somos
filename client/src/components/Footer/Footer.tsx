@@ -30,11 +30,11 @@ export default function Footer() {
 
             <ul className={styles.siteDirList}>
               <li className={styles.siteDirListItem}>
-                <a href="/">Home</a>
+                <a href="/somos">Home</a>
               </li>
 
               <li className={styles.siteDirListItem}>
-                <a href="/about">About</a>
+                <a href="/somos/about">About</a>
               </li>
             </ul>
           </div>

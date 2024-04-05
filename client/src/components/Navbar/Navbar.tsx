@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <header>
-      <a href="/">
+      <a href="/somos">
         <img
           src={somosLogo}
           alt="Purple somos logo"
@@ -25,8 +25,8 @@ export default function Navbar() {
       </a>
 
       <nav role="navigation" className={styles.navLinks}>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
+        <a href="/somos">Home</a>
+        <a href="/somos/about">About</a>
       </nav>
 
       <button
@@ -43,10 +43,10 @@ export default function Navbar() {
         <Drawer handleDismiss={showNavbar}>
           <ul className={styles.navListSidebar}>
             <li>
-              <a href="/">Home</a>
+              <a href="/somos">Home</a>
             </li>
             <li>
-              <a href="/about">About</a>
+              <a href="/somos/about">About</a>
             </li>
           </ul>
 

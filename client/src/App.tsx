@@ -13,8 +13,8 @@ function App() {
 
       <Router>
         <Routes>
-          <Route path="/" Component={HomePage} />
-          <Route path="/about" Component={AboutUs} />
+          <Route path="/somos" Component={HomePage} />
+          <Route path="/somos/about" Component={AboutUs} />
         </Routes>
       </Router>
 
