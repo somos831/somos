@@ -1,7 +1,6 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
 import { FaLinkedin, FaInstagram, FaTiktok } from "react-icons/fa";
-import VisuallyHidden from "../VisuallyHidden/VisuallyHidden";
 
 import styles from "./Navbar.module.css";
 import somosLogo from "../../assets/somoLogos//somosLogo.png";
