@@ -8,8 +8,8 @@
 
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   height: 70px;
   padding: 0 2rem;
   background-color: var(--background-color);
@@ -79,7 +79,7 @@ header .navBurger {
 @media screen and (min-width: 320px) and (max-width: 992px) {
   /* show navBtns on smaller screens */
   .somosLogo {
-    width: 150px;
+    max-width: 150px;
   }
 
   .somosLogoSidebar {

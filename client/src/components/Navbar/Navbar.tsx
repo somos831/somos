@@ -36,7 +36,6 @@ export default function Navbar() {
         onClick={showNavbar}
       >
         <FaBars aria-label="Main Menu" focusable="false" tabIndex={0} />
-        <VisuallyHidden>Open Main Menu</VisuallyHidden>
       </button>
 
       {isOpen && (

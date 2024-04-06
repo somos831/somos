@@ -91,6 +91,11 @@ footer {
   color: var(--text-color);
 }
 
+.siteDirListItem > a:hover,
+.siteDirListItem > a:focus {
+  color: var(--secondary-color);
+}
+
 .socialsContainer {
   display: flex;
   flex-direction: column;
@@ -111,6 +116,10 @@ footer {
   font-size: 2rem;
   max-width: 32px;
   fill: var(--text-color);
+}
+
+.socialIcons:hover,
+.socialIcons:focus {
 }
 
 .copyrightContainer {
@@ -180,4 +189,3 @@ footer {
     gap: 12px;
   }
 }
-
