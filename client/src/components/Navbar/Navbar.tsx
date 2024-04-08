@@ -5,6 +5,7 @@ import { FaLinkedin, FaInstagram, FaTiktok } from "react-icons/fa";
 import styles from "./Navbar.module.css";
 import somosLogo from "../../assets/somoLogos//somosLogo.png";
 import Drawer from "./Drawer";
+import { Link } from "react-router-dom";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -15,17 +16,17 @@ export default function Navbar() {
 
   return (
     <header>
-      <a href="/somos">
+      <Link to="/somos/">
         <img
           src={somosLogo}
           alt="Purple somos logo"
           className={styles.somosLogo}
         />
-      </a>
+      </Link>
 
       <nav role="navigation" className={styles.navLinks}>
-        <a href="/somos">Home</a>
-        <a href="/somos/about">About</a>
+        <Link to="/somos/">Home</Link>
+        <Link to="/somos/about">About</Link>
       </nav>
 
       <button
@@ -41,10 +42,10 @@ export default function Navbar() {
         <Drawer handleDismiss={showNavbar}>
           <ul className={styles.navListSidebar}>
             <li>
-              <a href="/somos">Home</a>
+              <Link to="/somos/">Home</Link>
             </li>
             <li>
-              <a href="/somos/about">About</a>
+              <Link to="/somos/about">About</Link>
             </li>
           </ul>
 

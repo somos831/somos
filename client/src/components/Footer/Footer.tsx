@@ -3,6 +3,7 @@ import styles from "./Footer.module.css";
 import somosLogo from "../../assets/somoLogos/SOMOS-LOGOS-04.png";
 import { FaInstagram, FaTiktok, FaDiscord } from "react-icons/fa";
 import linkedInIcon from "../../assets/brandLogos/linkedin.svg";
+import { Link } from "react-router-dom";
 
 export default function Footer() {
   return (
@@ -30,11 +31,11 @@ export default function Footer() {
 
             <ul className={styles.siteDirList}>
               <li className={styles.siteDirListItem}>
-                <a href="/somos">Home</a>
+                <Link to="/somos/">Home</Link>
               </li>
 
               <li className={styles.siteDirListItem}>
-                <a href="/somos/about">About</a>
+                <Link to="/somos/about">About</Link>
               </li>
             </ul>
           </div>
@@ -86,4 +87,3 @@ export default function Footer() {
     </footer>
   );
 }
-
