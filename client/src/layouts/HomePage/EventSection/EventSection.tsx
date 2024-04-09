@@ -1,6 +1,6 @@
 import styles from "./EventSection.module.css";
 
-import { FaGlobe, FaUser } from "react-icons/fa";
+import { FaGlobe, FaMapMarkerAlt, FaUser } from "react-icons/fa";
 import eventData from "../../../data/eventData.json";
 
 export default function EventSection() {
@@ -46,14 +46,10 @@ export default function EventSection() {
                   <h3>{event.title}</h3>
 
                   <h4>
-                    {`${event.type}` === "In-Person" ? (
-                      <FaUser />
-                    ) : `${event.type}` === "Virtual" ? (
-                      <FaGlobe />
-                    ) : (
-                      ""
-                    )}
-                    {`${event.type} Event`}
+                    <FaMapMarkerAlt />
+                    <a href="" className={styles.addressLink}>
+                      {event.address}
+                    </a>
                   </h4>
 
                   <p>{`${event.description}`}</p>

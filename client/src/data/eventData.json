@@ -3,7 +3,7 @@
     {
       "title": "Breaking Into Tech",
       "description": "Join us for an exclusive event that brings together professionals from the tech industry or related fields and aspiring tech professionals.",
-      "img": "./src/assets/images/april_tech_mixer.png",
+      "img": "images/april_tech_mixer.png",
       "imgAlt": "Martin Vargas wearing a light blue button up",
       "month": "April",
       "day": 17,
@@ -11,8 +11,8 @@
       "dayOfWeek": "Wed",
       "date": "2024-04-17",
       "time": "6:00pm - 9:00pm",
+      "address": "1311 Dayton St Suite B, Salinas, CA",
       "cost": "Free",
-      "type": "In-Person",
       "link": "https://docs.google.com/forms/d/e/1FAIpQLSdaOeOuyLQ8HKzT6bKxW6t7bG4mP_cXfxbDSJmhrCOk34Jupw/viewform"
     }
   ]

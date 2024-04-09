@@ -1,8 +1,10 @@
 import styles from "./Footer.module.css";
 
 import somosLogo from "../../assets/somoLogos/SOMOS-LOGOS-04.png";
-import { FaInstagram, FaTiktok, FaDiscord } from "react-icons/fa";
+import { FaInstagram } from "react-icons/fa";
 import linkedInIcon from "../../assets/brandLogos/linkedin.svg";
+import tiktokIcon from "../../assets/brandLogos/tiktok.svg";
+import discordIcon from "../../assets/brandLogos/discord.svg";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
@@ -31,11 +33,15 @@ export default function Footer() {
 
             <ul className={styles.siteDirList}>
               <li className={styles.siteDirListItem}>
-                <Link to="/somos/">Home</Link>
+                <Link to="/somos/" reloadDocument>
+                  Home
+                </Link>
               </li>
 
               <li className={styles.siteDirListItem}>
-                <Link to="/somos/about">About</Link>
+                <Link to="/somos/about" reloadDocument>
+                  About
+                </Link>
               </li>
             </ul>
           </div>
@@ -56,14 +62,22 @@ export default function Footer() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaTiktok className={styles.socialIcons} />
+                <img
+                  alt="tiktok icon"
+                  className={styles.socialIcons}
+                  src={tiktokIcon}
+                />
               </a>
               <a
                 href="https://discord.com/invite/ZP8Jr6fJan"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaDiscord className={styles.socialIcons} />
+                <img
+                  alt="linkedin icon"
+                  className={styles.socialIcons}
+                  src={discordIcon}
+                />
               </a>
               <a
                 href="https://www.linkedin.com/company/98805767/admin/feed/posts/"

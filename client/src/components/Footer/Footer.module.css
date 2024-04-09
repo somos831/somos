@@ -110,16 +110,13 @@ footer {
 .socialListContainer {
   display: grid;
   grid-template-columns: repeat(4, 50px);
+  align-items: center;
 }
 
 .socialIcons {
   font-size: 2rem;
   max-width: 32px;
   fill: var(--text-color);
-}
-
-.socialIcons:hover,
-.socialIcons:focus {
 }
 
 .copyrightContainer {
@@ -162,6 +159,10 @@ footer {
 
   .socialsContainer {
     margin: 16px 0;
+  }
+
+  .socialsContainer > h4 {
+    margin-bottom: 25px;
   }
 
   .socialListContainer {
