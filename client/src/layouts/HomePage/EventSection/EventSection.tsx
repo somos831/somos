@@ -47,7 +47,12 @@ export default function EventSection() {
 
                   <h4>
                     <FaMapMarkerAlt />
-                    <a href="" className={styles.addressLink}>
+                    <a
+                      href={event.googleMap}
+                      className={styles.addressLink}
+                      target="_blank"
+                      rel="noopener"
+                    >
                       {event.address}
                     </a>
                   </h4>
