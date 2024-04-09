@@ -4,6 +4,7 @@
       "title": "Breaking Into Tech",
       "description": "Join us for an exclusive event that brings together professionals from the tech industry or related fields and aspiring tech professionals.",
       "img": "./src/assets/images/april_tech_mixer.png",
+      "imgAlt": "Martin Vargas wearing a light blue button up",
       "month": "April",
       "day": 17,
       "year": 2024,

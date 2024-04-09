@@ -72,7 +72,11 @@ export default function EventSection() {
                 </div>
 
                 <div className={styles.eventImageContainer}>
-                  <img src={event.img} alt="" className={styles.image} />
+                  <img
+                    src={event.img}
+                    alt={event.imgAlt}
+                    className={styles.image}
+                  />
                 </div>
               </article>
             </div>
