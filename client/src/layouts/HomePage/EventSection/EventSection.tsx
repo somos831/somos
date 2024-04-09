@@ -1,6 +1,6 @@
 import styles from "./EventSection.module.css";
 
-import { FaGlobe, FaMapMarkerAlt, FaUser } from "react-icons/fa";
+import { FaMapMarkerAlt } from "react-icons/fa";
 import eventData from "../../../data/eventData.json";
 
 export default function EventSection() {
