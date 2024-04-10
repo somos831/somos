@@ -33,13 +33,13 @@ export default function Footer() {
 
             <ul className={styles.siteDirList}>
               <li className={styles.siteDirListItem}>
-                <Link to="/somos/" reloadDocument>
+                <Link to="/" reloadDocument>
                   Home
                 </Link>
               </li>
 
               <li className={styles.siteDirListItem}>
-                <Link to="/somos/about" reloadDocument>
+                <Link to="/about" reloadDocument>
                   About
                 </Link>
               </li>

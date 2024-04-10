@@ -16,7 +16,7 @@ export default function Navbar() {
 
   return (
     <header>
-      <Link to="/somos/" reloadDocument>
+      <Link to="/" reloadDocument>
         <img
           src={somosLogo}
           alt="Purple somos logo"
@@ -25,10 +25,10 @@ export default function Navbar() {
       </Link>
 
       <nav role="navigation" className={styles.navLinks}>
-        <Link to="/somos/" reloadDocument>
+        <Link to="/" reloadDocument>
           Home
         </Link>
-        <Link to="/somos/about" reloadDocument>
+        <Link to="/about" reloadDocument>
           About
         </Link>
       </nav>
@@ -46,12 +46,12 @@ export default function Navbar() {
         <Drawer handleDismiss={showNavbar}>
           <ul className={styles.navListSidebar}>
             <li>
-              <Link to="/somos/" reloadDocument>
+              <Link to="/" reloadDocument>
                 Home
               </Link>
             </li>
             <li>
-              <Link to="/somos/about" reloadDocument>
+              <Link to="/about" reloadDocument>
                 About
               </Link>
             </li>
