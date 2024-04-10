@@ -8,15 +8,15 @@ import AboutUs from "./layouts/AboutUs";
 
 const router = createBrowserRouter([
   {
-    path: "/somos/",
+    path: "/",
     element: <App />,
     children: [
       {
-        path: "/somos/",
+        path: "/",
         element: <HomePage />,
       },
       {
-        path: "/somos/about",
+        path: "/about",
         element: <AboutUs />,
       },
     ],
