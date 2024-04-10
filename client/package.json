@@ -2,7 +2,7 @@
   "name": "client",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://somos831/somos/",
+  "homepage": "https://somos831.com/somos/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
