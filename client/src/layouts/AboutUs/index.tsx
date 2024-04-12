@@ -131,8 +131,8 @@ export default function AboutUs(): React.ReactElement {
             <div className={styles.captionContainer}>
               <p>
                 Top (Left to Right): Mytzy Escalante Godinez, Mayra Ochoa,
-                Estefania Solis, Madahy Villareal, Angela Hernandez, Jennifer
-                Lopez
+                Estefania Escalante, Madahy Villareal, Angela Hernandez,
+                Jennifer Lopez
               </p>
               <p>
                 Bottom (Left to Right): Saul Reyes-Morales, Jonathan Odriano,
