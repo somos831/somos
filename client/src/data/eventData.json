@@ -1,20 +1,38 @@
 {
   "event": [
     {
-      "title": "Breaking Into Tech",
-      "description": "Join us for an exclusive event that brings together professionals from the tech industry or related fields and aspiring tech professionals.",
-      "img": "images/april_tech_mixer.png",
-      "imgAlt": "Martin Vargas wearing a light blue button up",
-      "month": "April",
-      "day": 17,
+      "title": "Hike at Toro Park",
+      "description": "🚶🍃 Explore the force of nature with us! Join our beginner-friendly hike at Toro Park in Salinas, and don't forget your Star Wars gear!",
+      "img": "./images/toroPark.png",
+      "imgAlt": "",
+      "month": "May",
+      "day": 4,
+      "year": 2024,
+      "dayOfWeek": "Sat",
+      "date": "2024-05-04",
+      "time": "9AM",
+      "address": "501 Monterey-Salinas Highway 68",
+      "googleMap": "https://maps.google.com/maps/place//data=!4m2!3m1!1s0x808df9c8ea6c3373:0x9b69e5aef7200292?entry=s&sa=X&ved=1t:8290&hl=en-us&ictx=111",
+      "cost": "Free",
+      "link": "",
+      "btnText": ""
+    },
+    {
+      "title": "Youth Job Fair",
+      "description": "Looking for job opportunites this summer? Check out Youth Job Fair coming up this May! There will be retailers and employers from all over Monterey County! For more info, click the link below.",
+      "img": "./images/youthJobFair.png",
+      "imgAlt": "",
+      "month": "May",
+      "day": 8,
       "year": 2024,
       "dayOfWeek": "Wed",
-      "date": "2024-04-17",
-      "time": "6:00pm - 8:00pm",
-      "address": "1311 Dayton St Suite B, Salinas, CA",
-      "googleMap": "https://maps.app.goo.gl/N96VK3ZVPj25jrpB8",
+      "date": "2024-05-08",
+      "time": "11:00AM - 2:30PM, 4:00PM - 6:00PM",
+      "address": "796 Northridge Mall, Salinas, CA 93906",
+      "googleMap": "https://maps.google.com/maps/place/796+Northridge+mall,+Salinas,+CA+93906/data=!4m2!3m1!1s0x808dff114364f8f7:0x107b24142518c60d?entry=s&sa=X&ved=1t:78214&hl=en-us&ictx=111",
       "cost": "Free",
-      "link": "https://docs.google.com/forms/d/e/1FAIpQLSdaOeOuyLQ8HKzT6bKxW6t7bG4mP_cXfxbDSJmhrCOk34Jupw/viewform"
+      "link": "https://app.premiervirtual.com/events/98e550bc-01d3-4afc-995f-b8751467632b/youth-job-fair/attendee",
+      "btnText": "More Info"
     }
   ]
 }

@@ -60,14 +60,20 @@ export default function EventSection() {
                   <p>{`${event.description}`}</p>
 
                   <div className={styles.eventRSVPContainer}>
-                    <a
-                      href={`${event.link}`}
-                      target="_blank"
-                      rel="noopener"
-                      className={styles.eventRSVPLink}
-                    >
-                      RSVP Now
-                    </a>
+                    {event.link ? (
+                      <>
+                        <a
+                          href={`${event.link}`}
+                          target="_blank"
+                          rel="noopener"
+                          className={styles.eventRSVPLink}
+                        >
+                          {event.btnText}
+                        </a>
+                      </>
+                    ) : (
+                      ""
+                    )}
                     <p>{`${event.cost}`}</p>
                   </div>
                 </div>
