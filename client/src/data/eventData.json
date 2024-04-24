@@ -2,20 +2,20 @@
   "event": [
     {
       "title": "Hike at Toro Park",
-      "description": "🚶🍃 Explore the force of nature with us! Join our beginner-friendly hike at Toro Park in Salinas, and don't forget your Star Wars gear!",
+      "description": "Join us at Toro Park! Whether you're an experienced hiker or just looking for a relaxed walk, this easy hike promises fresh air, scenic views, and great company.",
       "img": "./images/toroPark.png",
-      "imgAlt": "",
+      "imgAlt": "Flyer for Hiking event with somos",
       "month": "May",
       "day": 4,
       "year": 2024,
       "dayOfWeek": "Sat",
       "date": "2024-05-04",
       "time": "9AM",
-      "address": "501 Monterey-Salinas Highway 68",
+      "address": "501 Monterey-Salinas Highway 68, Overflow Parking Lot #9",
       "googleMap": "https://maps.google.com/maps/place//data=!4m2!3m1!1s0x808df9c8ea6c3373:0x9b69e5aef7200292?entry=s&sa=X&ved=1t:8290&hl=en-us&ictx=111",
       "cost": "Free",
-      "link": "",
-      "btnText": ""
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSfsns2BvWMsCc9pAnzD7AHVZCOb6SApj9w5eJh3bom3H0s4JQ/viewform",
+      "btnText": "RSVP Here"
     },
     {
       "title": "Youth Job Fair",
