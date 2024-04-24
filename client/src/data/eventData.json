@@ -3,6 +3,8 @@
     {
       "title": "Hike at Toro Park",
       "description": "Join us at Toro Park! Whether you're an experienced hiker or just looking for a relaxed walk, this easy hike promises fresh air, scenic views, and great company.",
+      "extraDetailsText": "Click here for Toro Park map",
+      "extraDetailsLink": "https://www.countyofmonterey.gov/home/showpublisheddocument/113909/637947046684170000",
       "img": "./images/toroPark.png",
       "imgAlt": "Flyer for Hiking event with somos",
       "month": "May",

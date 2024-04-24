@@ -143,6 +143,16 @@
   text-decoration: none;
 }
 
+.extraDetailsLink {
+  font-size: 0.875rem;
+  color: var(--primary20-color);
+  cursor: pointer;
+  text-decoration: none;
+  margin-bottom: 14px;
+  border-bottom: lightgray solid 0.9px;
+  width: fit-content;
+}
+
 .eventCardDetails > h3 {
   font-size: 1.5rem;
 }

@@ -59,6 +59,19 @@ export default function EventSection() {
 
                   <p>{`${event.description}`}</p>
 
+                  {event.extraDetailsLink ? (
+                    <a
+                      href={`${event.extraDetailsLink}`}
+                      className={styles.extraDetailsLink}
+                      target="_blank"
+                      rel="noopener"
+                    >
+                      {event.extraDetailsText}
+                    </a>
+                  ) : (
+                    ""
+                  )}
+
                   <div className={styles.eventRSVPContainer}>
                     {event.link ? (
                       <>
