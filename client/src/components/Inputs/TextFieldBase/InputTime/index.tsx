@@ -1,7 +1,7 @@
 import DatePicker, { DateObject } from "react-multi-date-picker";
 import TimePicker from "react-multi-date-picker/plugins/time_picker";
 
-import styles from './InputDate.module.css'
+import styles from './InputTime.module.css'
 
 import styled from 'styled-components';
 import { FieldValues, UseFormSetValue } from "react-hook-form";
@@ -48,6 +48,17 @@ const DateContainer = styled.div`
       }
     }
   }
+
+  &.disabled {
+    &>.rmdp-container>input {
+      color: grey;
+
+      box-shadow: none !important;
+      border-color: black;
+
+      background: rgba(0, 0, 0, .05);
+    }
+  }
 `;
 
 interface InputTimeType {
@@ -55,14 +66,14 @@ interface InputTimeType {
   placeholder: string;
   error?: boolean;
   setValue: UseFormSetValue<FieldValues>;
-  fullwidth?: boolean;
+  disabled?: boolean;
 }
 
-const InputTime:React.FC<InputTimeType> = ({ id, fullwidth, placeholder, setValue, error=false }) => {
+const InputTime:React.FC<InputTimeType> = ({ id, placeholder, setValue, disabled=false, error=false }) => {
 
   return (
-    <DateContainer className={`${styles.dateContainer} ${fullwidth && 'full-width'} ${error && 'input-err'}`}>
-        <DatePicker disableDayPicker format="HH:mm" placeholder={placeholder} onChange={(date:DateObject) => { setValue(id, date?.isValid ? date : "", { shouldValidate: true }) }} plugins={[<TimePicker hideSeconds /> ]}  />
+    <DateContainer className={`${styles.dateContainer} full-width ${disabled && 'disabled'} ${error && 'input-err'}`}>
+        <DatePicker disabled={disabled} readOnly={disabled} disableDayPicker format="HH:mm" placeholder={placeholder} onChange={(date:DateObject) => { setValue(id, date?.isValid ? date : "", { shouldValidate: true }) }} plugins={[<TimePicker hideSeconds /> ]}  />
     </DateContainer>
   )
 }

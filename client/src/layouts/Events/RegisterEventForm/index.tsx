@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import * as yup from "yup";
 
 import { FormProvider, useForm } from 'react-hook-form'
@@ -9,6 +9,7 @@ import { EventsSchema } from "../../../schemas";
 import TextFieldBase from "../../../components/Inputs/TextFieldBase";
 import CheckBox from '../../../components/Inputs/CheckBox';
 import Button from '../../../components/Inputs/Button';
+import ButtonText from '../../../components/Inputs/ButtonText';
 import InputFileSearch from '../../../components/Inputs/InputFileSearch';
 
 import ImgPreview from '../../../components/ImgPreview';
@@ -277,33 +278,40 @@ const STATE_SELECT = [
     }
 ]
 
+const initValues:FormFields = { 
+    name: '',
+    category: '',
+    date: '',
+    starttime: '',
+    endtime: '',
+    description: '',
+    provider: '',
+    url: '',
+    location: '',
+    street: '',
+    city: '',
+    state: '',
+    zipcode: '',
+}
+
 export default function RegisterEventForm(): React.ReactElement {
 
     const [img64Base, setImg64Base] = React.useState<string | undefined>(undefined)
+    //const [inputFileRef, setInputFileRef] = React.useState<React.RefObject<HTMLInputElement> | null>(null)
+
+    const [wholeDayEvent, setWholeDayEvent] = useState(false)
+    const [onlineEvent, setOnlineEvent] = useState(false)
 
     const methods = useForm<FormFields>({
-        defaultValues: { 
-            name: '',
-            category: '',
-            date: '',
-            starttime: '',
-            endtime: '',
-            description: '',
-            provider: '',
-            url: '',
-            location: '',
-            street: '',
-            city: '',
-            state: '',
-            zipcode: '',
-        },
+        defaultValues: initValues,
         resolver: yupResolver(EventsSchema), 
         mode: "onChange"
     });
 
     const onSubmit = (data:FormFields) => console.log(data)
     
-    
+    const handleWholeDayEvent = () => setWholeDayEvent(!wholeDayEvent)
+    const handleOnlineEvent = () => setOnlineEvent(!onlineEvent)
 
     return (
         <article className={styles.formContainer}>
@@ -318,14 +326,14 @@ export default function RegisterEventForm(): React.ReactElement {
                                 <TextFieldBase id="date" title='Event date*' placeholder="Event date" type="date" fullwidth={true} />
                             </div>
                             <div style={{ gridColumn: 'span 3' }}>
-                                <TextFieldBase id="starttime" title='Start time' placeholder="HH:MM" type="time" fullwidth={true} />
+                                <TextFieldBase id="starttime" disabled={wholeDayEvent} title='Start time' placeholder="HH:MM" type="time" fullwidth={true} />
                             </div>
                             <div style={{ gridColumn: 'span 3' }}>
-                                <TextFieldBase id="endtime" title='End time' placeholder="HH:MM" type="time" fullwidth={true} />
+                                <TextFieldBase id="endtime" disabled={wholeDayEvent} title='End time' placeholder="HH:MM" type="time" fullwidth={true} />
                             </div>
                         </div>
                         <div style={{ width: '100%', paddingBottom: '10px', display: 'flex', justifyContent: 'flex-end' }}>
-                            <CheckBox title="Whole day" />
+                            <CheckBox title="Whole day" checked={wholeDayEvent} onClick={handleWholeDayEvent} />
                         </div>
                         <div className={styles.categoryContainer}>
                             <TextFieldBase id="category" title='Event category*' placeholder="Event category" fullwidth={true} type="select" values={categories} />
@@ -334,9 +342,9 @@ export default function RegisterEventForm(): React.ReactElement {
                     </div>
                     <div className={styles.providerDetailsContainer}> 
                         <EventFormTitle title="Event Information" />
-                        <ImgPreview fullwidth height={300} img64Base={img64Base} onCancelImg={() => { setImg64Base(undefined) }} />
+                        <ImgPreview fullwidth height={300} img64Base={img64Base} onCancelImg={() => { setImg64Base(undefined); document.getElementById("btn_upload_event_img").value = ""; }} />
                         <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '20px' }} >
-                            <InputFileSearch handleFileBrowser={(fr, file) => {
+                            <InputFileSearch id="btn_upload_event_img" handleFileBrowser={(fr, file) => {
                                 setImg64Base(fr.result?.toString())
                                 console.log(file)
                             }} />
@@ -345,22 +353,24 @@ export default function RegisterEventForm(): React.ReactElement {
                         <EventFormTitle title="Event Location" />
                         <TextFieldBase id="location" title='Event location*' placeholder="Event location" fullwidth={true} />
                         <div style={{ width: '100%', paddingBottom: '10px', display: 'flex', justifyContent: 'flex-end' }}>
-                            <CheckBox title="Online Event" />
+                            <CheckBox title="Online Event" checked={onlineEvent} onClick={handleOnlineEvent} />
                         </div>
-                        <TextFieldBase id="street" title='Location street' placeholder="Street" fullwidth={true} />
+                        <TextFieldBase id="street" title='Location street' placeholder="Street" disabled={onlineEvent} fullwidth={true} />
                         <div className={styles.inputGridContainer}>
                             <div style={{ gridColumn: 'span 5' }}>
-                                <TextFieldBase id="city" title='City' placeholder="City" fullwidth={true} />
+                                <TextFieldBase id="city" title='City' placeholder="City" disabled={onlineEvent} fullwidth={true} />
                             </div>
                             <div style={{ gridColumn: 'span 3' }}>
-                                <TextFieldBase id="state" title='State' placeholder="State" fullwidth={true} type="select" values={STATE_SELECT} />
+                                <TextFieldBase id="state" title='State' placeholder="State" disabled={onlineEvent} fullwidth={true} type="select" values={STATE_SELECT} />
                             </div>
                             <div style={{ gridColumn: 'span 4' }}>
-                                <TextFieldBase id="zipcode" title='Zipcode' placeholder="xxxxx" fullwidth={true} />
+                                <TextFieldBase id="zipcode" title='Zipcode' placeholder="xxxxx" disabled={onlineEvent} fullwidth={true} />
                             </div>
                         </div>
                     </div>
-                    <div className={styles.providerFooterContainer}> 
+                    <div className={styles.providerFooterContainer} style={{ marginTop: '40px' }}>
+                        <ButtonText text="Reset Form" onClick={() => methods.reset() } />
+                        <span className='non-mouse-event'>/</span>
                         <Button type="submit">Register Event</Button>
                     </div>
                 </form>

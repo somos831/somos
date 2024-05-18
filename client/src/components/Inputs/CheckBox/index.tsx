@@ -22,20 +22,23 @@ const SpanCheckMark = styled.span`
         z-index: 999;
     }
 `
+type OnClickType = () => void
 
 interface CheckBoxProps {
     //id: string;
     title: string;
+    checked: boolean;
+    onClick: OnClickType;
     // placeholder: string;
     // type?: string;
     // fullwidth?: boolean;
 }
 
-const CheckBox:React.FC<CheckBoxProps> =  ({ title }) => {
+const CheckBox:React.FC<CheckBoxProps> =  ({ title, checked, onClick }) => {
     return (
         <label className={styles.checkboxContainer}>
             {title}
-            <InputCheck className={styles.inputCheckBox} type="checkbox" />
+            <InputCheck className={styles.inputCheckBox} type="checkbox" onChange={onClick} />
             <SpanCheckMark className={styles.checkmark}></SpanCheckMark>
         </label>
     )

@@ -19,10 +19,11 @@ interface TextFieldBaseProps {
     placeholder: string;
     type?: string;
     fullwidth?: boolean;
-    values?: KeyValue[]
+    values?: KeyValue[];
+    disabled?: boolean;
 }
 
-const TextFieldBase: React.FC<TextFieldBaseProps> = ({ title, placeholder, id, values, fullwidth = false, type="text" }) => {
+const TextFieldBase: React.FC<TextFieldBaseProps> = ({ title, placeholder, id, values, disabled=false, fullwidth = false, type="text" }) => {
 
     const { register, setValue, formState: { errors } } = useFormContext() 
 
@@ -36,30 +37,34 @@ const TextFieldBase: React.FC<TextFieldBaseProps> = ({ title, placeholder, id, v
             classes.push(styles.inputBaseErr)
         }
 
+        if (disabled) {
+            classes.push(styles.disabledField)
+        }
+
         return classes
-    }, [isErr])
+    }, [isErr, disabled])
 
     const InputElement = React.useMemo(():React.ReactNode => {
 
         switch(type) {
             case "date":
-                return (<InputDate id={id} placeholder={placeholder} fullwidth={fullwidth} setValue={setValue} error={isErr} />)
+                return (<InputDate disabled={disabled} id={id} placeholder={placeholder} setValue={setValue} error={isErr} />)
             case "time":
-                return (<InputTime id={id} placeholder={placeholder} fullwidth={fullwidth} setValue={setValue} error={isErr} />)
+                return (<InputTime disabled={disabled} id={id} placeholder={placeholder} setValue={setValue} error={isErr} />)
             case "textarea":
-                return (<textarea className={classnames.join(" ")} style={{ ...(fullwidth && { width: '100%' }) }} placeholder={placeholder} {...register(id)} rows={8} cols={50} />)
+                return (<textarea disabled={disabled} className={classnames.join(" ")} style={{width: '100%'}} placeholder={placeholder} {...register(id)} rows={8} cols={50} />)
             case "select": 
-                return (<InputSelect id={id} fullwidth={fullwidth} values={values} register={register} err={isErr} />)
+                return (<InputSelect disabled={disabled} id={id} values={values} register={register} err={isErr} />)
             default:
-                return (<input className={classnames.join(" ")} style={{ ...(fullwidth && { width: '100%' }) }} type={type} placeholder={placeholder} {...register(id)}/>)
+                return (<input disabled={disabled} className={classnames.join(" ")} style={{width: '100%'}} type={type} placeholder={placeholder} {...register(id)}/>)
         }
 
-    }, [id, placeholder, fullwidth, setValue, isErr, type, classnames, register, values])
+    }, [id, placeholder, fullwidth, setValue, isErr, type, classnames, register, values, disabled])
 
     const errMessage = React.useMemo(():string => isErr? `${errors[id]!.message}` : '', [isErr])
 
     return (
-        <div style={{ ...(fullwidth && { width: '100%' }), marginBottom: '20px' }}>
+        <div style={{ width: '100%' , marginBottom: '20px' }}>
             <label className={styles.fieldName}>{title}</label>
             {InputElement}
             {isErr && (

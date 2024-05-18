@@ -11,12 +11,12 @@ interface KeyValue {
 interface InputSelectProps {
     id: string;
     err: boolean;
-    fullwidth?: boolean;
+    disabled?: boolean;
     values?: KeyValue[];
     register: UseFormRegister<FieldValues>;
 }
 
-const InputSelect:React.FC<InputSelectProps>  =  ({ fullwidth, values, id, register, err }) => {
+const InputSelect:React.FC<InputSelectProps>  =  ({  values, id, register, err, disabled=false }) => {
 
     const inputclassnames = React.useMemo(() => {
         const classes = [styles.inputBase]
@@ -25,8 +25,10 @@ const InputSelect:React.FC<InputSelectProps>  =  ({ fullwidth, values, id, regis
             classes.push(styles.inputBaseErr)
         }
 
+        if (disabled) classes.push(styles.disabledField)
+
         return classes
-    }, [err])
+    }, [err, disabled])
 
     const containerclassnames = React.useMemo(() => {
         const classes = [styles.inputContainer]
@@ -40,8 +42,8 @@ const InputSelect:React.FC<InputSelectProps>  =  ({ fullwidth, values, id, regis
 
 
     return (
-        <div className={containerclassnames.join(" ")} style={{ ...(fullwidth && { width: '100%' }) }}>
-            <select className={inputclassnames.join(" ")} style={{ ...(fullwidth && { width: '100%' }) }} {...register(id)}>
+        <div className={containerclassnames.join(" ")} style={{width: '100%'}}>
+            <select disabled={disabled} className={inputclassnames.join(" ")} style={{width: '100%'}} {...register(id)}>
                 {
                     values?.map((value, index) => (
                         <option key={`select_${index}_${value.id}_${value.title}`} value={value.id}>{value.title}</option>

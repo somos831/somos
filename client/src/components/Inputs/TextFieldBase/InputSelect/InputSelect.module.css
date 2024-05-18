@@ -56,3 +56,12 @@
 .inputContainerErr::after {
     color: rgb(142, 49, 49);
 }
+
+.disabledField {
+    color: grey;
+
+    box-shadow: none !important;
+    border-color: black;
+
+    background: rgba(0, 0, 0, .05);
+}

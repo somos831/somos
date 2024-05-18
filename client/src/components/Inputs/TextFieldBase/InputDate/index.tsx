@@ -3,7 +3,7 @@ import DatePicker, { DateObject } from "react-multi-date-picker";
 import styles from './InputDate.module.css'
 
 import styled from 'styled-components';
-import { UseFormRegister, FieldValues, UseFormSetValue } from "react-hook-form";
+import { FieldValues, UseFormSetValue } from "react-hook-form";
 
 const DateContainer = styled.div`
   &>.rmdp-container {
@@ -47,6 +47,17 @@ const DateContainer = styled.div`
       }
     }
   }
+
+  &.disabled {
+    &>.rmdp-container>input {
+      color: grey;
+
+      box-shadow: none !important;
+      border-color: black;
+
+      background: rgba(0, 0, 0, .05);
+    }
+  }
 `;
 
 interface InputDateType {
@@ -55,13 +66,13 @@ interface InputDateType {
   error?: boolean;
   //register: UseFormRegister<FieldValues>;
   setValue: UseFormSetValue<FieldValues>;
-  fullwidth?: boolean;
+  disabled?: boolean;
 }
 
-const InputDate:React.FC<InputDateType> = ({ id, fullwidth, placeholder, setValue, error=false }) => {
+const InputDate:React.FC<InputDateType> = ({ id, placeholder, setValue, error=false, disabled=false }) => {
 
   return (
-    <DateContainer className={`${styles.dateContainer} ${fullwidth && 'full-width'} ${error && 'input-err'}`}>
+    <DateContainer className={`${styles.dateContainer} full-width ${disabled && 'disabled'} ${error && 'input-err'}`}>
         <DatePicker format="MM/DD/YYYY" placeholder={placeholder} onChange={(date:DateObject) => { setValue(id, date?.isValid ? date : "", { shouldValidate: true }) }} />
     </DateContainer>
   )

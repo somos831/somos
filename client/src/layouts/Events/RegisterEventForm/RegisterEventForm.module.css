@@ -26,6 +26,8 @@
     grid-column: span 12;
     display: flex;
     justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
 }
 
 .divisionTitle {

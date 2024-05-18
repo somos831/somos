@@ -4,11 +4,17 @@ import styles from './InputFileSearch.module.css'
 
 type handleFileBrowserType = (fr: FileReader, file: File | undefined | null) => void
 
+type handleInputRefType = (ref: React.RefObject<HTMLInputElement>) => void
+
 interface InputFileSearchProps {
-    handleFileBrowser: handleFileBrowserType
+    handleFileBrowser: handleFileBrowserType;
+    id: string;
+    handleInputRef?: handleInputRefType;
 }
 
-const InputFileSearch:React.FC<InputFileSearchProps> = ({ handleFileBrowser }) => {
+const InputFileSearch:React.FC<InputFileSearchProps> = ({ handleFileBrowser, handleInputRef, id }) => {
+
+    const ref = React.useRef(null)
 
     const handleOpenFile = (e: React.ChangeEvent<HTMLInputElement>):void => {
         
@@ -27,10 +33,17 @@ const InputFileSearch:React.FC<InputFileSearchProps> = ({ handleFileBrowser }) =
         }
     }
 
+    React.useEffect(() => {
+        if (ref) {
+            handleInputRef?.(ref)
+        }
+    }, [ref, handleInputRef])
+    
+
     return (
         <div>
-            <input type="file" id="btn_upload" accept="image/png, image/gif, image/jpeg" onChange={handleOpenFile} hidden/>
-            <label className={styles.btn} htmlFor="btn_upload">Choose file</label>
+            <input id={id} ref={ref} type="file" accept="image/png, image/gif, image/jpeg" onChange={handleOpenFile} hidden/>
+            <label className={styles.btn} htmlFor={id}>Choose file</label>
         </div>
     )
 }
