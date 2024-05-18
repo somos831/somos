@@ -13,12 +13,19 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@hookform/resolvers": "^3.4.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-focus-lock": "^2.12.1",
+    "react-hook-form": "^7.51.4",
     "react-icons": "^5.0.1",
+    "react-multi-date-picker": "^4.5.0",
     "react-remove-scroll": "^2.5.9",
+    "react-resize-detector": "^10.0.1",
     "react-router-dom": "^6.22.3",
-    "react-slideshow-image": "^4.3.1"
+    "react-slideshow-image": "^4.3.1",
+    "styled-components": "^6.1.11",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
     "@types/react": "^18.2.56",

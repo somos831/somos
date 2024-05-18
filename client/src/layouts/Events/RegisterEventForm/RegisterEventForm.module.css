@@ -1,0 +1,46 @@
+/* FORMS - CONTAINER ---------------------------------- */
+.formContainer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.eventForm {
+    width: 90%;
+    max-width: 1400px;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 2rem;
+}
+
+.eventDetailsContainer {
+    grid-column: span 7;
+    padding-right: 1rem;
+}
+
+.providerDetailsContainer {
+    grid-column: span 5;
+}
+
+.providerFooterContainer {
+    grid-column: span 12;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.divisionTitle {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+/* COLUMNS */
+.categoryContainer {
+    width: 60%;
+}
+
+.inputGridContainer {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    column-gap: 2rem;
+}

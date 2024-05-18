@@ -43,6 +43,12 @@ export default function Footer() {
                   About
                 </Link>
               </li>
+
+              <li className={styles.siteDirListItem}>
+                <Link to="/events" reloadDocument>
+                  Events
+                </Link>
+              </li>
             </ul>
           </div>
 

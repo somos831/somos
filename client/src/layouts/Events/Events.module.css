@@ -1,0 +1,20 @@
+/* HEADER CONTAINER */
+
+.articleContainer {
+    width: 100%;
+    padding: 100px 5%;
+}
+
+.headerPage {
+    font-size: 2rem;
+}
+
+.subHeaderPage {
+    font-size: 1.25rem;
+}
+
+.header {
+    margin-bottom: 60px;
+}
+
+/*FORM CONTAINER*/

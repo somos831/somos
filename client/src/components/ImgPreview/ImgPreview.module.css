@@ -1,0 +1,27 @@
+.imgPreviewContainer {
+    border: 1px solid #501D86;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.btnCancelImgPreview {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0px;
+    width: 35px;
+    height: 35px;
+    line-height: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    border: none !important;
+    background: #501D86;
+    color: white;
+    font-size: 1.4rem;
+    transform: translate(25%, -50%);
+    cursor: pointer;
+}
