@@ -28,6 +28,9 @@ export default function Navbar() {
         <Link to="/" reloadDocument>
           Home
         </Link>
+        <Link to="/events" reloadDocument>
+          Events
+        </Link>
         <Link to="/about" reloadDocument>
           About
         </Link>
@@ -48,6 +51,11 @@ export default function Navbar() {
             <li>
               <Link to="/" reloadDocument>
                 Home
+              </Link>
+            </li>
+            <li>
+              <Link to="/events" reloadDocument>
+                Events
               </Link>
             </li>
             <li>

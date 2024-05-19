@@ -3,6 +3,7 @@
 .articleContainer {
     width: 100%;
     padding: 100px 5%;
+    box-sizing: border-box;
 }
 
 .headerPage {
@@ -18,3 +19,12 @@
 }
 
 /*FORM CONTAINER*/
+@media screen and (max-width: 992px) {
+    .articleContainer {
+        padding: 50px 5%;
+    }
+
+    .header {
+        margin-bottom: 30px;
+    }
+}

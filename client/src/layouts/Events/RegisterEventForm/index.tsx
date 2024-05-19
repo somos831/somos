@@ -17,6 +17,7 @@ import ImgPreview from '../../../components/ImgPreview';
 import EventFormTitle from './EventFormTitle';
 
 import styles from "./RegisterEventForm.module.css";
+import Swal from 'sweetalert2';
 
 type FormFields = yup.InferType<typeof EventsSchema>
 
@@ -308,7 +309,16 @@ export default function RegisterEventForm(): React.ReactElement {
         mode: "onChange"
     });
 
-    const onSubmit = (data:FormFields) => console.log(data)
+    const onSubmit = (data:FormFields) => {
+
+        Swal.fire({
+            title: "We have received your event!",
+            text: "After our team reviews the information, we'll make sure your event gets the visibility it deserves.",
+            icon: "success"
+        });
+
+        console.log(data)
+    }
     
     const handleWholeDayEvent = () => setWholeDayEvent(!wholeDayEvent)
     const handleOnlineEvent = () => setOnlineEvent(!onlineEvent)
@@ -322,20 +332,20 @@ export default function RegisterEventForm(): React.ReactElement {
                         <TextFieldBase id="name" title='Event name*' placeholder="Event name" fullwidth={true} />
                         <TextFieldBase id="provider" title='Event provider*' placeholder="Event provider" fullwidth={true} />
                         <div className={styles.inputGridContainer}>
-                            <div style={{ gridColumn: 'span 6' }}>
+                            <div className={styles.gridFullColumn} style={{ gridColumn: 'span 6' }}>
                                 <TextFieldBase id="date" title='Event date*' placeholder="Event date" type="date" fullwidth={true} />
                             </div>
-                            <div style={{ gridColumn: 'span 3' }}>
+                            <div className={styles.gridHalfColumn} style={{ gridColumn: 'span 3' }}>
                                 <TextFieldBase id="starttime" disabled={wholeDayEvent} title='Start time' placeholder="HH:MM" type="time" fullwidth={true} />
                             </div>
-                            <div style={{ gridColumn: 'span 3' }}>
+                            <div className={styles.gridHalfColumn} style={{ gridColumn: 'span 3' }}>
                                 <TextFieldBase id="endtime" disabled={wholeDayEvent} title='End time' placeholder="HH:MM" type="time" fullwidth={true} />
                             </div>
                         </div>
                         <div style={{ width: '100%', paddingBottom: '10px', display: 'flex', justifyContent: 'flex-end' }}>
                             <CheckBox title="Whole day" checked={wholeDayEvent} onClick={handleWholeDayEvent} />
                         </div>
-                        <div className={styles.categoryContainer}>
+                        <div className={`${styles.categoryContainer} ${styles.gridFullColumn}`}>
                             <TextFieldBase id="category" title='Event category*' placeholder="Event category" fullwidth={true} type="select" values={categories} />
                         </div>
                         <TextFieldBase id="description" title='Event description' placeholder="Event description" type="textarea" fullwidth={true} />
@@ -357,19 +367,23 @@ export default function RegisterEventForm(): React.ReactElement {
                         </div>
                         <TextFieldBase id="street" title='Location street' placeholder="Street" disabled={onlineEvent} fullwidth={true} />
                         <div className={styles.inputGridContainer}>
-                            <div style={{ gridColumn: 'span 5' }}>
+                            <div className={styles.gridFullColumn} style={{ gridColumn: 'span 5' }}>
                                 <TextFieldBase id="city" title='City' placeholder="City" disabled={onlineEvent} fullwidth={true} />
                             </div>
-                            <div style={{ gridColumn: 'span 3' }}>
+                            <div className={styles.gridHalfColumn} style={{ gridColumn: 'span 3' }}>
                                 <TextFieldBase id="state" title='State' placeholder="State" disabled={onlineEvent} fullwidth={true} type="select" values={STATE_SELECT} />
                             </div>
-                            <div style={{ gridColumn: 'span 4' }}>
+                            <div className={styles.gridHalfColumn} style={{ gridColumn: 'span 4' }}>
                                 <TextFieldBase id="zipcode" title='Zipcode' placeholder="xxxxx" disabled={onlineEvent} fullwidth={true} />
                             </div>
                         </div>
                     </div>
                     <div className={styles.providerFooterContainer} style={{ marginTop: '40px' }}>
-                        <ButtonText text="Reset Form" onClick={() => methods.reset() } />
+                        <ButtonText text="Reset Form" onClick={() => {
+                            methods.reset();
+                            setOnlineEvent(false);
+                            setWholeDayEvent(false);
+                        }} />
                         <span className='non-mouse-event'>/</span>
                         <Button type="submit">Register Event</Button>
                     </div>

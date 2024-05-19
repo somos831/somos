@@ -65,15 +65,16 @@ interface InputTimeType {
   id: string;
   placeholder: string;
   error?: boolean;
+  value: string;
   setValue: UseFormSetValue<FieldValues>;
   disabled?: boolean;
 }
 
-const InputTime:React.FC<InputTimeType> = ({ id, placeholder, setValue, disabled=false, error=false }) => {
+const InputTime:React.FC<InputTimeType> = ({ id, placeholder, value, setValue, disabled=false, error=false }) => {
 
   return (
     <DateContainer className={`${styles.dateContainer} full-width ${disabled && 'disabled'} ${error && 'input-err'}`}>
-        <DatePicker disabled={disabled} readOnly={disabled} disableDayPicker format="HH:mm" placeholder={placeholder} onChange={(date:DateObject) => { setValue(id, date?.isValid ? date : "", { shouldValidate: true }) }} plugins={[<TimePicker hideSeconds /> ]}  />
+        <DatePicker value={value || ""} disabled={disabled} readOnly={disabled} disableDayPicker format="HH:mm" placeholder={placeholder} onChange={(date:DateObject) => { setValue(id, date?.isValid ? date : "", { shouldValidate: true }) }} plugins={[<TimePicker hideSeconds /> ]}  />
     </DateContainer>
   )
 }

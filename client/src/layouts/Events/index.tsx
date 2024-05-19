@@ -11,7 +11,7 @@ export default function Events(): React.ReactElement {
 
     return (
         <section>
-            <Banner title="Events" />
+            <Banner title="Events" background='images/banners/somos_about_page.jpg' />
 
             <article className={styles.articleContainer}>
                 <section className={styles.header}>

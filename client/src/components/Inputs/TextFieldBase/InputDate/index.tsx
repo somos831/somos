@@ -63,17 +63,20 @@ const DateContainer = styled.div`
 interface InputDateType {
   id: string;
   placeholder: string;
+  value: string;
   error?: boolean;
   //register: UseFormRegister<FieldValues>;
   setValue: UseFormSetValue<FieldValues>;
   disabled?: boolean;
 }
 
-const InputDate:React.FC<InputDateType> = ({ id, placeholder, setValue, error=false, disabled=false }) => {
-
+const InputDate:React.FC<InputDateType> = ({ id, placeholder, value, setValue, error=false, disabled=false }) => {
+  
   return (
     <DateContainer className={`${styles.dateContainer} full-width ${disabled && 'disabled'} ${error && 'input-err'}`}>
-        <DatePicker format="MM/DD/YYYY" placeholder={placeholder} onChange={(date:DateObject) => { setValue(id, date?.isValid ? date : "", { shouldValidate: true }) }} />
+        <DatePicker value={value || ""} format="MM/DD/YYYY" placeholder={placeholder} onChange={(date:DateObject) => { 
+          setValue(id, date?.isValid ? date : "", { shouldValidate: true }); 
+        }} />
     </DateContainer>
   )
 }

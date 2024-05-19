@@ -38,7 +38,7 @@ const CheckBox:React.FC<CheckBoxProps> =  ({ title, checked, onClick }) => {
     return (
         <label className={styles.checkboxContainer}>
             {title}
-            <InputCheck className={styles.inputCheckBox} type="checkbox" onChange={onClick} />
+            <InputCheck className={styles.inputCheckBox} type="checkbox" checked={checked} onChange={onClick} />
             <SpanCheckMark className={styles.checkmark}></SpanCheckMark>
         </label>
     )

@@ -1,14 +1,80 @@
+/* HEADER */
+.container {
+    width: 100%;
+    min-height: 300px;
+
+    position: relative;
+}
+
+.backgroundContainer {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    background-size: cover;
+    background-position-y: center;
+    background-repeat: no-repeat;
+}
+
+.backgroundContainer::after {
+    position: absolute;
+    content: "";
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    background: rgba(0, 0, 0, .4);
+}
+
+.textContainer {
+    position: absolute;
+    content: "";
+    display: block;
+
+    width: 100%;
+    height: 100%;
+
+    top: 0;
+    left: 0;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    align-items: center;
+
+    padding: 0px 5%;
+
+    z-index: 1;
+}
+
+.headerText1 {
+    font-weight: 800;
+    font-size: 3.75rem;
+
+    color: white;
+
+    text-align: center;
+    text-transform: uppercase;
+}
+
+/*  */
 .aboutUsHeader {
     width: 100%;
     height: 300px;
     font-size: 22px;
     display: flex;
     align-items: flex-end;
-    background-image: url("../../assets/images/somos_about_page.jpg");
-    background-size: cover;
-    background-position-y: center;
-    background-repeat: no-repeat;
-    position: relative;
+    
+    
 }
 
 .aboutUsHeader:after {
@@ -31,17 +97,4 @@
     align-items: center;
     justify-content: center;
     text-shadow: 1px 1px 3px var(--text-secondary-color);
-}
-
-.headerText1 {
-    font-weight: 600;
-    padding-bottom: 10px;
-    font-size: 3.75rem;
-    z-index: 999;
-}
-
-.aboutUsTextComponent,
-.headerText1 {
-  width: 900px;
-  text-align: left;
 }

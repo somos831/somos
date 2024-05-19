@@ -51,23 +51,15 @@ const ImgPreview:React.FC<ImgPreviewProps> = ({ fullwidth=false, fullheight=fals
         if (ctx !== null) {
             ctx?.clearRect(0, 0, realCanvasWidth, realCanvasHeight)
 
-            let img = new Image;
-            img.src = 'images/youthJobFair.png'
+            const img = new Image;
 
             const useLoadImage = !!img64Base && img64Base != ""
-
-            if (useLoadImage) {
-                img = new Image;
-                img.src = img64Base
-            }
 
             img.onload = () => {
                 setShowCancelBtn(useLoadImage)
 
                 const boxWidth = Math.floor(img.width)
                 const boxHeight = Math.floor(img.height)
-
-                console.log("boxWidth:", boxWidth, "boxHeight:",boxHeight)
 
                 const hRatio = realCanvasWidth / boxWidth
                 const vRatio = realCanvasHeight / boxHeight
@@ -82,6 +74,8 @@ const ImgPreview:React.FC<ImgPreviewProps> = ({ fullwidth=false, fullheight=fals
 
                 ctx?.drawImage(img, 0, 0, boxWidth, boxHeight, centerShift_x, centerShift_y, imgWidth, imgHeight)
             }
+
+            img.src = useLoadImage? img64Base : 'images/youthJobFair.png';
         }
 
     }, [containerWidth, containerHeight, containerRef, canvasRef, img64Base])
