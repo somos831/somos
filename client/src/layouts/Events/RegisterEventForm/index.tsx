@@ -383,6 +383,8 @@ export default function RegisterEventForm(): React.ReactElement {
                             methods.reset();
                             setOnlineEvent(false);
                             setWholeDayEvent(false);
+                            setImg64Base(undefined);
+                            document.getElementById("btn_upload_event_img").value = "";
                         }} />
                         <span className='non-mouse-event'>/</span>
                         <Button type="submit">Register Event</Button>
