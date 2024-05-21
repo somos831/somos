@@ -1,0 +1,66 @@
+.section {
+    width: 100%;
+    height: max-content;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 5% 90px 5%;
+    overflow-x: hidden;
+    position: relative;
+    background: #501D86;
+}
+
+.eventHeading {
+    margin-top: 6rem;
+    font-size: 2rem;
+    text-align: center;
+    color: white;
+}
+
+.hrLine {
+    margin-top: 1rem;
+    margin-bottom: 3rem;
+    background: white;
+    width: 90%;
+    max-width: 450px;
+}
+
+.whiteCardContainer {
+    background: white;
+    padding: 40px 30px 60px 10px;
+    border-radius: 10px;
+}
+
+/* Media Query for Tablets */
+@media screen and (min-width: 768px) and (max-width: 1200px) {
+    .eventHeading {
+        margin-top: 4rem;
+    }
+
+    .whiteCardContainer {
+        padding: 40px 20px 60px 30px;
+    }
+}
+
+/* Media Query fro Mobile */
+@media screen and (max-width: 768px) {
+    .eventHeading {
+        margin-top: 2rem;
+    }
+    .section {
+        background: transparent;
+        padding: 10px 5% 50px 5%;
+    }
+    .whiteCardContainer {
+        padding: 0px !important;
+    }
+    .eventHeading {
+        color: black;
+    }
+    
+    .hrLine {
+        background: black;
+        margin-bottom: 0px !important;
+    }
+}

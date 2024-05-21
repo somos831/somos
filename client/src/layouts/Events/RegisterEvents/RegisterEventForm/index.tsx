@@ -4,15 +4,15 @@ import * as yup from "yup";
 import { FormProvider, useForm } from 'react-hook-form'
 
 import { yupResolver } from '@hookform/resolvers/yup'
-import { EventsSchema } from "../../../schemas";
+import { EventsSchema } from "../../../../schemas";
 
-import TextFieldBase from "../../../components/Inputs/TextFieldBase";
-import CheckBox from '../../../components/Inputs/CheckBox';
-import Button from '../../../components/Inputs/Button';
-import ButtonText from '../../../components/Inputs/ButtonText';
-import InputFileSearch from '../../../components/Inputs/InputFileSearch';
+import TextFieldBase from "../../../../components/Inputs/TextFieldBase";
+import CheckBox from '../../../../components/Inputs/CheckBox';
+import Button from '../../../../components/Inputs/Button';
+import ButtonText from '../../../../components/Inputs/ButtonText';
+import InputFileSearch from '../../../../components/Inputs/InputFileSearch';
 
-import ImgPreview from '../../../components/ImgPreview';
+import ImgPreview from '../../../../components/ImgPreview';
 
 import EventFormTitle from './EventFormTitle';
 

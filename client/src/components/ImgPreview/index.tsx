@@ -75,7 +75,7 @@ const ImgPreview:React.FC<ImgPreviewProps> = ({ fullwidth=false, fullheight=fals
                 ctx?.drawImage(img, 0, 0, boxWidth, boxHeight, centerShift_x, centerShift_y, imgWidth, imgHeight)
             }
 
-            img.src = useLoadImage? img64Base : 'images/youthJobFair.png';
+            img.src = useLoadImage? img64Base : '/images/youthJobFair.png';
         }
 
     }, [containerWidth, containerHeight, containerRef, canvasRef, img64Base])

@@ -2,7 +2,7 @@ import React from "react"
 
 import styles from "./Events.module.css";
 
-import Banner from '../../components/Banner'
+import Banner from '../../../components/Banner'
 
 import RegisterEventForm from "./RegisterEventForm";
 
@@ -11,7 +11,7 @@ export default function Events(): React.ReactElement {
 
     return (
         <section>
-            <Banner title="Events" background='images/banners/somos_about_page.jpg' />
+            <Banner title="Events" background='/images/banners/somos_about_page.jpg' />
 
             <article className={styles.articleContainer}>
                 <section className={styles.header}>
