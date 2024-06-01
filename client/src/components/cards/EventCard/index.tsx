@@ -4,7 +4,7 @@ import useResponsive from '../../../hooks/useResponsive';
 
 import { FaMapMarkerAlt } from "react-icons/fa";
 
-const EventCard = ({event}) => {
+const EventCard = ({ event, hidebtnreadmore, btnColor="501D86" }) => {
 
     const { isDesktopOrLaptop, isTablet, isTabletOrMobile, isMobile } = useResponsive()
 
@@ -13,34 +13,43 @@ const EventCard = ({event}) => {
             backgroundImage: `url("${event.img}")`,
             ...(isTabletOrMobile && {
                 gridColumn: isTablet? 'span 4' : 'span 12',
-                backgroundSize: 'contain'
+                backgroundSize: 'contain',
+                ...(isTablet && {
+                    backgroundPositionY: 'calc(50% - 60px)',
+                }),
             }),
             ...(isMobile && {
-                height: '300px'
+                height: '200px'
             })
         }),
     }
 
     const cardContentStyle = {
         ...(event.img && {
-            gridColumn: isDesktopOrLaptop? 'span 7' : 'span 8',
+            gridColumn: isDesktopOrLaptop? 'span 9' : 'span 8',
         }),
         ...(!event.img && isTablet && {
             gridColumn: 'span 12',
         }),
         ...(isMobile && {
             gridColumn: 'span 12',
-            padding: '20px 0px 0px 0px',
+            padding: '20px 0px 20px 0px',
+        })
+    }
+
+    const dateStringP = {
+        ...(isMobile && {
+            display: 'inline',
         })
     }
 
     return (
         <article className={styles.eventContainerCard}>
-            {event.img && isTabletOrMobile && (
+            {event.img && (
                 <section style={cardImgStyle} className={styles.eventImageCard}>
                 </section>
             )}
-            { isDesktopOrLaptop && (
+            { isDesktopOrLaptop && !event.img && (
                 <section className={styles.eventDateCard}>
                     <div className={styles.eventNoImageCardContainer}>
                         <h6 className={styles.title}>{event.month} {event.day}</h6>
@@ -59,16 +68,9 @@ const EventCard = ({event}) => {
                 </section>
             )}
             <section style={cardContentStyle} className={styles.eventContentCard}>
-                {isTablet && (
-                    <p className={styles.dateStr}>
-                        <span>{event.month} {event.day}</span> || <span>{event.time}</span>
-                    </p>
-                )}
-                {isMobile && (
-                    <div>
-                        <p style={{ fontWeight: 300 }}>{event.month}, {event.day} @ {event.time}</p>
-                    </div>
-                )}
+                <p style={dateStringP} className={styles.dateStr}>
+                    <span className={styles.dateInfo}>{event.month} {event.day}</span> <span>@ {event.time}</span>
+                </p>
                 <div className={styles.header}>
                     <h6 className={styles.title}>{event.title}</h6>
                     <span style={{ fontWeight: 700 }} >||</span>
@@ -79,22 +81,25 @@ const EventCard = ({event}) => {
                 ):(
                     <p className={styles.address}>{!isMobile && (<span><FaMapMarkerAlt /></span>)}{event.address}</p>
                 )}
+                {event.categories && (<p className={styles.eventCategoryContainer}>
+                    <span className={styles.eventCategoryTitle}>Event Categories:</span>
+                    <span className={styles.eventCategoryTag}>{event.categories.map((category:string, index:number) => {
+                        return `${index>0? ', ':''}${category}`
+                    })}</span>
+                </p>)}
                 <p className={styles.description}>
                     {event.description}
                 </p>
                 {event.extraDetailsLink && (
                     <a className={styles.extraDetailsStr} href={event.extraDetailsLink}>{event.extraDetailsText? event.extraDetailsText : event.extraDetailsLink}</a>
                 )}
-
-                <div className={styles.linkContainer}>
-                    {event.btnText && (<a className={styles.linkBtn} href={event.link}>{event.btnText}</a>)}
-                    <span className={styles.costInfo}>{event.cost}</span>
-                </div>
+                {!hidebtnreadmore && (
+                    <div className={styles.linkContainer}>
+                        {event.btnText && (<a style={{ background: `#${btnColor}` }}  className={styles.linkBtn} href={event.link}>{event.btnText}</a>)}
+                        <span className={styles.costInfo}>{event.cost}</span>
+                    </div>
+                )}
             </section>
-            {event.img && isDesktopOrLaptop && (
-                <section style={cardImgStyle} className={styles.eventImageCard}>
-                </section>
-            )}
         </article>
     )
 }

@@ -6,6 +6,8 @@ import EventCard from '../../../../components/cards/EventCard'
 
 import ResponsivePagination from 'react-responsive-pagination';
 
+import useResponsive from '../../../../hooks/useResponsive';
+
 const event1 = {
     "title": "Hike at Toro Park",
     "description": "Join us at Toro Park! Whether you're an experienced hiker or just looking for a relaxed walk, this easy hike promises fresh air, scenic views, and great company.",
@@ -56,6 +58,8 @@ const ITEM_PER_PAGE = 4
 
 const PastEvents = () => {
 
+    const { isMobile } = useResponsive()
+
     const totalPages = React.useMemo<number>(() => Math.ceil(events.length / ITEM_PER_PAGE), [events, events.length]);
     const [currentPage, setCurrentPage] = React.useState<number>(1);
 
@@ -70,15 +74,19 @@ const PastEvents = () => {
 
     function handlePageChange(page:number) { setCurrentPage(page); }
     
-    
+    const hrStyleBottom = {
+        ...(isMobile && {
+          marginBottom: '20px'
+        })
+    }
 
     return (
         <div className={styles.section}>
             <h2 className={styles.eventHeading}>Past Events</h2>
-            <hr className={styles.hrLine} />
+            <hr style={hrStyleBottom} className={styles.hrLine} />
 
             <div className={styles.whiteCardContainer}>
-                {pageEvents.map((event, index) => (<EventCard key={`${index}_ue`} event={event} />))}
+                {pageEvents.map((event, index) => (<EventCard key={`${index}_ue`} event={event} hidebtnreadmore />))}
 
                 <ResponsivePagination
                     total={totalPages}

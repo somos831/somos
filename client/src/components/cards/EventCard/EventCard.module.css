@@ -2,6 +2,7 @@
     background: transparent;
 
     width: 100%;
+    min-height: 264px;
 
     display: grid;
     grid-template-columns: repeat(12, 1fr);
@@ -32,8 +33,8 @@
     display: flex; 
     flex-direction: column; 
     justify-content: flex-start;
-     align-items: center; 
-     padding: 20px;
+    align-items: center; 
+    padding: 20px;
 }
 
 .eventContentCard {
@@ -53,11 +54,10 @@
 }
 
 .dateStr {
-    font-weight: 1.2rem;
     width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 20px;
+    gap: 12px;
     margin-bottom: 5px;
 }
 
@@ -97,7 +97,7 @@
 
 .providerStr {
     font-weight: 600;
-    font-size: 1.2rem;
+    font-size: 1rem;
     text-align: start;
     flex-grow: 1;
 }
@@ -144,7 +144,7 @@
     text-decoration: none;
     font-weight: 700;
     color: white;
-    background: #501D86;
+    background: #DF9402;
     padding: 10px 20px;
     border-radius: 5px;
     cursor: pointer;
@@ -152,4 +152,40 @@
 
 .costInfo {
     font-size: 1.2rem;
+}
+
+.dateInfo {
+    color: #676767;
+    font-weight: bold;
+}
+
+.eventCategoryContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    margin-top: 5px;
+}
+
+.eventCategoryTitle {
+    font-size: .9rem;
+    font-weight: bold;
+    margin-right: 6px;
+}
+
+.eventCategoryTag {
+    font-size: .9rem;
+}
+
+/* Media Query for Tablets */
+@media screen and (max-width: 1200px) {
+    .address {
+        display: inline;
+    }
+}
+
+@media screen and (min-width: 1200px) {
+    .eventContainerCard {
+        margin-bottom: 60px;
+    }
 }

@@ -21,11 +21,13 @@ interface TextFieldBaseProps {
     fullwidth?: boolean;
     values?: KeyValue[];
     disabled?: boolean;
+    defaultvalue?: string;
+    minDate?: Date
 }
 
-const TextFieldBase: React.FC<TextFieldBaseProps> = ({ title, placeholder, id, values, disabled=false, fullwidth = false, type="text" }) => {
+const TextFieldBase: React.FC<TextFieldBaseProps> = ({ title, placeholder, id, values, disabled=false, type="text", defaultvalue="", minDate }) => {
 
-    const { register, setValue, watch, formState: { errors } } = useFormContext() 
+    const { register, setValue, watch, formState: { errors }, trigger } = useFormContext() 
 
     // eslint-disable-next-line react-hooks/exhaustive-deps
     const isErr = React.useMemo(() => !!errors[id], [ errors, errors[id], id ])
@@ -48,17 +50,37 @@ const TextFieldBase: React.FC<TextFieldBaseProps> = ({ title, placeholder, id, v
 
     React.useEffect(() => {
         const subscription = watch((value) => {
-            if (value)
-            setFieldValue(value[id])      
+            if (value) {
+                setFieldValue(value[id])
+                
+            }      
         })
         return () => subscription.unsubscribe()
-    }, [watch, id])
+    }, [watch, id, setFieldValue])
+
+
+    React.useEffect(() => {
+        if (type === "date" && defaultvalue) {
+            setFieldValue(defaultvalue)
+        }
+    }, [])
+
+    React.useEffect(() => {
+        if (disabled) {
+            setFieldValue("")
+            
+            if (type == "date") setValue(id, null, { shouldValidate: false })
+            else setValue(id, "", { shouldValidate: false })
+
+            trigger(id)
+        }
+    }, [disabled, setFieldValue, setValue, id, trigger])
 
     const InputElement = React.useMemo(():React.ReactNode => {
 
         switch(type) {
             case "date":
-                return (<InputDate value={fieldValue} disabled={disabled} id={id} placeholder={placeholder} setValue={setValue} error={isErr} />)
+                return (<InputDate value={fieldValue} disabled={disabled} id={id} placeholder={placeholder} setValue={setValue} error={isErr} minDate={minDate} />)
             case "time":
                 return (<InputTime value={fieldValue} disabled={disabled} id={id} placeholder={placeholder} setValue={setValue} error={isErr} />)
             case "textarea":

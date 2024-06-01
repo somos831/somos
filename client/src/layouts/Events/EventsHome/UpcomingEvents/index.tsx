@@ -4,6 +4,8 @@ import EventCard from '../../../../components/cards/EventCard'
 
 import ResponsivePagination from 'react-responsive-pagination';
 
+import useResponsive from '../../../../hooks/useResponsive';
+
 import 'react-responsive-pagination/themes/classic.css';
 import React from 'react';
 
@@ -72,6 +74,8 @@ const ITEM_PER_PAGE = 4
 
 const UpcomingEvents = () => {
 
+  const { isMobile } = useResponsive()
+
   const totalPages = React.useMemo<number>(() => Math.ceil(events.length / ITEM_PER_PAGE), [events, events.length]);
   const [currentPage, setCurrentPage] = React.useState<number>(1);
 
@@ -90,13 +94,18 @@ const UpcomingEvents = () => {
     // ... do something with `page`
   }
 
+  const hrStyleBottom = {
+    ...(isMobile && {
+      marginBottom: '20px'
+    })
+  }
 
   return (
     <div className={styles.section}>
         <h2 className={styles.eventHeading}>Upcoming Events</h2>
-        <hr className={styles.hrLine} />
+        <hr style={hrStyleBottom} className={styles.hrLine} />
 
-        {pageEvents.map((event, index) => (<EventCard key={`${index}_ue`} event={event} />))}
+        {pageEvents.map((event, index) => (<EventCard hidebtnreadmore={false} key={`${index}_ue`} event={event} />))}
 
         <ResponsivePagination
           total={totalPages}
