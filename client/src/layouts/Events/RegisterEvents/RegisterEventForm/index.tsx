@@ -308,6 +308,7 @@ const getYesterdayDate:date = () => {
 export default function RegisterEventForm(): React.ReactElement {
 
     const [img64Base, setImg64Base] = React.useState<string | undefined>(undefined)
+    const [showImgError, setShowImgError] = React.useState<boolean>(false)
     //const [inputFileRef, setInputFileRef] = React.useState<React.RefObject<HTMLInputElement> | null>(null)
 
     const [wholeDayEvent, setWholeDayEvent] = useState(false)
@@ -340,7 +341,7 @@ export default function RegisterEventForm(): React.ReactElement {
     return (
         <article className={styles.formContainer}>
             <FormProvider {...methods}>
-                <form className={styles.eventForm} onSubmit={methods.handleSubmit(onSubmit)}>
+                <form className={styles.eventForm} onSubmit={methods.handleSubmit(onSubmit, () => setShowImgError(true))}>
                     <div className={styles.eventDetailsContainer}>
                         <EventFormTitle title="Event Details" />
                         <TextFieldBase id="title" title='Event title*' placeholder="Event title" fullwidth={true} />
@@ -374,7 +375,7 @@ export default function RegisterEventForm(): React.ReactElement {
                     </div>
                     <div className={styles.providerDetailsContainer}> 
                         <EventFormTitle title="Event Information" />
-                        <ImgPreview fullwidth height={300} img64Base={img64Base} onCancelImg={() => { setImg64Base(undefined); document.getElementById("btn_upload_event_img").value = ""; }} />
+                        <ImgPreview fullwidth height={300} img64Base={img64Base} showErr={showImgError} onCancelImg={() => { setImg64Base(undefined); document.getElementById("btn_upload_event_img").value = ""; }} />
                         <div style={{ display: 'flex', justifyContent: 'flex-end', marginTop: '20px' }} >
                             <InputFileSearch id="btn_upload_event_img" handleFileBrowser={(fr, file) => {
                                 setImg64Base(fr.result?.toString())
@@ -407,6 +408,7 @@ export default function RegisterEventForm(): React.ReactElement {
                             setOnlineEvent(false);
                             setWholeDayEvent(false);
                             setImg64Base(undefined);
+                            setShowImgError(false)
                             document.getElementById("btn_upload_event_img").value = "";
                         }} />
                         <span className='non-mouse-event'>/</span>
