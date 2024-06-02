@@ -337,10 +337,8 @@ export default function RegisterEventForm(): React.ReactElement {
         const location = {
             name: data.location,
             address: `${data.street}, ${data.city}, ${data.state}, ${data.zipcode}`,
-            url: data.locationurl
+            url: data.locationurl,
         }
-
-        
 
         const event = {
             title: data.title,
