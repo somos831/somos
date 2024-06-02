@@ -1,9 +1,20 @@
+import React from 'react'
+
 import Banner from "../../../components/Banner"
 
 import UpcomingEvents from "./UpcomingEvents"
 import PastEvents from "./PastEvents"
 
-const index = () => {
+import useEvents from "../../../hooks/useEvents"
+
+const EventsHome = () => {
+
+  const { loadEvents, upcomingevents, pastevents } = useEvents()
+
+  React.useEffect(() => {
+    loadEvents()
+  }, [])
+
   return (
     <div>
       <Banner 
@@ -20,10 +31,10 @@ const index = () => {
         decoration
       />
 
-      <UpcomingEvents />
-      <PastEvents />
+      <UpcomingEvents events={upcomingevents} />
+      <PastEvents events={pastevents} />
     </div>
   )
 }
 
-export default index
+export default EventsHome

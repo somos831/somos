@@ -19,293 +19,299 @@ import EventFormTitle from './EventFormTitle';
 import styles from "./RegisterEventForm.module.css";
 import Swal from 'sweetalert2';
 
-type FormFields = yup.InferType<typeof EventsSchema>
+import useEvents from '../../../../hooks/useEvents';
 
-const categories = [
-    { 
-        id: "1",
-        title: 'Sports'
-    },
-    { 
-        id: "2",
-        title: 'Conferences'
-    },
-    { 
-        id: "3",
-        title: 'Expos'
-    },
-    { 
-        id: "4",
-        title: 'Community'
-    }
-]
+type FormFields = yup.InferType<typeof EventsSchema>
 
 const STATE_SELECT = [
     {
-        title: "AL",
+        name: "AL",
         id: "AL"
     },
     {
-        title: "AK",
+        name: "AK",
         id: "AK"
     },
     {
-        title: "AS",
+        name: "AS",
         id: "AS"
     },
     {
-        title: "AZ",
+        name: "AZ",
         id: "AZ"
     },
     {
-        title: "AR",
+        name: "AR",
         id: "AR"
     },
     {
-        title: "CA",
+        name: "CA",
         id: "CA"
     },
     {
-        title: "CO",
+        name: "CO",
         id: "CO"
     },
     {
-        title: "CT",
+        name: "CT",
         id: "CT"
     },
     {
-        title: "DE",
+        name: "DE",
         id: "DE"
     },
     {
-        title: "DC",
+        name: "DC",
         id: "DC"
     },
     {
-        title: "FM",
+        name: "FM",
         id: "FM"
     },
     {
-        title: "FL",
+        name: "FL",
         id: "FL"
     },
     {
-        title: "Ge",
+        name: "Ge",
         id: "GA"
     },
     {
-        title: "GU",
+        name: "GU",
         id: "GU"
     },
     {
-        title: "HI",
+        name: "HI",
         id: "HI"
     },
     {
-        title: "ID",
+        name: "ID",
         id: "ID"
     },
     {
-        title: "IL",
+        name: "IL",
         id: "IL"
     },
     {
-        title: "IN",
+        name: "IN",
         id: "IN"
     },
     {
-        title: "IA",
+        name: "IA",
         id: "IA"
     },
     {
-        title: "KS",
+        name: "KS",
         id: "KS"
     },
     {
-        title: "KY",
+        name: "KY",
         id: "KY"
     },
     {
-        title: "LA",
+        name: "LA",
         id: "LA"
     },
     {
-        title: "ME",
+        name: "ME",
         id: "ME"
     },
     {
-        title: "MH",
+        name: "MH",
         id: "MH"
     },
     {
-        title: "MD",
+        name: "MD",
         id: "MD"
     },
     {
-        title: "MA",
+        name: "MA",
         id: "MA"
     },
     {
-        title: "MI",
+        name: "MI",
         id: "MI"
     },
     {
-        title: "MN",
+        name: "MN",
         id: "MN"
     },
     {
-        title: "MS",
+        name: "MS",
         id: "MS"
     },
     {
-        title: "MO",
+        name: "MO",
         id: "MO"
     },
     {
-        title: "MT",
+        name: "MT",
         id: "MT"
     },
     {
-        title: "NE",
+        name: "NE",
         id: "NE"
     },
     {
-        title: "NV",
+        name: "NV",
         id: "NV"
     },
     {
-        title: "NH",
+        name: "NH",
         id: "NH"
     },
     {
-        title: "NJ",
+        name: "NJ",
         id: "NJ"
     },
     {
-        title: "NM",
+        name: "NM",
         id: "NM"
     },
     {
-        title: "NY",
+        name: "NY",
         id: "NY"
     },
     {
-        title: "NC",
+        name: "NC",
         id: "NC"
     },
     {
-        title: "ND",
+        name: "ND",
         id: "ND"
     },
     {
-        title: "MP",
+        name: "MP",
         id: "MP"
     },
     {
-        title: "OH",
+        name: "OH",
         id: "OH"
     },
     {
-        title: "OK",
+        name: "OK",
         id: "OK"
     },
     {
-        title: "OR",
+        name: "OR",
         id: "OR"
     },
     {
-        title: "PW",
+        name: "PW",
         id: "PW"
     },
     {
-        title: "PA",
+        name: "PA",
         id: "PA"
     },
     {
-        title: "PR",
+        name: "PR",
         id: "PR"
     },
     {
-        title: "RI",
+        name: "RI",
         id: "RI"
     },
     {
-        title: "SC",
+        name: "SC",
         id: "SC"
     },
     {
-        title: "SD",
+        name: "SD",
         id: "SD"
     },
     {
-        title: "TN",
+        name: "TN",
         id: "TN"
     },
     {
-        title: "TX",
+        name: "TX",
         id: "TX"
     },
     {
-        title: "UT",
+        name: "UT",
         id: "UT"
     },
     {
-        title: "VT",
+        name: "VT",
         id: "VT"
     },
     {
-        title: "VI",
+        name: "VI",
         id: "VI"
     },
     {
-        title: "VA",
+        name: "VA",
         id: "VA"
     },
     {
-        title: "WA",
+        name: "WA",
         id: "WA"
     },
     {
-        title: "WV",
+        name: "WV",
         id: "WV"
     },
     {
-        title: "WI",
+        name: "WI",
         id: "WI"
     },
     {
-        title: "WY",
+        name: "WY",
         id: "WY"
     }
 ]
 
 const initValues:FormFields = { 
     title: '',
-    category: '',
+    category: '1',
     startdate: new Date(),
     enddate: null,
     starttime: '',
     endtime: '',
     description: '',
     provider: '',
-    url: '',
+    location_details : '',
     location: '',
     street: '',
     city: '',
-    state: '',
+    state: 'CA',
     zipcode: '',
     addinfo: '',
     addurl: '',
-    price: ''
+    price: '',
+    locationurl: ''
 }
 
-const getYesterdayDate:date = () => {
-    const date = new Date()
-    date.setDate(date.getDate() - 1);
-    return date
+function isNumeric(str) {
+    if (typeof str != "string") return false // we only process strings!  
+    return !isNaN(str) && // use type coercion to parse the _entirety_ of the string (`parseFloat` alone does not do this)...
+           !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+}
+
+function prepareDateEventInfo(date:Date | null, time:string | undefined) {
+    let info = ""
+
+    if (date && !isNaN(date)) {
+        const year = date.getFullYear();
+        const month = String(date.getMonth() + 1).padStart(2, '0');
+        const day = String(date.getDate()).padStart(2, '0');
+
+        info = `${year}-${month}-${day}`
+    }
+
+    if (time && time != "") {
+        const [hour, min] = time.split(':')
+
+        info += ` ${hour}:${min}`
+    }
+
+    return info
 }
 
 export default function RegisterEventForm(): React.ReactElement {
+
+    const { categories } =useEvents()
 
     const [img64Base, setImg64Base] = React.useState<string | undefined>(undefined)
     const [showImgError, setShowImgError] = React.useState<boolean>(false)
@@ -322,11 +328,56 @@ export default function RegisterEventForm(): React.ReactElement {
     });
 
     const onSubmit = (data:FormFields) => {
+
+        if (!img64Base) {
+            setShowImgError(true)
+            return; // EXIT IF WE DON'T HAVE AN IMAGE
+        } 
+
+        const location = {
+            name: data.location,
+            address: `${data.street}, ${data.city}, ${data.state}, ${data.zipcode}`,
+            url: data.locationurl
+        }
+
+        
+
+        const event = {
+            title: data.title,
+            description: data.description,
+            start_date: prepareDateEventInfo(data.startdate, wholeDayEvent? "" : data.starttime),
+            end_date: wholeDayEvent? "" : prepareDateEventInfo(data.enddate, data.endtime),
+            //#TODO: ADD location_details:
+            price: isNumeric(data.price)? parseFloat(data.price) : 0,
+            additional_info: data.addinfo,
+            additional_url: data.addurl,
+            //#TODO: ADD contact_info
+        }
+
+        const organization = {
+            name: data.provider
+        } 
+
+        const category = {
+            id: data.category // TODO: CHECK If I can send Category ID
+        }
+
         Swal.fire({
             title: "We have received your event!",
             text: "After our team reviews the information, we'll make sure your event gets the visibility it deserves.",
             icon: "success"
         });
+
+        // TODO: ADD UPLOAD IMAGE
+
+        console.log({
+            location,
+            event,
+            organization,
+            category
+        })
+
+        setShowImgError(false)
     }
     
     const handleWholeDayEvent = () => setWholeDayEvent(!wholeDayEvent)
@@ -382,10 +433,11 @@ export default function RegisterEventForm(): React.ReactElement {
                                 console.log(file)
                             }} />
                         </div>
-                        <TextFieldBase id="url" title='Event url' placeholder="Event url" fullwidth={true} />
                         <TextFieldBase id="category" title='Event category*' placeholder="Event category" fullwidth={true} type="select" values={categories} />
                         <EventFormTitle title="Event Location" />
                         <TextFieldBase id="location" title='Location Name*' placeholder="Location name" fullwidth={true} />
+                        <TextFieldBase id="locationurl" title='Location URL' placeholder="Location url" fullwidth={true} />
+                        <TextFieldBase id="location_details " title='Location Details' placeholder="Location details" fullwidth={true} type="textarea" />
                         <div style={{ width: '100%', paddingBottom: '10px', display: 'flex', justifyContent: 'flex-end' }}>
                             <CheckBox title="Online Event" checked={onlineEvent} onClick={handleOnlineEvent} />
                         </div>

@@ -22,14 +22,22 @@ yup.addMethod(yup.string, 'compareStartTime', function(startime, errMsg) {
     })
 })
 
+yup.addMethod(yup.string, 'throwErrEndTime', function() {
+    return this.test(`throw-err-end-time`, function(value) {
+        const { path, createError } = this;
+        
+        if (!value || value.trim() == "") return true
+
+        return createError({ path, message: "Start time is required" })
+    })
+})
+
 yup.addMethod(yup.date, 'fixNullDate', function() {
     return this.test(`fix-null-date`, function(value) {
         
         const isValid = value instanceof Date && !isNaN(value.getTime())
 
         if (!isValid) value = null
-
-        console.log('isvalid?', isValid, value)
 
         return true
     })
@@ -40,16 +48,21 @@ export const EventsSchema = yup.object({
     category: yup.string().required('Event category is required'),
     startdate: yup.date().default(new Date()).typeError("Please enter a valid start date").required('Event start date is required'),
     starttime: yup.string(),
-    endtime: yup.string().when('starttime', (starttime, schema) => {
+    endtime: yup.string().when(['starttime', 'startdate', 'enddate'], ([starttime, startdate, enddate], schema) => {
 
-        if (starttime[0]) return schema.compareStartTime(starttime[0], "Event end time must be later than")
+        const endDateIsValid = enddate instanceof Date && !isNaN(enddate.getTime())
 
+        if (endDateIsValid && startdate.getTime() < enddate.getTime()) return schema
+
+        if (starttime) return schema.compareStartTime(starttime, "Event end time must be later than")
+        
         return schema
     }),
     description: yup.string(),
     provider: yup.string().required('Event provider is required'),
-    url: yup.string(),
+    location_details: yup.string(),
     location: yup.string().required('Event location is required'),
+    locationurl: yup.string(),
     street: yup.string(),
     city: yup.string(),
     state: yup.string(),

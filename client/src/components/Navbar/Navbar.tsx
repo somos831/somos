@@ -9,7 +9,11 @@ import { Link } from "react-router-dom";
 
 import { FaAngleRight, FaAngleDown } from "react-icons/fa";
 
+import useEvents from "../../hooks/useEvents";
+
 export default function Navbar() {
+  const { loadInformation: loadEventsInformation } = useEvents()
+  
   const [isOpen, setIsOpen] = React.useState(false);
 
   const [isEventSubMenuOpen, setIsEventSubMenuOpen] = React.useState(false);
@@ -17,6 +21,10 @@ export default function Navbar() {
   const showNavbar = () => {
     setIsOpen((prevOpen) => !prevOpen);
   };
+
+  React.useEffect(() => {
+    loadEventsInformation()
+  }, [])
 
   return (
     <header>
