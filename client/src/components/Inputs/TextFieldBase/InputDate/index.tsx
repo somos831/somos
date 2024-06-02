@@ -1,3 +1,5 @@
+import React from 'react'
+
 import DatePicker, { DateObject } from "react-multi-date-picker";
 
 import styles from './InputDate.module.css'
@@ -68,14 +70,15 @@ interface InputDateType {
   //register: UseFormRegister<FieldValues>;
   setValue: UseFormSetValue<FieldValues>;
   disabled?: boolean;
+  minDate?: Date;
 }
 
-const InputDate:React.FC<InputDateType> = ({ id, placeholder, value, setValue, error=false, disabled=false }) => {
-  
+const InputDate:React.FC<InputDateType> = ({ id, placeholder, value, setValue, error=false, disabled=false, minDate }) => {
+
   return (
     <DateContainer className={`${styles.dateContainer} full-width ${disabled && 'disabled'} ${error && 'input-err'}`}>
-        <DatePicker value={value || ""} format="MM/DD/YYYY" placeholder={placeholder} onChange={(date:DateObject) => { 
-          setValue(id, date?.isValid ? date : "", { shouldValidate: true }); 
+        <DatePicker value={value || null} disabled={disabled} readOnly={disabled} minDate={minDate} format="MM/DD/YYYY" placeholder={placeholder} onChange={(date:DateObject) => { 
+          setValue(id, date?.isValid ? date : null, { shouldValidate: true }); 
         }} />
     </DateContainer>
   )

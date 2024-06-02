@@ -25,3 +25,14 @@
     transform: translate(25%, -50%);
     cursor: pointer;
 }
+
+.errField {
+    font-family: "Poppins", sans-serif !important;
+    font-size: 1rem;
+    font-weight: 400;
+    font-style: italic;
+
+    color: rgb(142, 49, 49);
+
+    margin-top: 5px;
+}

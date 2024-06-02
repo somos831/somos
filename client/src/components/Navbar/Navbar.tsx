@@ -7,12 +7,24 @@ import somosLogo from "../../assets/somoLogos//somosLogo.png";
 import Drawer from "./Drawer";
 import { Link } from "react-router-dom";
 
+import { FaAngleRight, FaAngleDown } from "react-icons/fa";
+
+import useEvents from "../../hooks/useEvents";
+
 export default function Navbar() {
+  const { loadInformation: loadEventsInformation } = useEvents()
+  
   const [isOpen, setIsOpen] = React.useState(false);
+
+  const [isEventSubMenuOpen, setIsEventSubMenuOpen] = React.useState(false);
 
   const showNavbar = () => {
     setIsOpen((prevOpen) => !prevOpen);
   };
+
+  React.useEffect(() => {
+    loadEventsInformation()
+  }, [])
 
   return (
     <header>
@@ -28,9 +40,21 @@ export default function Navbar() {
         <Link to="/" reloadDocument>
           Home
         </Link>
-        <Link to="/events" reloadDocument>
-          Events
-        </Link>
+        <span>
+          <Link className={`${styles.mainSubMenuItemLink}`} to="/events" reloadDocument> Events </Link>
+          <ul className={styles.desktopNavLinks}>
+              <li>
+                <Link to="/events" reloadDocument>
+                  Events
+                </Link>
+              </li>
+              <li>
+                <Link to="/events/register" reloadDocument>
+                  Register Event
+                </Link>
+              </li>
+            </ul>
+        </span>
         <Link to="/about" reloadDocument>
           About
         </Link>
@@ -54,9 +78,23 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <Link to="/events" reloadDocument>
-                Events
-              </Link>
+              <p className={`${styles.mainSubMenuSubContent}`} onClick={() => setIsEventSubMenuOpen(!isEventSubMenuOpen)}>
+                <span>Events</span> {isEventSubMenuOpen? (<FaAngleDown />) : (<FaAngleRight />) }
+              </p>
+              {isEventSubMenuOpen && (
+                <ul className={styles.containerSubMenu}>
+                  <li>
+                    <Link to="/events" reloadDocument>
+                      Events List
+                    </Link>
+                  </li>
+                  <li>
+                    <Link to="/events/register" reloadDocument>
+                      Register Event
+                    </Link>
+                  </li>
+                </ul>
+              )}
             </li>
             <li>
               <Link to="/about" reloadDocument>

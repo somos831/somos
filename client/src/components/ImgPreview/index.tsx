@@ -12,10 +12,11 @@ interface ImgPreviewProps {
     height?: number;
     fullheight?: boolean;
     img64Base?: string | undefined;
-    onCancelImg?: cancelImageType
+    showErr?: boolean;
+    onCancelImg?: cancelImageType;
 }
 
-const ImgPreview:React.FC<ImgPreviewProps> = ({ fullwidth=false, fullheight=false, width, height, img64Base, onCancelImg }) => {
+const ImgPreview:React.FC<ImgPreviewProps> = ({ fullwidth=false, fullheight=false, width, height, img64Base, showErr=false, onCancelImg }) => {
 
     const { width: containerWidth, height: containerHeight, ref: containerRef } = useResizeDetector<HTMLDivElement>();
     const canvasRef  = React.useRef<HTMLCanvasElement>(null)
@@ -75,17 +76,18 @@ const ImgPreview:React.FC<ImgPreviewProps> = ({ fullwidth=false, fullheight=fals
                 ctx?.drawImage(img, 0, 0, boxWidth, boxHeight, centerShift_x, centerShift_y, imgWidth, imgHeight)
             }
 
-            img.src = useLoadImage? img64Base : 'images/youthJobFair.png';
+            img.src = useLoadImage? img64Base : '/logos/somosLogo.png';
         }
 
     }, [containerWidth, containerHeight, containerRef, canvasRef, img64Base])
         
-    return (
-        <div ref={containerRef} className={styles.imgPreviewContainer} style={{ width: componentWidth, height: componentHeight }}>
+    return (<>
+        <div ref={containerRef} className={styles.imgPreviewContainer} style={{ width: componentWidth, height: componentHeight, ...(showErr && !img64Base && { border: '1px solid rgb(142, 49, 49)' }) }}>
             <canvas ref={canvasRef} />
             {showCancelBtn && ( <button type="button" className={styles.btnCancelImgPreview} onClick={onCancelImg}>x</button> )}
         </div>
-    )
+        {showErr && !img64Base && (<p className={styles.errField} >Event Image is required</p>)}
+    </>)
 }
 
 export default ImgPreview

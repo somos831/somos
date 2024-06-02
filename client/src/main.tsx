@@ -5,7 +5,9 @@ import "./index.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "./layouts/HomePage/HomePage";
 import AboutUs from "./layouts/AboutUs";
-import Events from "./layouts/Events"
+
+import RegisterEvents from "./layouts/Events/RegisterEvents"
+import Events from "./layouts/Events/EventsHome"
 
 const router = createBrowserRouter([
   {
@@ -22,7 +24,16 @@ const router = createBrowserRouter([
       },
       {
         path: "/events",
-        element: <Events />,
+        children: [
+          {
+            path: '/events',
+            element: <Events />,
+          },
+          {
+            path: '/events/register',
+            element: <RegisterEvents />,
+          }
+        ]
       },
     ],
   },
