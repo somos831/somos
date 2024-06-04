@@ -11,17 +11,19 @@ const useEvents = () => {
 
     const { categories, events } = useSelector(state => state.events)
 
-    const loadCategories = async () => {
-        const { data } = await axiosClient.get('/categories')
-        dispatch(actionLoadCategoryEvents(data))
+    const loadCategories = () => {
+        axiosClient.get('/categories').then( function ({ data }) {
+            dispatch(actionLoadCategoryEvents(data))
+        })
     }
 
-    const loadEvents = async () => {
-        const { data } = await axiosClient.get('/events')
-        dispatch(actionLoadEvents(data))
+    const loadEvents = () => {
+        axiosClient.get('/events').then( function ({ data }) {
+            dispatch(actionLoadEvents(data))
+        })
     }
 
-    const loadInformation = async () => {
+    const loadInformation = () => {
         loadCategories()
         loadEvents()
     }

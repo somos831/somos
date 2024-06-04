@@ -14,15 +14,17 @@ const PastEvents = ({ events }) => {
 
     const { isMobile } = useResponsive()
 
-    const totalPages = React.useMemo<number>(() => Math.ceil(events.length / ITEM_PER_PAGE), [events, events.length]);
+    const totalPages = React.useMemo<number>(() => (events)? Math.ceil(events.length / ITEM_PER_PAGE) : 0, [events]);
     const [currentPage, setCurrentPage] = React.useState<number>(1);
 
     const pageEvents = React.useMemo(() => {
 
+        if (!events) return []
+
         const from = (currentPage - 1) * ITEM_PER_PAGE;
         const end = currentPage * ITEM_PER_PAGE;
 
-        return events.slice(from, end)
+        return  events.slice(from, end)
 
     }, [currentPage, events])
 
