@@ -45,7 +45,7 @@ const InputSelect:React.FC<InputSelectProps>  =  ({  values, id, register, err, 
         <div className={containerclassnames.join(" ")} style={{width: '100%'}}>
             <select disabled={disabled} className={inputclassnames.join(" ")} style={{width: '100%'}} {...register(id)}>
                 {
-                    values?.map((value, index) => (
+                    values && values instanceof Array && values?.map((value, index) => (
                         <option key={`select_${index}_${value.id}_${value.name}`} value={value.id}>{value.name}</option>
                     ))
                 }
