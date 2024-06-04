@@ -46,13 +46,17 @@ const UpcomingEvents = ({ events }) => {
         <h2 className={styles.eventHeading}>Upcoming Events</h2>
         <hr style={hrStyleBottom} className={styles.hrLine} />
 
-        {pageEvents.map((event, index) => (<EventCard hidebtnreadmore={false} key={`${index}_ue`} event={event} />))}
+        {events && events instanceof Array && events.length > 0 && (
+            <div className={styles.whiteCardContainer}>
+              {pageEvents.map((event, index) => (<EventCard hidebtnreadmore={false} key={`${index}_ue`} event={event} />))}
 
-        <ResponsivePagination
-          total={totalPages}
-          current={currentPage}
-          onPageChange={page => handlePageChange(page)}
-        />
+              <ResponsivePagination
+                total={totalPages}
+                current={currentPage}
+                onPageChange={page => handlePageChange(page)}
+              />
+            </div>
+        )}
     </div>
   )
 }

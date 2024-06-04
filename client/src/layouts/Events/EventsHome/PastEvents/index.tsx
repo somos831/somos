@@ -41,15 +41,17 @@ const PastEvents = ({ events }) => {
             <h2 className={styles.eventHeading}>Past Events</h2>
             <hr style={hrStyleBottom} className={styles.hrLine} />
 
-            <div className={styles.whiteCardContainer}>
-                {pageEvents.map((event, index) => (<EventCard key={`${index}_ue`} event={event} hidebtnreadmore />))}
+            {events && events instanceof Array && events.length > 0 && (
+                <div className={styles.whiteCardContainer}>
+                    {pageEvents.map((event, index) => (<EventCard key={`${index}_ue`} event={event} hidebtnreadmore />))}
 
-                <ResponsivePagination
-                    total={totalPages}
-                    current={currentPage}
-                    onPageChange={page => handlePageChange(page)}
-                />
-            </div>
+                    <ResponsivePagination
+                        total={totalPages}
+                        current={currentPage}
+                        onPageChange={page => handlePageChange(page)}
+                    />
+                </div>
+            )}
         </div>
     )
 }
