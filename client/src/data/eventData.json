@@ -2,9 +2,9 @@
   "event": [
     {
       "title": "🚀 Boost Your Linkedin Game: Skills Workshop 🚀",
-      "description": "Elevate your LinkedIn game and open doors to new career possibilities with SOMOS™ Central Coast Tech Association! Secure your spot today and transform your professional online presence! Join us after the workshop at XL Public House for a casual happy hour to continue networking in a relaxed atmosphere.",
-      "extraDetailsLink": "",
-      "extraDetailsText": "",
+      "description": "Elevate your LinkedIn game and open doors to new career possibilities with SOMOS™ Central Coast Tech Association! Secure your spot today and transform your professional online presence! Join us after the workshop at XL Public House for a casual happy hour to continue networking in a relaxed atmosphere. This event will be hosted in-person and virtually!",
+      "extraDetailsLink": "https://us02web.zoom.us/j/83693691299?pwd=7NGQaVPpIXnLDMbWMtaRZEma0jeteq.1",
+      "extraDetailsText": "Zoom Link",
       "img": "./images/linkedin_workshop.png",
       "imgAlt": "Flyer for Linkedin workshop hosted by somos",
       "month": "June",

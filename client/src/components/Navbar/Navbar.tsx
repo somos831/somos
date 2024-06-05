@@ -72,7 +72,11 @@ export default function Navbar() {
             >
               <FaInstagram aria-label="Instagram" />
             </a>
-            <a href="#" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://www.tiktok.com/@join.somos?_t=8jXca38wEZf&_r=1"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <FaTiktok aria-label="Tiktok" />
             </a>
           </div>
