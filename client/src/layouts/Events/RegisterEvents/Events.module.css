@@ -1,0 +1,30 @@
+/* HEADER CONTAINER */
+
+.articleContainer {
+    width: 100%;
+    padding: 100px 5%;
+    box-sizing: border-box;
+}
+
+.headerPage {
+    font-size: 2rem;
+}
+
+.subHeaderPage {
+    font-size: 1.25rem;
+}
+
+.header {
+    margin-bottom: 60px;
+}
+
+/*FORM CONTAINER*/
+@media screen and (max-width: 992px) {
+    .articleContainer {
+        padding: 50px 5%;
+    }
+
+    .header {
+        margin-bottom: 30px;
+    }
+}

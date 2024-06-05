@@ -6,6 +6,9 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import HomePage from "./layouts/HomePage/HomePage";
 import AboutUs from "./layouts/AboutUs";
 
+import RegisterEvents from "./layouts/Events/RegisterEvents"
+import Events from "./layouts/Events/EventsHome"
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -18,6 +21,19 @@ const router = createBrowserRouter([
       {
         path: "/about",
         element: <AboutUs />,
+      },
+      {
+        path: "/events",
+        children: [
+          {
+            path: '/events',
+            element: <Events />,
+          },
+          {
+            path: '/events/register',
+            element: <RegisterEvents />,
+          }
+        ]
       },
     ],
   },

@@ -47,3 +47,37 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+
+/* PAGINATION */
+.pagination .page-item a, .pagination .page-item:first-child span, .pagination .page-item:last-child span{
+  border-color: #DF9402 !important;
+  font-family: "Poppins", sans-serif;
+  color: black !important;
+  min-width: 35px;
+  width: 35px;
+  min-height: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pagination .page-item.active a{
+  background: #DF9402;
+  color: white !important;
+}
+
+.pagination .page-item:first-child a, .pagination .page-item:last-child a, .pagination .page-item:first-child span, .pagination .page-item:last-child span  {
+  border: 0px !important;
+  padding: 0px;
+}
+
+.pagination .page-item:first-child a span, .pagination .page-item:last-child a span, .pagination .page-item:first-child span, .pagination .page-item:last-child span {
+  font-size: 2rem;
+  line-height: 1rem;
+  padding: 0px;
+}
+
+.page-item:first-child span.page-link span, .pagination .page-item:last-child span.page-link span {
+  color: rgba(0, 0, 0, .5) !important;
+}
