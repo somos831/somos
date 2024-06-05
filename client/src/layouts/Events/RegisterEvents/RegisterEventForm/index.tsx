@@ -335,10 +335,10 @@ export default function RegisterEventForm(): React.ReactElement {
 
     const onSubmit = (data:FormFields) => {
 
-        if (!img64Base) {
-            setShowImgError(true)
-            return; // EXIT IF WE DON'T HAVE AN IMAGE
-        } 
+        // if (!img64Base) {
+        //     setShowImgError(true)
+        //     return; // EXIT IF WE DON'T HAVE AN IMAGE
+        // } 
 
         const location = {
             name: data.location,
@@ -392,11 +392,11 @@ export default function RegisterEventForm(): React.ReactElement {
             methods.reset({enddate: null, starttime: "", endtime: ""})
         }
     }, [wholeDayEvent, methods])
-
+//, () => setShowImgError(true) - ERROR ON SUBMIT
     return (
         <article className={styles.formContainer}>
             <FormProvider {...methods}>
-                <form className={styles.eventForm} onSubmit={methods.handleSubmit(onSubmit, () => setShowImgError(true))}>
+                <form className={styles.eventForm} onSubmit={methods.handleSubmit(onSubmit)}>
                     <div className={styles.eventDetailsContainer}>
                         <EventFormTitle title="Event Details" />
                         <TextFieldBase id="title" title='Event title*' placeholder="Event title" fullwidth={true} />
