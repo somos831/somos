@@ -7,7 +7,7 @@ import somosLogo from "../../assets/somoLogos//somosLogo.png";
 import Drawer from "./Drawer";
 import { Link } from "react-router-dom";
 
-import { FaAngleRight, FaAngleDown } from "react-icons/fa";
+// import { FaAngleRight, FaAngleDown } from "react-icons/fa";
 
 import useEvents from "../../hooks/useEvents";
 
@@ -16,7 +16,7 @@ export default function Navbar() {
 
   const [isOpen, setIsOpen] = React.useState(false);
 
-  const [isEventSubMenuOpen, setIsEventSubMenuOpen] = React.useState(false);
+  // const [isEventSubMenuOpen, setIsEventSubMenuOpen] = React.useState(false);
 
   const showNavbar = () => {
     setIsOpen((prevOpen) => !prevOpen);

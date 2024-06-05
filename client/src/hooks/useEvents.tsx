@@ -1,46 +1,53 @@
-import React from "react"
+//TODO: Lines below remove typescript error, remove once types are implemented
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 
-import { useSelector, useDispatch } from 'react-redux'
+import React from "react";
 
-import { actionLoadCategoryEvents, actionLoadEvents } from '../actions/eventActions'
+import { useSelector, useDispatch } from "react-redux";
 
-import axiosClient from '../utils/axiosClient'
+import {
+  actionLoadCategoryEvents,
+  actionLoadEvents,
+} from "../actions/eventActions";
+
+import axiosClient from "../utils/axiosClient";
 
 const useEvents = () => {
-    const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
-    const { categories, events } = useSelector(state => state.events)
+  const { categories, events } = useSelector((state) => state.events);
 
-    const loadCategories = () => {
-        axiosClient.get('/categories').then( function ({ data }) {
-            dispatch(actionLoadCategoryEvents(data))
-        })
-    }
+  const loadCategories = () => {
+    axiosClient.get("/categories").then(function ({ data }) {
+      dispatch(actionLoadCategoryEvents(data));
+    });
+  };
 
-    const loadEvents = () => {
-        axiosClient.get('/events').then( function ({ data }) {
-            dispatch(actionLoadEvents(data))
-        })
-    }
+  const loadEvents = () => {
+    axiosClient.get("/events").then(function ({ data }) {
+      dispatch(actionLoadEvents(data));
+    });
+  };
 
-    const loadInformation = () => {
-        loadCategories()
-        loadEvents()
-    }
+  const loadInformation = () => {
+    loadCategories();
+    loadEvents();
+  };
 
+  const upcomingevents = React.useMemo(() => events, [events]);
+  const pastevents = React.useMemo(() => events, [events]);
 
-    const upcomingevents = React.useMemo(() => events, [events])
-    const pastevents = React.useMemo(() => events, [events])
+  return {
+    categories,
+    events,
+    upcomingevents,
+    pastevents,
+    loadCategories,
+    loadInformation,
+    loadEvents,
+  };
+};
 
-    return {
-        categories,
-        events,
-        upcomingevents,
-        pastevents,
-        loadCategories,
-        loadInformation,
-        loadEvents,
-    }
-}
+export default useEvents;
 
-export default useEvents

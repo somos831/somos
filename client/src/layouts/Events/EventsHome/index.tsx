@@ -10,9 +10,7 @@ import eventData from "../../../data/eventData.json";
 import somosEvent from "../../../assets/images/somosEvent1.jpg";
 
 const EventsHome = () => {
-  const { loadEvents, upcomingevents, pastevents } = useEvents();
-
-  console.log(upcomingevents);
+  const { loadEvents } = useEvents();
 
   React.useEffect(() => {
     loadEvents();

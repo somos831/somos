@@ -1,59 +1,67 @@
-import React from 'react'
+//TODO: Lines below remove typescript error, remove once types are implemented
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-nocheck
 
-import styles from './PastEvents.module.css'
+import React from "react";
 
-import EventCard from '../../../../components/cards/EventCard'
+import styles from "./PastEvents.module.css";
 
-import ResponsivePagination from 'react-responsive-pagination';
+import EventCard from "../../../../components/cards/EventCard";
 
-import useResponsive from '../../../../hooks/useResponsive';
+import ResponsivePagination from "react-responsive-pagination";
 
-const ITEM_PER_PAGE = 4
+import useResponsive from "../../../../hooks/useResponsive";
+
+const ITEM_PER_PAGE = 4;
 
 const PastEvents = ({ events }) => {
+  const { isMobile } = useResponsive();
 
-    const { isMobile } = useResponsive()
+  const totalPages = React.useMemo<number>(
+    () => (events ? Math.ceil(events.length / ITEM_PER_PAGE) : 0),
+    [events],
+  );
+  const [currentPage, setCurrentPage] = React.useState<number>(1);
 
-    const totalPages = React.useMemo<number>(() => (events)? Math.ceil(events.length / ITEM_PER_PAGE) : 0, [events]);
-    const [currentPage, setCurrentPage] = React.useState<number>(1);
+  const pageEvents = React.useMemo(() => {
+    if (!events) return [];
 
-    const pageEvents = React.useMemo(() => {
+    const from = (currentPage - 1) * ITEM_PER_PAGE;
+    const end = currentPage * ITEM_PER_PAGE;
 
-        if (!events) return []
+    return events.slice(from, end);
+  }, [currentPage, events]);
 
-        const from = (currentPage - 1) * ITEM_PER_PAGE;
-        const end = currentPage * ITEM_PER_PAGE;
+  function handlePageChange(page: number) {
+    setCurrentPage(page);
+  }
 
-        return  events.slice(from, end)
+  const hrStyleBottom = {
+    ...(isMobile && {
+      marginBottom: "20px",
+    }),
+  };
 
-    }, [currentPage, events])
+  return (
+    <div className={styles.section}>
+      <h2 className={styles.eventHeading}>Past Events</h2>
+      <hr style={hrStyleBottom} className={styles.hrLine} />
 
-    function handlePageChange(page:number) { setCurrentPage(page); }
-    
-    const hrStyleBottom = {
-        ...(isMobile && {
-          marginBottom: '20px'
-        })
-    }
+      {events && events instanceof Array && events.length > 0 && (
+        <div className={styles.whiteCardContainer}>
+          {pageEvents.map((event, index) => (
+            <EventCard key={`${index}_ue`} event={event} hidebtnreadmore />
+          ))}
 
-    return (
-        <div className={styles.section}>
-            <h2 className={styles.eventHeading}>Past Events</h2>
-            <hr style={hrStyleBottom} className={styles.hrLine} />
-
-            {events && events instanceof Array && events.length > 0 && (
-                <div className={styles.whiteCardContainer}>
-                    {pageEvents.map((event, index) => (<EventCard key={`${index}_ue`} event={event} hidebtnreadmore />))}
-
-                    <ResponsivePagination
-                        total={totalPages}
-                        current={currentPage}
-                        onPageChange={page => handlePageChange(page)}
-                    />
-                </div>
-            )}
+          <ResponsivePagination
+            total={totalPages}
+            current={currentPage}
+            onPageChange={(page) => handlePageChange(page)}
+          />
         </div>
-    )
-}
+      )}
+    </div>
+  );
+};
 
-export default PastEvents
+export default PastEvents;
