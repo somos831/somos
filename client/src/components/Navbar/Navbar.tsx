@@ -12,8 +12,8 @@ import { FaAngleRight, FaAngleDown } from "react-icons/fa";
 import useEvents from "../../hooks/useEvents";
 
 export default function Navbar() {
-  const { loadInformation: loadEventsInformation } = useEvents()
-  
+  const { loadInformation: loadEventsInformation } = useEvents();
+
   const [isOpen, setIsOpen] = React.useState(false);
 
   const [isEventSubMenuOpen, setIsEventSubMenuOpen] = React.useState(false);
@@ -23,8 +23,8 @@ export default function Navbar() {
   };
 
   React.useEffect(() => {
-    loadEventsInformation()
-  }, [])
+    loadEventsInformation();
+  }, []);
 
   return (
     <header>
@@ -41,19 +41,26 @@ export default function Navbar() {
           Home
         </Link>
         <span>
-          <Link className={`${styles.mainSubMenuItemLink}`} to="/events" reloadDocument> Events </Link>
-          <ul className={styles.desktopNavLinks}>
-              <li>
-                <Link to="/events" reloadDocument>
-                  Events
-                </Link>
-              </li>
-              <li>
-                <Link to="/events/register" reloadDocument>
-                  Register Event
-                </Link>
-              </li>
-            </ul>
+          <Link
+            className={`${styles.mainSubMenuItemLink}`}
+            to="/events"
+            reloadDocument
+          >
+            {" "}
+            Events{" "}
+          </Link>
+          {/* <ul className={styles.desktopNavLinks}> */}
+          {/*     <li> */}
+          {/*       <Link to="/events" reloadDocument> */}
+          {/*         Events */}
+          {/*       </Link> */}
+          {/*     </li> */}
+          {/*     <li> */}
+          {/*       <Link to="/events/register" reloadDocument> */}
+          {/*         Register Event */}
+          {/*       </Link> */}
+          {/*     </li> */}
+          {/*   </ul> */}
         </span>
         <Link to="/about" reloadDocument>
           About
@@ -78,24 +85,33 @@ export default function Navbar() {
               </Link>
             </li>
             <li>
-              <p className={`${styles.mainSubMenuSubContent}`} onClick={() => setIsEventSubMenuOpen(!isEventSubMenuOpen)}>
-                <span>Events</span> {isEventSubMenuOpen? (<FaAngleDown />) : (<FaAngleRight />) }
-              </p>
-              {isEventSubMenuOpen && (
-                <ul className={styles.containerSubMenu}>
-                  <li>
-                    <Link to="/events" reloadDocument>
-                      Events List
-                    </Link>
-                  </li>
-                  <li>
-                    <Link to="/events/register" reloadDocument>
-                      Register Event
-                    </Link>
-                  </li>
-                </ul>
-              )}
+              <Link to="/events" reloadDocument>
+                Events
+              </Link>
             </li>
+            {/* <li> */}
+            {/*   <p */}
+            {/*     className={`${styles.mainSubMenuSubContent}`} */}
+            {/*     onClick={() => setIsEventSubMenuOpen(!isEventSubMenuOpen)} */}
+            {/*   > */}
+            {/*     <span>Events</span>{" "} */}
+            {/*     {isEventSubMenuOpen ? <FaAngleDown /> : <FaAngleRight />} */}
+            {/*   </p> */}
+            {/*   {isEventSubMenuOpen && ( */}
+            {/*     <ul className={styles.containerSubMenu}> */}
+            {/*       <li> */}
+            {/*         <Link to="/events" reloadDocument> */}
+            {/*           Events List */}
+            {/*         </Link> */}
+            {/*       </li> */}
+            {/*       <li> */}
+            {/*         <Link to="/events/register" reloadDocument> */}
+            {/*           Register Event */}
+            {/*         </Link> */}
+            {/*       </li> */}
+            {/*     </ul> */}
+            {/*   )} */}
+            {/* </li> */}
             <li>
               <Link to="/about" reloadDocument>
                 About

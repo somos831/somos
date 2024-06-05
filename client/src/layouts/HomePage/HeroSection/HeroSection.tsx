@@ -32,9 +32,8 @@ export default function HeroSection(): React.ReactElement {
 
         <div className={styles.subheadingContainer}>
           <p className={styles.subheading}>
-            Fostering community growth, and addressing societal challenges
-            through mentorship, community-driven projects, and professional
-            development
+            Fostering community growth through mentorship, community-driven
+            projects, and professional development
           </p>
 
           <div className={styles.buttonContainer}>
