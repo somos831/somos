@@ -14,9 +14,12 @@ yup.addMethod(yup.string, 'compareStartTime', function(startime, errMsg) {
 
         const [starthourstr, startminstr] = startime.split(':')
         const [endhourstr, endminstr] = value.split(':')
+        
+        console.log(parseInt(starthourstr), parseInt(endhourstr), parseInt(starthourstr) > parseInt(endhourstr))
+        console.log(parseInt(startminstr), parseInt(endminstr), parseInt(startminstr) >= parseInt(endminstr))
 
         if (parseInt(starthourstr) > parseInt(endhourstr)) return createError({ path, message: `${errMsg} ${startime}` })
-        else if (parseInt(startminstr) >= parseInt(endminstr)) return createError({ path, message: `${errMsg} ${startime}` })
+        else if (parseInt(starthourstr) == parseInt(endhourstr) && parseInt(startminstr) >= parseInt(endminstr)) return createError({ path, message: `${errMsg} ${startime}` })
 
         return true
     })
@@ -81,5 +84,5 @@ export const EventsSchema = yup.object({
     }),
     addinfo: yup.string(),
     addurl: yup.string(),
-    price: yup.string(),
+    price: yup.number().transform((value) => (isNaN(value) ? undefined : value)).nullable().min(0, "Price can't be less than zero"),
 })

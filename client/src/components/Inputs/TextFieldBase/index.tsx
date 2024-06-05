@@ -22,10 +22,11 @@ interface TextFieldBaseProps {
     values?: KeyValue[];
     disabled?: boolean;
     defaultvalue?: string;
-    minDate?: Date
+    minDate?: Date;
+    step?: string;
 }
 
-const TextFieldBase: React.FC<TextFieldBaseProps> = ({ title, placeholder, id, values, disabled=false, type="text", defaultvalue="", minDate }) => {
+const TextFieldBase: React.FC<TextFieldBaseProps> = ({ title, placeholder, id, values, disabled=false, type="text", defaultvalue="", minDate, step="" }) => {
 
     const { register, setValue, watch, formState: { errors }, trigger } = useFormContext() 
 
@@ -69,8 +70,8 @@ const TextFieldBase: React.FC<TextFieldBaseProps> = ({ title, placeholder, id, v
         if (disabled) {
             setFieldValue("")
             
-            if (type == "date") setValue(id, null, { shouldValidate: false })
-            else setValue(id, "", { shouldValidate: false })
+            if (type == "date" || type == "number") setValue(id, null, { shouldValidate: true })
+            else setValue(id, "", { shouldValidate: true })
 
             trigger(id)
         }
@@ -88,10 +89,10 @@ const TextFieldBase: React.FC<TextFieldBaseProps> = ({ title, placeholder, id, v
             case "select": 
                 return (<InputSelect disabled={disabled} id={id} values={values} register={register} err={isErr} />)
             default:
-                return (<input disabled={disabled} className={classnames.join(" ")} style={{width: '100%'}} type={type} placeholder={placeholder} {...register(id)}/>)
+                return (<input disabled={disabled} className={classnames.join(" ")} style={{width: '100%'}} type={type} placeholder={placeholder} step={type == "number"? step: ""} {...register(id)}/>)
         }
 
-    }, [id, placeholder, setValue, isErr, type, classnames, register, values, disabled, fieldValue])
+    }, [id, placeholder, setValue, isErr, type, classnames, register, values, disabled, fieldValue, minDate, step])
 
     const errMessage = React.useMemo(():string => isErr? `${errors[id]!.message}` : '', [isErr])
 

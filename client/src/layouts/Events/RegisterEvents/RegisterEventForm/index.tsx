@@ -21,6 +21,12 @@ import Swal from 'sweetalert2';
 
 import useEvents from '../../../../hooks/useEvents';
 
+const getYesterdayDate = () => {
+    const date = new Date()
+    date.setDate(date.getDate() - 1);
+    return new Date(date.toISOString().split('T')[0])
+}
+
 type FormFields = yup.InferType<typeof EventsSchema>
 
 const STATE_SELECT = [
@@ -265,7 +271,7 @@ const STATE_SELECT = [
 const initValues:FormFields = { 
     title: '',
     category: '1',
-    startdate: new Date(),
+    startdate: getYesterdayDate(),
     enddate: null,
     starttime: '',
     endtime: '',
@@ -279,7 +285,7 @@ const initValues:FormFields = {
     zipcode: '',
     addinfo: '',
     addurl: '',
-    price: '',
+    price: null,
     locationurl: ''
 }
 
@@ -397,13 +403,13 @@ export default function RegisterEventForm(): React.ReactElement {
                         <TextFieldBase id="provider" title='Organization Name*' placeholder="Organization name" fullwidth={true} />
                         <div className={styles.inputGridContainer}>
                             <div className={styles.gridHalfColumn} style={{ gridColumn: 'span 7' }}>
-                                <TextFieldBase id="startdate" title='Start date*' placeholder="Start date" type="date" fullwidth={true} defaultvalue={initValues.startdate} minDate={new Date()} />
+                                <TextFieldBase id="startdate" title='Start date*' placeholder="Start date" type="date" fullwidth={true} defaultvalue={initValues.startdate} minDate={getYesterdayDate()} />
                             </div>
                             <div className={styles.gridHalfColumn} style={{ gridColumn: 'span 5' }}>
                                 <TextFieldBase id="starttime" disabled={wholeDayEvent} title='Start time' placeholder="HH:MM" type="time" fullwidth={true} />
                             </div>
                             <div className={styles.gridHalfColumn} style={{ gridColumn: 'span 7' }}>
-                                <TextFieldBase id="enddate" title='End date' placeholder="End date" type="date" fullwidth={true} disabled={wholeDayEvent} minDate={new Date()} />
+                                <TextFieldBase id="enddate" title='End date' placeholder="End date" type="date" fullwidth={true} disabled={wholeDayEvent} minDate={getYesterdayDate()} />
                             </div>
                             <div className={styles.gridHalfColumn} style={{ gridColumn: 'span 5' }}>
                                 <TextFieldBase id="endtime" disabled={wholeDayEvent} title='End time' placeholder="HH:MM" type="time" fullwidth={true} />
@@ -414,7 +420,7 @@ export default function RegisterEventForm(): React.ReactElement {
                         </div>
                         <div className={styles.inputGridContainer}>
                             <div className={styles.gridHalfColumn} style={{ gridColumn: 'span 6' }}>
-                                <TextFieldBase id="price" title='Event Price' placeholder="Free" fullwidth={true} />
+                                <TextFieldBase id="price" title='Event Price (if any)' placeholder="Free" fullwidth={true} type="number" step=".01" />
                             </div>
                         </div>
                         <TextFieldBase id="description" title='Event description' placeholder="Event description" type="textarea" fullwidth={true} />
