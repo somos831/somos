@@ -1,0 +1,20 @@
+.btn {
+    border: none;
+    border-radius: 5px;
+    padding: 12px 32px;
+    text-decoration: none;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    transition: ease-out 0.2s;
+    cursor: pointer;
+
+    font-family: "Poppins", sans-serif !important;
+    font-size: 1.1rem;
+    font-weight: 700;
+  }
+  
+.btn:hover,
+.btn:focus {
+    background-color: coral;
+    color: black;
+}
