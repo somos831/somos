@@ -19,8 +19,8 @@
   align-items: center;
   background-color: var(--bg-ghost-white);
   color: var(--text-secondary-color);
-  padding: 80px 0 16px 0;
-  margin-bottom: 8px;
+  padding: 60px 0 16px 0;
+  margin-bottom: 24px;
 }
 
 /* Event Heading CSS */

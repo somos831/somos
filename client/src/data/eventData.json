@@ -1,10 +1,31 @@
 {
   "upcomingEvent": [
     {
+      "title": "⛱️ SOMOS's 1st Birthday Bash⛱️",
+      "description": "Come celebrate with us our 1-year anniversary! 🎉 Join us for an evening of music, games, and socializing! RSVP today and let us know you are coming!",
+      "extraDetailsLink": "",
+      "extraDetailsText": "",
+      "img": "./images/beach_party_2024.png",
+      "imgAlt": "Flyer for somos first birthday celebration",
+      "month": "July",
+      "day": 27,
+      "year": 2024,
+      "dayOfWeek": "Sat",
+      "date": "2024-07-27",
+      "time": "5-8PM",
+      "address": "Seabright Beach, Santa Cruz 95062",
+      "googleMap": "https://maps.app.goo.gl/2VqZVszzGripbBNy8",
+      "cost": "Free",
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSedoEvhh_HQ_tiXukYKAiNCTHvtxmfjN8FITMLWVjhPspCqoQ/viewform",
+      "btnText": "RSVP Here"
+    }
+  ],
+  "pastEvents": [
+    {
       "title": "🚀 Boost Your Linkedin Game: Skills Workshop 🚀",
       "description": "Elevate your LinkedIn game and open doors to new career possibilities with SOMOS™ Central Coast Tech Association! Secure your spot today and transform your professional online presence! Join us after the workshop at XL Public House for a casual happy hour to continue networking in a relaxed atmosphere. This event will be hosted in-person and virtually!",
-      "extraDetailsLink": "https://us02web.zoom.us/j/83693691299?pwd=7NGQaVPpIXnLDMbWMtaRZEma0jeteq.1",
-      "extraDetailsText": "Zoom Link",
+      "extraDetailsLink": "",
+      "extraDetailsText": "",
       "img": "./images/linkedin_workshop.png",
       "imgAlt": "Flyer for Linkedin workshop hosted by somos",
       "month": "June",
@@ -18,9 +39,7 @@
       "cost": "Free",
       "link": "https://docs.google.com/forms/d/e/1FAIpQLSdc1ANggVMh9QkOj319flswAGxViKGO81vlp-0FJGk-ftJrzw/viewform",
       "btnText": "RSVP Here"
-    }
-  ],
-  "pastEvents": [
+    },
     {
       "title": "Hike at Toro Park",
       "description": "Join us at Toro Park! Whether you're an experienced hiker or just looking for a relaxed walk, this easy hike promises fresh air, scenic views, and great company.",

@@ -23,6 +23,21 @@ export default function AboutUs(): React.ReactElement {
         </div>
       </div>
 
+      {/* <Banner */}
+      {/*   background={aboutImage} */}
+      {/*   title={"About Us"} */}
+      {/*   body="Our mission is to create a collaborative network of tech professionals committed to empowering aspiring individuals and */}
+      {/*   fostering community" */}
+      {/*   height={480} */}
+      {/*   tabletHeight={400} */}
+      {/*   mobileHeight={300} */}
+      {/*   justifyContent="flex-end" */}
+      {/*   alignItems="flex-start" */}
+      {/*   py={3} */}
+      {/*   variation="header1" */}
+      {/*   decoration */}
+      {/* /> */}
+
       <div className={styles.quoteContainer}>
         <p className={styles.quote}>
           "Do what you can, with what you have, where you are."
@@ -35,7 +50,7 @@ export default function AboutUs(): React.ReactElement {
 
       <div className={styles.content}>
         <p>
-          <em className={styles.lastUpdatedText}>Last Updated April 2024</em>
+          <em className={styles.lastUpdatedText}>Last Updated June 2024</em>
         </p>
 
         <article className={styles.articleSection}>
