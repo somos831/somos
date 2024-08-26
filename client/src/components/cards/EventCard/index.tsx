@@ -123,7 +123,12 @@ const EventCard = ({ event, hidebtnreadmore, btnColor = "501D86" }) => {
         )}
         <p className={styles.description}>{event.description}</p>
         {event.extraDetailsLink && (
-          <a className={styles.extraDetailsStr} href={event.extraDetailsLink}>
+          <a
+            className={styles.extraDetailsStr}
+            href={event.extraDetailsLink}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             {event.extraDetailsText
               ? event.extraDetailsText
               : event.extraDetailsLink}
@@ -149,4 +154,3 @@ const EventCard = ({ event, hidebtnreadmore, btnColor = "501D86" }) => {
 };
 
 export default EventCard;
-

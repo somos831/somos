@@ -1,6 +1,27 @@
 {
   "upcomingEvent": [
     {
+      "title": "🤖 AI Workshop Series 🤖 ",
+      "description": "Join SOMOS for their series of AI-focused gatherings, in collaboration with Cloud Brigade, for an interactive workshop exploring the world of Artifical Intelligence. Only 30 In-Person spots available! Reserve your spot now!",
+      "extraDetailsLink": "https://stanford.zoom.us/j/99574113546?pwd=AvURQH5WzXILPJqf7I5NCEc45HqxSW.1",
+      "extraDetailsText": "Join on Zoom Here!",
+      "img": "./images/ai_workshop.png",
+      "imgAlt": "Flyer for somos first workshop in the ai workshop series",
+      "month": "September",
+      "day": 10,
+      "year": 2024,
+      "dayOfWeek": "Tues",
+      "date": "2024-09-10",
+      "time": "6-8PM",
+      "address": "101 Cooper St, Santa Cruz 95060",
+      "googleMap": "https://maps.app.goo.gl/N97BpFFyxaGBYKRJ6",
+      "cost": "Free",
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSdxsy76fiyCi8_p8TC-jKiNmUr7nG9JHtWgAXJDhK3-n2z9Sg/viewform",
+      "btnText": "RSVP Here"
+    }
+  ],
+  "pastEvents": [
+    {
       "title": "⛱️ SOMOS's 1st Birthday Bash⛱️",
       "description": "Come celebrate with us our 1-year anniversary! 🎉 Join us for an evening of music, games, and socializing! RSVP today and let us know you are coming!",
       "extraDetailsLink": "",
@@ -18,9 +39,7 @@
       "cost": "Free",
       "link": "https://docs.google.com/forms/d/e/1FAIpQLSedoEvhh_HQ_tiXukYKAiNCTHvtxmfjN8FITMLWVjhPspCqoQ/viewform",
       "btnText": "RSVP Here"
-    }
-  ],
-  "pastEvents": [
+    },
     {
       "title": "🚀 Boost Your Linkedin Game: Skills Workshop 🚀",
       "description": "Elevate your LinkedIn game and open doors to new career possibilities with SOMOS™ Central Coast Tech Association! Secure your spot today and transform your professional online presence! Join us after the workshop at XL Public House for a casual happy hour to continue networking in a relaxed atmosphere. This event will be hosted in-person and virtually!",
