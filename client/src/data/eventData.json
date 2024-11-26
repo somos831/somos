@@ -1,6 +1,27 @@
 {
   "upcomingEvent": [
     {
+      "title": "🌙 SOMOS After Hours 🌙",
+      "description": "Join us for our end of the year networking event at Farmers Union Pour House in downtown Salinas. Come chat and meet people in the tech industry and adjacent fields. RSVP today! Let us know you are ready to sip and connect.",
+      "extraDetailsLink": "",
+      "extraDetailsText": "",
+      "img": "./images/after_hours.png",
+      "imgAlt": "Flyer for somos after hours networking event",
+      "month": "December",
+      "day": 11,
+      "year": 2024,
+      "dayOfWeek": "Wed",
+      "date": "2024-12-11",
+      "time": "6:30PM-8:30PM",
+      "address": "217 Main St. Salinas, CA 93901",
+      "googleMap": "https://maps.app.goo.gl/iZ6D7JyUHYJj1UG66",
+      "cost": "Free",
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSc_crIk0D4lnBJcKiA7ooJHn9zHBy9NC_8lGcYqHXkAk_yLEw/viewform",
+      "btnText": "RSVP Here"
+    }
+  ],
+  "pastEvents": [
+    {
       "title": "👩‍💻 Tech Mixer: Trailblazer Engineers 👩‍💻",
       "description": "Join us for an evening with our keynote speakers, Lesly Garcia, a developer at Liberty Mutual, and Laura Chavez, a SWE at Salesforce, as they share their career paths and insights into their work. ",
       "extraDetailsLink": "",
@@ -18,9 +39,7 @@
       "cost": "Free",
       "link": "https://docs.google.com/forms/d/e/1FAIpQLSc_crIk0D4lnBJcKiA7ooJHn9zHBy9NC_8lGcYqHXkAk_yLEw/viewform",
       "btnText": "RSVP Here"
-    }
-  ],
-  "pastEvents": [
+    },
     {
       "title": "🤖 AI Workshop Series 🤖 ",
       "description": "Join SOMOS for their series of AI-focused gatherings, in collaboration with Cloud Brigade, for an interactive workshop exploring the world of Artifical Intelligence. Only 30 In-Person spots available! Reserve your spot now!",

@@ -19,7 +19,7 @@ const EventCard = ({ event, hidebtnreadmore, btnColor = "501D86" }) => {
         gridColumn: isTablet ? "span 4" : "span 12",
         backgroundSize: "contain",
         ...(isTablet && {
-          backgroundPositionY: "calc(50% - 60px)",
+          backgroundPositionY: "0",
         }),
       }),
       ...(isMobile && {
