@@ -1,7 +1,6 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
 import { FaLinkedin, FaInstagram, FaBookmark } from "react-icons/fa";
-import substackIcon from "../../assets/brandLogos/substack.svg";
 
 import styles from "./Navbar.module.css";
 import somosLogo from "../../assets/somoLogos//somosLogo.png";
