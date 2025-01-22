@@ -1,6 +1,7 @@
 import React from "react";
 import { FaBars } from "react-icons/fa";
-import { FaLinkedin, FaInstagram, FaTiktok } from "react-icons/fa";
+import { FaLinkedin, FaInstagram, FaBookmark } from "react-icons/fa";
+import substackIcon from "../../assets/brandLogos/substack.svg";
 
 import styles from "./Navbar.module.css";
 import somosLogo from "../../assets/somoLogos//somosLogo.png";
@@ -135,11 +136,11 @@ export default function Navbar() {
               <FaInstagram aria-label="Instagram" />
             </a>
             <a
-              href="https://www.tiktok.com/@join.somos?_t=8jXca38wEZf&_r=1"
+              href="https://substack.com/@somoscentralcoasttechassoc"
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaTiktok aria-label="Tiktok" />
+              <FaBookmark aria-label="Substack" />
             </a>
           </div>
         </Drawer>

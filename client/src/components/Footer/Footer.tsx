@@ -3,7 +3,7 @@ import styles from "./Footer.module.css";
 import somosLogo from "../../assets/somoLogos/SOMOS-LOGOS-04.png";
 import { FaInstagram } from "react-icons/fa";
 import linkedInIcon from "../../assets/brandLogos/linkedin.svg";
-import tiktokIcon from "../../assets/brandLogos/tiktok.svg";
+import substackIcon from "../../assets/brandLogos/substack.svg";
 import discordIcon from "../../assets/brandLogos/discord.svg";
 import { Link } from "react-router-dom";
 
@@ -64,14 +64,14 @@ export default function Footer() {
                 <FaInstagram className={styles.socialIcons} />
               </a>
               <a
-                href="https://www.tiktok.com/@join.somos?_t=8jXca38wEZf&_r=1"
+                href="https://substack.com/@somoscentralcoasttechassoc"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <img
-                  alt="tiktok icon"
+                  alt="substack icon"
                   className={styles.socialIcons}
-                  src={tiktokIcon}
+                  src={substackIcon}
                 />
               </a>
               <a
@@ -80,7 +80,7 @@ export default function Footer() {
                 rel="noopener noreferrer"
               >
                 <img
-                  alt="linkedin icon"
+                  alt="discord icon"
                   className={styles.socialIcons}
                   src={discordIcon}
                 />
