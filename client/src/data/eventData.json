@@ -1,6 +1,46 @@
 {
   "upcomingEvent": [
     {
+      "title": "🌙 After Hours: Speed Connect 🌙",
+      "description": "We are excited to present our first event in the City of Watsonville! This event is part of our SOMOS™ After Hours series, designed to create networking opportunities.",
+      "extraDetailsLink": "",
+      "extraDetailsText": "",
+      "img": "./images/speed_connect.png",
+      "imgAlt": "Flyer for somos after hours networking event",
+      "month": "February",
+      "day": 28,
+      "year": 2025,
+      "dayOfWeek": "Fri",
+      "date": "2025-02-28",
+      "time": "6:30PM-8:30PM",
+      "address": "Watsonville Public House: 625 Main St, Watsonville, CA 95076",
+      "googleMap": "https://g.co/kgs/ZSzC22z",
+      "cost": "Free",
+      "link": "https://lnkd.in/gDHG7QJq",
+      "btnText": "RSVP Here"
+    }
+  ],
+  "pastEvents": [
+    {
+      "title": "☕️ Platicando con SOMOS ☕️",
+      "description": "Open forum for our community to shape SOMOS's future together. Come share your ideas - Your voice, our community.",
+      "extraDetailsLink": "",
+      "extraDetailsText": "",
+      "img": "./images/platicando.png",
+      "imgAlt": "Flyer for platicando con somos event",
+      "month": "January",
+      "day": 23,
+      "year": 2025,
+      "dayOfWeek": "Thurs",
+      "date": "2025-01-23",
+      "time": "6:30PM-8:00PM",
+      "address": "210 Salinas St. Salinas, CA 93901",
+      "googleMap": "https://maps.app.goo.gl/ED61UorBNcNRrqHn8",
+      "cost": "Free",
+      "link": "",
+      "btnText": ""
+    },
+    {
       "title": "🌙 SOMOS After Hours 🌙",
       "description": "Join us for our end of the year networking event at Farmers Union Pour House in downtown Salinas. Come chat and meet people in the tech industry and adjacent fields. RSVP today! Let us know you are ready to sip and connect.",
       "extraDetailsLink": "",
@@ -18,9 +58,7 @@
       "cost": "Free",
       "link": "https://docs.google.com/forms/d/e/1FAIpQLSfa9YXWgXDChSRC_X5edhdy5xxFnbxzh5u7sZcW3-4xOBgRrA/viewform",
       "btnText": "RSVP Here"
-    }
-  ],
-  "pastEvents": [
+    },
     {
       "title": "👩‍💻 Tech Mixer: Trailblazer Engineers 👩‍💻",
       "description": "Join us for an evening with our keynote speakers, Lesly Garcia, a developer at Liberty Mutual, and Laura Chavez, a SWE at Salesforce, as they share their career paths and insights into their work. ",
