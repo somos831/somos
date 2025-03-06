@@ -1,6 +1,27 @@
 {
   "upcomingEvent": [
     {
+      "title": "🥾 Pie-ing for Adventure 🥾",
+      "description": "Join us at Fort Ord! Whether you're an experienced hiker or just looking for a relaxed walk, this easy hike promises fresh air, scenic views, and great company. Plus, it’s International Women’s Day so rock your pink to honor the incredible women in our lives! 💕",
+      "extraDetailsLink": "",
+      "extraDetailsText": "",
+      "img": "./images/hiking.png",
+      "imgAlt": "Flyer for somos hiking event",
+      "month": "March",
+      "day": 8,
+      "year": 2025,
+      "dayOfWeek": "Sat",
+      "date": "2025-03-08",
+      "time": "9AM",
+      "address": "Toro Creek Rd, Marina, CA 93933",
+      "googleMap": "https://maps.app.goo.gl/EWYvPZ1EdEHy8Bz46",
+      "cost": "Free",
+      "link": "https://forms.gle/HKhzKQEZG6BBqRZ46",
+      "btnText": "RSVP Here"
+    }
+  ],
+  "pastEvents": [
+    {
       "title": "🌙 After Hours: Speed Connect 🌙",
       "description": "We are excited to present our first event in the City of Watsonville! This event is part of our SOMOS™ After Hours series, designed to create networking opportunities.",
       "extraDetailsLink": "",
@@ -18,9 +39,7 @@
       "cost": "Free",
       "link": "https://lnkd.in/gDHG7QJq",
       "btnText": "RSVP Here"
-    }
-  ],
-  "pastEvents": [
+    },
     {
       "title": "☕️ Platicando con SOMOS ☕️",
       "description": "Open forum for our community to shape SOMOS's future together. Come share your ideas - Your voice, our community.",

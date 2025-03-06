@@ -3,7 +3,7 @@ import { FaBars } from "react-icons/fa";
 import { FaLinkedin, FaInstagram, FaBookmark } from "react-icons/fa";
 
 import styles from "./Navbar.module.css";
-import somosLogo from "../../assets/somoLogos//somosLogo.png";
+import somosLogo from "../../assets/somoLogos/somosLogo.png";
 import Drawer from "./Drawer";
 import { Link } from "react-router-dom";
 
