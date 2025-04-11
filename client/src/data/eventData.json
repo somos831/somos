@@ -1,6 +1,27 @@
 {
   "upcomingEvent": [
     {
+      "title": "👾 Game Night 👾",
+      "description": "Join us for a fun-filled evening of board games, video games, great food, and drinks! Whether you're a casual player or a pro, there's something for everyone. Bring your friends, bring your game face, and get ready for a night of laughs and friendly competition. Open to all – we’d love to see you there!",
+      "extraDetailsLink": "",
+      "extraDetailsText": "",
+      "img": "./images/gamenight.png",
+      "imgAlt": "Flyer for somos game night event",
+      "month": "April",
+      "day": 22,
+      "year": 2025,
+      "dayOfWeek": "Tues",
+      "date": "2025-04-22",
+      "time": "6:30PM-8:00PM",
+      "address": "210 Salinas St. Salinas, CA 93901",
+      "googleMap": "https://maps.app.goo.gl/ED61UorBNcNRrqHn8",
+      "cost": "Free",
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSc8EP3tcu0zdfM3O1q1hXouB8bsWPxh03fCvnbacHWj9CM1Bw/viewform",
+      "btnText": "RSVP Here"
+    }
+  ],
+  "pastEvents": [
+    {
       "title": "🥾 Pie-ing for Adventure 🥾",
       "description": "Join us at Fort Ord! Whether you're an experienced hiker or just looking for a relaxed walk, this easy hike promises fresh air, scenic views, and great company. Plus, it’s International Women’s Day so rock your pink to honor the incredible women in our lives! 💕",
       "extraDetailsLink": "",
@@ -18,9 +39,7 @@
       "cost": "Free",
       "link": "https://forms.gle/HKhzKQEZG6BBqRZ46",
       "btnText": "RSVP Here"
-    }
-  ],
-  "pastEvents": [
+    },
     {
       "title": "🌙 After Hours: Speed Connect 🌙",
       "description": "We are excited to present our first event in the City of Watsonville! This event is part of our SOMOS™ After Hours series, designed to create networking opportunities.",

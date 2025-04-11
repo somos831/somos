@@ -89,7 +89,6 @@ const EventCard = ({ event, hidebtnreadmore, btnColor = "501D86" }) => {
         </p>
         <div className={styles.header}>
           <h6 className={styles.title}>{event.title}</h6>
-          <span style={{ fontWeight: 700 }}>||</span>
           <p className={styles.providerStr}>{event.provider}</p>
         </div>
         {event.googleMap ? (
