@@ -1,6 +1,27 @@
 {
   "upcomingEvent": [
     {
+      "title": "❄️ SOMOS After Hours: Cozy Edition❄️",
+      "description": "Join us for our final event of the year! Wrap up 2025 with warmth, comfort, and great company. Connect with fellow professionals from across the Central Coast in a relaxed cozy atmosphere. Enjoy hot beverages, cozy vibes, and meaningful conversations!",
+      "extraDetailsLink": "",
+      "extraDetailsText": "",
+      "img": "./images/somos_cozy.png",
+      "imgAlt": "Flyer for somos December after hours event",
+      "month": "December",
+      "day": 11,
+      "year": 2025,
+      "dayOfWeek": "Thurs",
+      "date": "2025-12-11",
+      "time": "7:00PM-8:30PM",
+      "address": "210 Salinas St. Salinas, CA 93901",
+      "googleMap": "https://maps.app.goo.gl/ED61UorBNcNRrqHn8",
+      "cost": "Free",
+      "link": "",
+      "btnText": ""
+    }
+  ],
+  "pastEvents": [
+        {
       "title": "💬 June Tech Mixer 2025 💬",
       "description": "Join fellow innovators and tech enthusiasts at our upcoming mixer! Enjoy light refreshments, great conversations, and a special talk by tech entrepreneur, Benito Sanchez.",
       "extraDetailsLink": "",
@@ -18,9 +39,7 @@
       "cost": "Free",
       "link": "https://forms.gle/ctefUKkizriKmfbr6",
       "btnText": "RSVP Here"
-    }
-  ],
-  "pastEvents": [
+    },
     {
       "title": "👾 Game Night 👾",
       "description": "Join us for a fun-filled evening of board games, video games, great food, and drinks! Whether you're a casual player or a pro, there's something for everyone. Bring your friends, bring your game face, and get ready for a night of laughs and friendly competition. Open to all – we’d love to see you there!",
