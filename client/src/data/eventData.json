@@ -1,6 +1,27 @@
 {
   "upcomingEvent": [
     {
+      "title": "🐾 Tech Networking Mixer Event 🐾",
+      "description": "The Hartnell Computer Science Club and SOMOS are hosting a tech mixer at Hartnell College. If you are student, tech professional, or just interested in tech, come join us for a fun and informative evening! Connect with industry professionals and Hartnell faculty!",
+      "extraDetailsLink": "",
+      "extraDetailsText": "",
+      "img": "./images/somos_hartnell.jpg",
+      "imgAlt": "Flyer for Tech Networking Mixer Event at Hartnell College",
+      "month": "February",
+      "day": 27,
+      "year": 2026,
+      "dayOfWeek": "Fri",
+      "date": "2025-02-27",
+      "time": "6:00PM-8:30PM",
+      "address": "411 Central Ave, Salinas, CA 93901",
+      "googleMap": "https://maps.app.goo.gl/WcRMz535ueXHtiNr9",
+      "cost": "Free",
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSfTOweTYqXAgt6NxPIHhGhX9hd1y5grApdUB_zUTjNTjmaeFg/viewform",
+      "btnText": "RSVP Here"
+    }
+  ],
+  "pastEvents": [
+    {
       "title": "❄️ SOMOS After Hours: Cozy Edition❄️",
       "description": "Join us for our final event of the year! Wrap up 2025 with warmth, comfort, and great company. Connect with fellow professionals from across the Central Coast in a relaxed cozy atmosphere. Enjoy hot beverages, cozy vibes, and meaningful conversations!",
       "extraDetailsLink": "",
@@ -18,10 +39,8 @@
       "cost": "Free",
       "link": "",
       "btnText": ""
-    }
-  ],
-  "pastEvents": [
-        {
+    },
+    {
       "title": "💬 June Tech Mixer 2025 💬",
       "description": "Join fellow innovators and tech enthusiasts at our upcoming mixer! Enjoy light refreshments, great conversations, and a special talk by tech entrepreneur, Benito Sanchez.",
       "extraDetailsLink": "",
