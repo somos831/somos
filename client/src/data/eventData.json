@@ -1,6 +1,27 @@
 {
   "upcomingEvent": [
     {
+      "title": "⛱️ SOMOS Beach Social ⛱️",
+      "description": "Join us for a laid-back beach social! We’ll have fun activities, music, and pizza. We encourage you to bring your favorite snack to share and something comfortable to sit on. Looking forward to seeing you there! Please submit form if you plan on attending.",
+      "extraDetailsLink": "",
+      "extraDetailsText": "",
+      "img": "./images/somos_social.png",
+      "imgAlt": "Flyer for somos beach social event",
+      "month": "April",
+      "day": 25,
+      "year": 2026,
+      "dayOfWeek": "Sat",
+      "date": "2026-04-25",
+      "time": "5:00PM",
+      "address": "653 Del Monte Ave, Monterey, CA 93940",
+      "googleMap": "https://www.google.com/url?sa=t&source=web&rct=j&url=https://maps.google.com/maps?vet%3D10CAAQoqAOahcKEwiw0bzjgPGTAxUAAAAAHQAAAAAQCQ..i%26client%3Dfirefox-b-1-d%26pvq%3DOhUweDA6MHhiZDJjYzA3MmU4ZjQ5MGI%26fvr%3D1%26cs%3D1%26um%3D1%26ie%3DUTF-8%26fb%3D1%26gl%3Dus%26sa%3DX%26ftid%3D0x808de4449132bedb:0xbd2cc072e8f490b%26ved%3D1t:8290%26ictx%3D111&opi=89978449",
+      "cost": "Free",
+      "link": "https://docs.google.com/forms/d/e/1FAIpQLSeUsh_9Vo607InL9qyLqZJGH1TUS_UmQ4YFoRCFyInqJPKsHw/viewform",
+      "btnText": "RSVP Here"
+    }
+  ],
+  "pastEvents": [
+    {
       "title": "🐾 Tech Networking Mixer Event 🐾",
       "description": "The Hartnell Computer Science Club and SOMOS are hosting a tech mixer at Hartnell College. If you are student, tech professional, or just interested in tech, come join us for a fun and informative evening! Connect with industry professionals and Hartnell faculty!",
       "extraDetailsLink": "",
@@ -18,9 +39,7 @@
       "cost": "Free",
       "link": "https://docs.google.com/forms/d/e/1FAIpQLSfTOweTYqXAgt6NxPIHhGhX9hd1y5grApdUB_zUTjNTjmaeFg/viewform",
       "btnText": "RSVP Here"
-    }
-  ],
-  "pastEvents": [
+    },
     {
       "title": "❄️ SOMOS After Hours: Cozy Edition❄️",
       "description": "Join us for our final event of the year! Wrap up 2025 with warmth, comfort, and great company. Connect with fellow professionals from across the Central Coast in a relaxed cozy atmosphere. Enjoy hot beverages, cozy vibes, and meaningful conversations!",
